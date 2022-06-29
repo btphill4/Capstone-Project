@@ -14,25 +14,38 @@
 # Install with linux command: pip install numpy
 import numpy as np
 from Methods import *
+# os for importing files
+import os
+import sys
 # ~~~~~~~~~~~ Import CVS Here (To be updated with better method) ~~~~~~~~~~~ #
 # Import template
 import csv
 
 # Store imported data in an empty array imported
-importedDB = []
+importedTenDB = []
+importedHODB = []
 
 # Figure out how to change the path for it to work on all machines
-with open("/home/brandon/Desktop/business.csv", 'r') as businessFile:
-    rows = csv.reader(businessFile, delimiter=',')
+with open(os.path.join(sys.path[0], "Tenantdb.csv"), 'r') as TenantDB:
+    rows = csv.reader(TenantDB, delimiter=',')
     for r in rows:
         # append(r[0]) get first column, append(r[1]) gets 2nd column etc
-        importedDB.append(r[1])
+        importedTenDB.append(r[1])
         # print(r)
 
+
+# Figure out how to change the path for it to work on all machines
+with open(os.path.join(sys.path[0], "HomeOwnerdb.csv"), 'r') as HomeOwnerDB:
+    rows = csv.reader(HomeOwnerDB, delimiter=',')
+    for r in rows:
+        # append(r[0]) get first column, append(r[1]) gets 2nd column etc
+        importedHODB.append(r[1])
+        # print(r)
 # ~~~~~~ CSV is now imported and added to array(imported) ~~~~~~ #
 
 # Print entire DB: 
-# print(imported)
+print(importedHODB)
+print(importedTenDB)
 
 # Print specific index:
 #print(importedDB[100])
@@ -43,8 +56,8 @@ with open("/home/brandon/Desktop/business.csv", 'r') as businessFile:
 # ~~~~~~~~~~Matching starts here~~~~~~~~~~ #
 
 # Copy omportedDB to a tempDB to not alter the list
-tempDB = importedDB
-
+tempTenantDB = importedTenDB
+tempHomeOwnerDB = importedHODB
 matchedDB = []
 
 #print to Test that the DB was copied
