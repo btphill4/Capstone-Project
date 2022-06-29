@@ -13,7 +13,7 @@
 # Import Numpy for np.isin array functions
 # Install with linux command: pip install numpy
 import numpy as np
-
+from Methods import *
 # ~~~~~~~~~~~ Import CVS Here (To be updated with better method) ~~~~~~~~~~~ #
 # Import template
 import csv
@@ -29,14 +29,16 @@ with open("/home/brandon/Desktop/business.csv", 'r') as businessFile:
         importedDB.append(r[1])
         # print(r)
 
-# CSV is now imported and added to array(imported)
+# ~~~~~~ CSV is now imported and added to array(imported) ~~~~~~ #
 
-# Print entire DB
+# Print entire DB: 
 # print(imported)
 
-# Print specific index
+# Print specific index:
 #print(importedDB[100])
 
+#test function to check Methods.py methods:
+#testFunction() 
 
 # ~~~~~~~~~~Matching starts here~~~~~~~~~~ #
 
@@ -50,7 +52,7 @@ matchedDB = []
 
 
 # ~~~~~~~~~~~ match rent function ~~~~~~~~~~~ #
-# Checks for intersection between HO_rentDB and TEN_rentDB
+# Checks for intersection between HO_rentDB_Set and TEN_rentDB_Set
 # If it found an intersection - add to matched
 # else do nothing -> print not match for testing
 HO_rentDB = [700]
@@ -64,7 +66,7 @@ def match_rent():
 
     # Checks if values of testingRentDB are in rentDB (using numpy)
     #np.isin(testingRentDB[0], rentDB[0])
-
+    
     #if match is found
     if HO_rentDB_set.intersection(TEN_rentDB_set):
         #Print if found (testing)
@@ -83,6 +85,9 @@ def match_rent():
         print("RENT NOT MATCHED")
 
     # print(rentDB)
+# end match_rent()
+
+
 
 match_rent()
 print(matchedDB)
@@ -106,7 +111,7 @@ def match_City():
         # add to the matched array
     else:
         print("NO City Match")
-
+#end match_city()
 
 # Run match_City()
 match_City()
