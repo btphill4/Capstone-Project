@@ -1,2 +1,3 @@
 # Capstone-Project
-Sam L added as collaborator as of 7-19-2022
+Planning:
+- Question 26: Take the two survey results and subtract the two numbers and the lower number the better
