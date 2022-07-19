@@ -12,7 +12,7 @@
 
 # Import Numpy for np.isin array functions
 import numpy as np
-from Methods import *
+from Match_Methods import *
 # os for importing files
 import os
 import sys
