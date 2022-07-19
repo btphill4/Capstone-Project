@@ -1,0 +1,5 @@
+Natural Language Toolkit
+pip install nltk
+
+Numpy - number/array library
+pip install numpy

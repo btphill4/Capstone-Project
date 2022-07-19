@@ -11,7 +11,6 @@
 
 
 # Import Numpy for np.isin array functions
-# Install with linux command: pip install numpy
 import numpy as np
 from Methods import *
 # os for importing files
