@@ -1,0 +1,97 @@
+CREATE TABLE homeownerapp(
+  appid numeric PRIMARY KEY NOT NULL, -- application id
+
+-- MOST IMPORTANT QUESTIONS
+
+  -- q7
+  city TEXT NOT NULL,
+
+  -- q10
+	rent_range_start numeric NOT NULL,
+	rent_range_end numeric NOT NULL,
+
+  -- q12
+  lease_or_rent TEXT NOT NULL,
+  lease_length TEXT,
+
+  -- q13
+  has_children boolean NOT NULL, 
+  children_ages TEXT, -- should maybe be a separate table in real database
+
+  -- q14
+  live_with_children boolean NOT NULL,
+
+  -- q15
+  personal_pets_bool boolean NOT NULL,
+  personal_pets_text TEXT,
+
+  -- q16
+  live_with_pets_bool boolean NOT NULL,
+  live_with_pets_text TEXT,
+
+  -- q17
+  move_in_date date NOT NULL,
+
+-- MEDIUM IMPORTANT QUESTIONS
+  
+  -- q5 
+  what_do_you_do TEXT NOT NULL,
+
+  -- q8 
+  preferred_neighborhood TEXT NOT NULL,
+
+  -- q9
+  max_house_mates numeric NOT NULL,
+
+  -- q11
+  age_range TEXT NOT NULL,
+
+  -- q19
+  environment_type TEXT NOT NULL,
+
+  -- q20 
+  q20_1 numeric NOT NULL, -- furnished room
+  q20_2 numeric NOT NULL, -- parking
+  q20_3 numeric NOT NULL, -- gym
+
+  -- q24 personal 
+  q24_1 numeric NOT NULL, -- kitchen use
+  q24_2 numeric NOT NULL, -- neatness
+  q24_3 numeric NOT NULL, -- kitchen cleanliness
+  q24_4 numeric NOT NULL, -- guests often visit
+  q24_5 numeric NOT NULL, -- household cleanliness
+  q24_6 numeric NOT NULL, -- recreational cannabis
+  q24_7 numeric NOT NULL, -- smoking
+
+  -- q26 housemate
+  q24_1 numeric NOT NULL, -- kitchen use
+  q24_2 numeric NOT NULL, -- neatness
+  q24_3 numeric NOT NULL, -- kitchen cleanliness
+  q24_4 numeric NOT NULL, -- guests often visit
+  q24_5 numeric NOT NULL, -- household cleanliness
+  q24_6 numeric NOT NULL, -- recreational cannabis
+  q24_7 numeric NOT NULL, -- smoking
+
+  -- q28
+  additional_info TEXT,
+
+-- LOW IMPORTANCE 
+
+  -- q18 personality
+  q18_1 numeric NOT NULL, -- carefree
+  q18_2 numeric NOT NULL, -- outgoing
+  q18_3 numeric NOT NULL, -- laid back
+  q18_4 TEXT, -- other (please specify)
+
+  -- q21 ideal friday night
+  q21_1 numeric NOT NULL, -- movie night with friends/housemates
+  q21_2 numeric NOT NULL, -- night out
+  q21_3 numeric NOT NULL, -- bar hopping
+  q21_4 numeric NOT NULL, -- self care night to wind down
+  q21_5 numeric NOT NULL, -- netflix
+  q21_6 TEXT, -- other (please specify)
+
+  -- q27 favorite hobbies/what do you do on days off for enjoyment
+  hobbies_text TEXT NOT NULL
+
+);
