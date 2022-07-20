@@ -1,2 +1,5 @@
 Question 26: Take the two survey results and subtract the two numbers and the lower number  
              the better 
+
+Python objects from SQL: 
+https://stackoverflow.com/questions/7203258/python-object-from-a-sql-row-with-a-large-number-of-columns

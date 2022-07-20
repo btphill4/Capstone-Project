@@ -11,6 +11,7 @@
 
 
 # Import Numpy for np.isin array functions
+from nis import match
 import numpy as np
 from Match_Methods import *
 # os for importing files
@@ -40,7 +41,8 @@ with open(os.path.join(sys.path[0], "HomeOwnerdb.csv"), 'r') as HomeOwnerDB:
         # append(r[0]) get first column, append(r[1]) gets 2nd column etc
         importedHODB.append(r[1])
         # print(r)
-# ~~~~~~ CSV is now imported and added to array(imported) ~~~~~~ #
+
+# ~~~~~~ CSV is now imported and added to arrays(importedHODB, importedTenDB) ~~~~~~ #
 
 # Print entire DB: 
 print(importedHODB)
@@ -63,67 +65,90 @@ matchedDB = []
 #print(tempDB[1])
 
 
-# ~~~~~~~~~~~ match rent function ~~~~~~~~~~~ #
-# Checks for intersection between HO_rentDB_Set and TEN_rentDB_Set
-# If it found an intersection - add to matched
-# else do nothing -> print not match for testing
-HO_rentDB = [700]
-HO_rentDB_set = set(HO_rentDB)
-TEN_rentDB = [700]
-TEN_rentDB_set = set(TEN_rentDB)
+# ~~~~~~~~~~ Most Important Questions ~~~~~~~~~~ #
 
-def match_rent():
-    # Testing Print Statement
-    #print("match_rent function()")
+# Q6: workSchedule
+match_workSchedule()
 
-    # Checks if values of testingRentDB are in rentDB (using numpy)
-    #np.isin(testingRentDB[0], rentDB[0])
-    
-    #if match is found
-    if HO_rentDB_set.intersection(TEN_rentDB_set):
-        #Print if found (testing)
-        print("RENT MATCHED")
-
-        # add to matchedDB
-        global matchedDB, HO_rentDB 
-        matchedDB = matchedDB + HO_rentDB
-
-        #print updated matchedDB (testing)
-        #print(matchedDB)
-
-    #if match is not found     
-    else:
-        # Print if not found (Testing)
-        print("RENT NOT MATCHED")
-
-    # print(rentDB)
-# end match_rent()
-
-
-
-match_rent()
-print(matchedDB)
-
-
+# Q7: city
+#Temp Values (WILL BE REMOVED)
 # Create DB for Cities and add them to sets for (testing change with multi-dimensional array)
 HO_cityDB = ['Phoenix']
-HO_cityDB_Set = set(HO_cityDB)
 TEN_tempCityDB = ['Glendale']
-TEN_tempCityDB_Set = set(TEN_tempCityDB)
+TEN_tempCityDB_1 = ['Phoenix']
 
+# Run match_City() EXAMPLES
+match_city(HO_cityDB, TEN_tempCityDB)   #fail
+match_city(HO_cityDB, TEN_tempCityDB_1) #pass
 
-# City Matching Function
-def match_City():
-    # for cityDB in cityDB:
-    # if tempCityDB == 'Glendale':
-    # print('MATCH')
-    if set(HO_cityDB_Set).intersection(TEN_tempCityDB_Set):
-        print("CITY MATCH")
+# Q10: Rent
+#Testing values (WILL BE REMOVED)
+HO_rentDB = [700]
+TEN_rentDB = [700]
 
-        # add to the matched array
-    else:
-        print("NO City Match")
-#end match_city()
+# Run match_rent()
+match_rent(HO_rentDB, TEN_rentDB)
 
-# Run match_City()
-match_City()
+# Q14: Open to living with kids
+match_livingWithKids()
+
+# Q13: Do you have kids
+match_HaveKids()
+
+# Q16: Open to living with pets
+#Teasting Values 
+boolLivingPets_TEN = True
+boolLivingPets_HO = True
+
+match_livingWithPets(boolLivingPets_HO, boolLivingPets_TEN)
+# Q15: Do you have pets
+# Testing Values
+boolHavePets_TEN = True
+boolHavePets_HO = True
+petTypes_HO = ["dog", "cat", "lizard"]
+petTypes_TEN = ["dog", "cat"]
+match_HavePets()
+
+# Q17: Move in date
+match_MoveDate()
+
+# Q12: Lease Type
+match_leaseType()
+
+# ~~~~~~~~~~ Medium Important Questions ~~~~~~~~~~ #
+
+# Q8: Neighborhood Preference
+match_neighborhoodPref()
+
+# Q9: Max number of housemates (1 to 5+)
+match_MaxRoomates()
+
+# Q11: Age of roomates
+match_AgeRange()
+
+# Q19: Type of social enviroment
+match_SocialEnviroment()
+
+# Q20: Scale 1-5 amenities
+match_amenitiesImportance()
+
+# Q24: Rate yourself cleanliness
+match_rateYourself()
+
+# Q26: Rate your roomates
+match_RateOthers()
+
+# Q28: Tell us about yourself
+match_TellUs()
+
+# ~~~~~~~~~~ Low Important Questions ~~~~~~~~~~ #
+
+# Q18: Personality
+match_personality()
+
+# Q21: Ideal friday night
+match_FridayNight()
+
+# Q27: Hobbies/free time
+match_hobbies()
+

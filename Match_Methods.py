@@ -1,7 +1,8 @@
-
 # File to hold our methods
 
-#Test function to ensure it's working
+
+
+#Test function to ensure the file working
 def testFunction():
     print("Printing Test function")
 
@@ -11,65 +12,88 @@ def testFunction():
 #~~~~~~~~~~ Most important Questions ~~~~~~~~~~#
 
 # 6. What are your typical workday hours and days of the week? Please fill out in the boxes below as such (for example: 9-5, 9am-5pm)
-# Input: Range of numbers
+# Input: Range of numbers(hours) and string days
+
 def match_workSchedule():
     print("Match Work Schedule")
+
 #end match_workSchedule():
 
 # 7. In which city are you looking to rent?
 # Input: string
-# In Main.py: Create DB for Cities and add them to sets for (testing change with multi-dimensional array)
-HO_cityDB = ['Phoenix']
-HO_cityDB_Set = set(HO_cityDB)
-TEN_tempCityDB = ['Glendale']
-TEN_tempCityDB_Set = set(TEN_tempCityDB)
 
-# City Matching Function
-def match_city():
-    # for cityDB in cityDB:
-    # if tempCityDB == 'Glendale':
-    # print('MATCH')
-    if set(HO_cityDB_Set).intersection(TEN_tempCityDB_Set):
+def match_city(HO_city, TEN_city):
+    #create a temp set to check for match using .intersection()
+    #make arrays sets for .intersection()
+    HO_city_set = set(HO_city)
+    TEN_city_set = set(TEN_city)
+
+    # Test import
+#    print("HO_city_set: ", HO_city_set)
+#    print("TEN_city_set: ", TEN_city_set)
+
+    # Check for match
+    # If match found add to global matchedDB
+    if set(HO_city_set).intersection(TEN_city_set):
         print("CITY MATCH")
 
-        # add to the matched array
+        # add to matchedDB
+#        global matchedDB, HO_city
+#        matchedDB = matchedDB + HO_city
+
+        # add weights
+
+    #Else no matchdo nothing    
     else:
         print("NO City Match")
+
 #end match_city()
 
 # 10. What is the monthly rent range you are looking to pay? 
 # Input: Range of Numbers 
-#def match_rent1():
-    # Testing Print Statement
-    #print("match_rent function()")
 
-    # Checks if values of testingRentDB are in rentDB (using numpy)
-    #np.isin(testingRentDB[0], rentDB[0])
+# ~~~~~~~~~~~ match rent function ~~~~~~~~~~~ #
+# Checks for intersection between HO_rentDB_Set and TEN_rentDB_Set
+# If it found an intersection - add to matched
+# else do nothing -> print not match for testing
+def match_rent(HO_rent, Ten_Rent):
+    # Testing Print Statement
+#    print("match_rent function()")
+
+    #create sets for arrays
+    HO_rent_set = set(HO_rent)
+    TEN_rent_set = set(Ten_Rent)
     
+    # Print Temp sets (Testing)
+#    print("HO_rent_set: ", HO_rent_set)
+#    print("TEN_rent_set: ", TEN_rent_set)
+
     #if match is found
-#    if HO_rentDB_set.intersection(TEN_rentDB_set):
+    if HO_rent_set.intersection(TEN_rent_set):
         #Print if found (testing)
-#        print("RENT MATCHED")
+        print("RENT MATCHED")
 
         # add to matchedDB
 #        global matchedDB, HO_rentDB 
 #        matchedDB = matchedDB + HO_rentDB
 
-        #print updated matchedDB (testing)
-        #print(matchedDB)
+        # print updated matchedDB (testing)
+#        print(matchedDB)
 
     #if match is not found     
-#    else:
+    else:
         # Print if not found (Testing)
-#        print("RENT NOT MATCHED")
+        print("RENT NOT MATCHED")
 
-    # print(rentDB)
+#     print(matchedDB)
 # end match_rent()
 
 # 14. Are you open to living with someone who may have children?
 # Input: Bool (Yes/No)
+
 def match_livingWithKids():
     print("Match living with kids")
+
 #end match_livingWithKids()
 
 # 13. Do you have any children? 
@@ -80,14 +104,37 @@ def match_HaveKids():
 
 # 16. Are you open to living with someone who has pets? 
 # Input: Bool
-def match_livingWithPets():
-    print("living with pets")
+
+def match_livingWithPets(boolLivingPets_HO, boolLivingPets_TEN):
+    # Testing function print
+#    print("living with pets")
+
+    #if they are equal, they match
+    if boolLivingPets_HO == boolLivingPets_TEN:
+        print("Living with pets MATCHED")
+    #add to matched array
+
+    else: 
+        print("Living with pets NOT MATCHED")
+
 #end match_livingWithPets()
 
 # 15. Do you have any pets?
 # Input: Bool (Yes/No) if yes number input of # of pets and string of types
-def match_HavePets():
-    print("match have pets")
+def match_HavePets(boolHavePets_HO, boolHavePets_TEN, petTypes_HO, petTypes_TEN):
+    # Testing Function print   
+#    print("match have pets")
+
+    #if they are equal, they match
+    if boolHavePets_HO == boolHavePets_TEN:
+        print("Have pets MATCHED")
+
+        #add 
+    #add to matched array
+
+    else: 
+        print("Living with pets NOT MATCHED")
+
 #end match_HavePets()
 
 # 17. When would you like to move in?
