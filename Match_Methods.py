@@ -19,7 +19,7 @@ def match_workSchedule():
 
 #end match_workSchedule():
 
-# 7. In which city are you looking to rent?
+# 7. In which city are you looking to rent? HANDLED WITH SQL
 # Input: string
 
 def match_city(HO_city, TEN_city):
@@ -49,7 +49,7 @@ def match_city(HO_city, TEN_city):
 
 #end match_city()
 
-# 10. What is the monthly rent range you are looking to pay? 
+# 10. What is the monthly rent range you are looking to pay? HANDLED WITH SQL
 # Input: Range of Numbers 
 
 # ~~~~~~~~~~~ match rent function ~~~~~~~~~~~ #
@@ -126,14 +126,18 @@ def match_HavePets(boolHavePets_HO, boolHavePets_TEN, petTypes_HO, petTypes_TEN)
 #    print("match have pets")
 
     #if they are equal, they match
-    if boolHavePets_HO == boolHavePets_TEN:
-        print("Have pets MATCHED")
-
-        #add 
+    if boolHavePets_HO == True:
+        #for i in petTypes_HO:
+            #print(petTypes_HO[i])
+        print("HomeOwner pets: ", petTypes_HO)
+    if boolHavePets_TEN == True:
+        #for i in petTypes_TEN:
+            #print(petTypes_HO[i])
+        print("Tenant pets: ", petTypes_TEN)
     #add to matched array
 
     else: 
-        print("Living with pets NOT MATCHED")
+        print("Living with pets NOT MATCHED/HAVE NO PETS")
 
 #end match_HavePets()
 
@@ -146,8 +150,13 @@ def match_MoveDate():
 
 # 12. Would you like to rent month to month or on a lease basis?
 # Input: either month-to-month or Lease basis, if lease basis number input for how long
-def match_leaseType():
-    print("Match lease type")
+def match_leaseType(leaseType1, leaseType2):
+    #Initial testing print
+#    print("Match lease type")
+    if leaseType1 == leaseType2:
+        print("Lease type MATCHED")
+    else:
+        print("Lease type NOT MATCHED")
 #end match_leaseType():
 
 
