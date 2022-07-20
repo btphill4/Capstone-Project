@@ -20,5 +20,5 @@ Aisha Tenant Matching Application
 - Question 26: Take the two survey results and subtract the two numbers and the lower number the better
 
 ## Important Links:
-- [Application Questions Importance](https://docs.google.com/document/d/1V_Ck4jLrqV8R8Zfp6E6u_KgL7fsAu6P7IxuN3JAnunk/edit)
+- [Application Questions Importance Google Doc](https://docs.google.com/document/d/1V_Ck4jLrqV8R8Zfp6E6u_KgL7fsAu6P7IxuN3JAnunk/edit)
 - [Taiga](https://tree.taiga.io/project/bphillips-aisha-comfortable-living-tenant-matching/timeline) 
