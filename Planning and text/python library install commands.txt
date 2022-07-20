@@ -1,3 +1,6 @@
+Install pip for python librarys (linux):
+Sudo apt-get pip
+
 Natural Language Toolkit
 pip install nltk
 
