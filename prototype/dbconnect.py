@@ -16,12 +16,12 @@ from nltk.tokenize import sent_tokenize
 
 # database host is database address (localhost if on local computer)
 # database name is name of database
-db_host = "localhost"   # address of database
-db_name = "tempdb"      # name of database
+db_host = "ec2-54-165-90-230.compute-1.amazonaws.com"   # address of database
+db_name = "d6hp3i25m6gslc"      # name of database
 
 # data base username/pass
-db_user = "nick"        # login name
-db_pass = "dog123"      # login password
+db_user = "uqqcowyaruajrk"        # login name
+db_pass = "e8828f90c6df41a82eac46bcb552a9cdf32a5b109db1d72ec7cb9ad988030475"      # login password
 
 # can use a user account only with permissions to read from database to make sure
 # we cannot edit anything by accident
