@@ -1,7 +1,8 @@
-
 # File to hold our methods
 
-#Test function to ensure it's working
+
+
+#Test function to ensure the file working
 def testFunction():
     print("Printing Test function")
 
@@ -14,54 +15,70 @@ def testFunction():
 # Input: Range of numbers
 def match_workSchedule():
     print("Match Work Schedule")
+
 #end match_workSchedule():
 
 # 7. In which city are you looking to rent?
 # Input: string
 # In Main.py: Create DB for Cities and add them to sets for (testing change with multi-dimensional array)
-HO_cityDB = ['Phoenix']
-HO_cityDB_Set = set(HO_cityDB)
-TEN_tempCityDB = ['Glendale']
-TEN_tempCityDB_Set = set(TEN_tempCityDB)
 
-# City Matching Function
-def match_city():
+def match_city(HO_city, TEN_city):
     # for cityDB in cityDB:
     # if tempCityDB == 'Glendale':
     # print('MATCH')
-    if set(HO_cityDB_Set).intersection(TEN_tempCityDB_Set):
+
+    #make arrays sets for .intersection()
+    HO_city_set = set(HO_city)
+    TEN_city_set = set(TEN_city)
+
+    #Test import
+    #print("HO_city_set: ", HO_city_set)
+    #print("TEN_city_set: ", TEN_city_set)
+
+    if set(HO_city_set).intersection(TEN_city_set):
         print("CITY MATCH")
 
-        # add to the matched array
+        # add to matchedDB
+       # global matchedDB, HO_rentDB 
+       # matchedDB = matchedDB + HO_rentDB
+
+        #print updated matchedDB (testing)
+        #print(matchedDB)
+    #Else do nothing    
     else:
         print("NO City Match")
+
 #end match_city()
 
 # 10. What is the monthly rent range you are looking to pay? 
 # Input: Range of Numbers 
-#def match_rent1():
+
+def match_rent(HO_rent, Ten_Rent):
     # Testing Print Statement
     #print("match_rent function()")
-
-    # Checks if values of testingRentDB are in rentDB (using numpy)
-    #np.isin(testingRentDB[0], rentDB[0])
+    HO_rent_set = set(HO_rent)
+    TEN_rent_set = set(Ten_Rent)
     
+    #Test sets
+    #print("HO_rent_set: ", HO_rent_set)
+    #print("TEN_rent_set: ", TEN_rent_set)
+
     #if match is found
-#    if HO_rentDB_set.intersection(TEN_rentDB_set):
+    if HO_rent_set.intersection(TEN_rent_set):
         #Print if found (testing)
-#        print("RENT MATCHED")
+        print("RENT MATCHED")
 
         # add to matchedDB
-#        global matchedDB, HO_rentDB 
-#        matchedDB = matchedDB + HO_rentDB
+       # global matchedDB, HO_rentDB 
+       # matchedDB = matchedDB + HO_rentDB
 
         #print updated matchedDB (testing)
         #print(matchedDB)
 
     #if match is not found     
-#    else:
+    else:
         # Print if not found (Testing)
-#        print("RENT NOT MATCHED")
+        print("RENT NOT MATCHED")
 
     # print(rentDB)
 # end match_rent()

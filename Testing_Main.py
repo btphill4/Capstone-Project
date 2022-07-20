@@ -40,7 +40,8 @@ with open(os.path.join(sys.path[0], "HomeOwnerdb.csv"), 'r') as HomeOwnerDB:
         # append(r[0]) get first column, append(r[1]) gets 2nd column etc
         importedHODB.append(r[1])
         # print(r)
-# ~~~~~~ CSV is now imported and added to array(imported) ~~~~~~ #
+
+# ~~~~~~ CSV is now imported and added to arrays(importedHODB, importedTenDB) ~~~~~~ #
 
 # Print entire DB: 
 print(importedHODB)
@@ -67,63 +68,22 @@ matchedDB = []
 # Checks for intersection between HO_rentDB_Set and TEN_rentDB_Set
 # If it found an intersection - add to matched
 # else do nothing -> print not match for testing
+
+#Testing values
 HO_rentDB = [700]
-HO_rentDB_set = set(HO_rentDB)
 TEN_rentDB = [700]
-TEN_rentDB_set = set(TEN_rentDB)
 
-def match_rent():
-    # Testing Print Statement
-    #print("match_rent function()")
-
-    # Checks if values of testingRentDB are in rentDB (using numpy)
-    #np.isin(testingRentDB[0], rentDB[0])
-    
-    #if match is found
-    if HO_rentDB_set.intersection(TEN_rentDB_set):
-        #Print if found (testing)
-        print("RENT MATCHED")
-
-        # add to matchedDB
-        global matchedDB, HO_rentDB 
-        matchedDB = matchedDB + HO_rentDB
-
-        #print updated matchedDB (testing)
-        #print(matchedDB)
-
-    #if match is not found     
-    else:
-        # Print if not found (Testing)
-        print("RENT NOT MATCHED")
-
-    # print(rentDB)
-# end match_rent()
-
-
-
-match_rent()
-print(matchedDB)
+match_rent(HO_rentDB, TEN_rentDB)
+#print(matchedDB)
 
 
 # Create DB for Cities and add them to sets for (testing change with multi-dimensional array)
 HO_cityDB = ['Phoenix']
-HO_cityDB_Set = set(HO_cityDB)
 TEN_tempCityDB = ['Glendale']
-TEN_tempCityDB_Set = set(TEN_tempCityDB)
-
-
-# City Matching Function
-def match_City():
-    # for cityDB in cityDB:
-    # if tempCityDB == 'Glendale':
-    # print('MATCH')
-    if set(HO_cityDB_Set).intersection(TEN_tempCityDB_Set):
-        print("CITY MATCH")
-
-        # add to the matched array
-    else:
-        print("NO City Match")
-#end match_city()
+TEN_tempCityDB_1 = ['Phoenix']
 
 # Run match_City()
-match_City()
+match_city(HO_cityDB, TEN_tempCityDB)
+match_city(HO_cityDB, TEN_tempCityDB_1)
+
+
