@@ -11,6 +11,7 @@
 
 
 # Import Numpy for np.isin array functions
+from nis import match
 import numpy as np
 from Match_Methods import *
 # os for importing files
@@ -95,8 +96,17 @@ match_livingWithKids()
 match_HaveKids()
 
 # Q16: Open to living with pets
+#Teasting Values 
+boolLivingPets_TEN = True
+boolLivingPets_HO = True
 
+match_livingWithPets(boolLivingPets_HO, boolLivingPets_TEN)
 # Q15: Do you have pets
+# Testing Values
+boolHavePets_TEN = True
+boolHavePets_HO = True
+petTypes_HO = ["dog", "cat", "lizard"]
+petTypes_TEN = ["dog", "cat"]
 match_HavePets()
 
 # Q17: Move in date
