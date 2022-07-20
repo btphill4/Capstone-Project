@@ -20,7 +20,8 @@ def match_workSchedule():
 
 # 7. In which city are you looking to rent?
 # Input: string
-# In Main.py: Create DB for Cities and add them to sets for (testing change with multi-dimensional array)
+
+
 
 def match_city(HO_city, TEN_city):
     #create a temp set to check for match using .intersection()
@@ -52,6 +53,10 @@ def match_city(HO_city, TEN_city):
 # 10. What is the monthly rent range you are looking to pay? 
 # Input: Range of Numbers 
 
+# ~~~~~~~~~~~ match rent function ~~~~~~~~~~~ #
+# Checks for intersection between HO_rentDB_Set and TEN_rentDB_Set
+# If it found an intersection - add to matched
+# else do nothing -> print not match for testing
 def match_rent(HO_rent, Ten_Rent):
     # Testing Print Statement
     #print("match_rent function()")

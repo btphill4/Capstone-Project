@@ -64,26 +64,81 @@ matchedDB = []
 #print(tempDB[1])
 
 
-# ~~~~~~~~~~~ match rent function ~~~~~~~~~~~ #
-# Checks for intersection between HO_rentDB_Set and TEN_rentDB_Set
-# If it found an intersection - add to matched
-# else do nothing -> print not match for testing
+# ~~~~~~~~~~ Most Important Questions ~~~~~~~~~~ #
 
-#Testing values
-HO_rentDB = [700]
-TEN_rentDB = [700]
+# Q6: workSchedule
+match_workSchedule()
 
-match_rent(HO_rentDB, TEN_rentDB)
-#print(matchedDB)
-
-
+# Q7: city
+#Temp Values (WILL BE REMOVED)
 # Create DB for Cities and add them to sets for (testing change with multi-dimensional array)
 HO_cityDB = ['Phoenix']
 TEN_tempCityDB = ['Glendale']
 TEN_tempCityDB_1 = ['Phoenix']
 
-# Run match_City()
-match_city(HO_cityDB, TEN_tempCityDB)
-match_city(HO_cityDB, TEN_tempCityDB_1)
+# Run match_City() EXAMPLES
+match_city(HO_cityDB, TEN_tempCityDB)   #fail
+match_city(HO_cityDB, TEN_tempCityDB_1) #pass
 
+# Q10: Rent
+#Testing values (WILL BE REMOVED)
+HO_rentDB = [700]
+TEN_rentDB = [700]
+
+# Run match_rent()
+match_rent(HO_rentDB, TEN_rentDB)
+
+# Q14: Open to living with kids
+match_livingWithKids()
+
+# Q13: Do you have kids
+match_HaveKids()
+
+# Q16: Open to living with pets
+
+# Q15: Do you have pets
+match_HavePets()
+
+# Q17: Move in date
+match_MoveDate()
+
+# Q12: Lease Type
+match_leaseType()
+
+# ~~~~~~~~~~ Medium Important Questions ~~~~~~~~~~ #
+
+# Q8: Neighborhood Preference
+match_neighborhoodPref()
+
+# Q9: Max number of housemates (1 to 5+)
+match_MaxRoomates()
+
+# Q11: Age of roomates
+match_AgeRange()
+
+# Q19: Type of social enviroment
+match_SocialEnviroment()
+
+# Q20: Scale 1-5 amenities
+match_amenitiesImportance()
+
+# Q24: Rate yourself cleanliness
+match_rateYourself()
+
+# Q26: Rate your roomates
+match_RateOthers()
+
+# Q28: Tell us about yourself
+match_TellUs()
+
+# ~~~~~~~~~~ Low Important Questions ~~~~~~~~~~ #
+
+# Q18: Personality
+match_personality()
+
+# Q21: Ideal friday night
+match_FridayNight()
+
+# Q27: Hobbies/free time
+match_hobbies()
 
