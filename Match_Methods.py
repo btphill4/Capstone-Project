@@ -1,11 +1,40 @@
 # File to hold our methods
 
+# Import Database Connection Library 
+import psycopg2 
+
+# Import natural language toolkit library
+import nltk
+
+
+
 
 
 #Test function to ensure the file working
 def testFunction():
     print("Printing Test function")
 
+#~~~~~~~~~ Database Methods ~~~~~~~~~#
+
+# must be called first to connect to database, returns a connection object
+def connect_to_db():
+    # Database host is database address
+    # Database name is name of database
+    db_host = "ec2-54-165-90-230.compute-1.amazonaws.com"
+    db_name = "d6hp3i25m6gslc"
+
+    # Data base username/pass
+    db_user = "uqqcowyaruajrk"
+    db_pass = "e8828f90c6df41a82eac46bcb552a9cdf32a5b109db1d72ec7cb9ad988030475"
+    db_port = 5432
+
+    connect = psycopg2.connect(host=db_host, dbname=db_name, user=db_user, password=db_pass, port=db_port)
+    return connect
+
+# parameter: an integer representing the ID of the tenant who needs to match with homeowners
+# returns a list of ids that match the city and rent range
+def initial_filter_db(id):
+    print("hi")
 
 #~~~~~~~~~ Matching METHODS ~~~~~~~~~#
 
