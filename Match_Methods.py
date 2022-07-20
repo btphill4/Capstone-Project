@@ -23,28 +23,27 @@ def match_workSchedule():
 # In Main.py: Create DB for Cities and add them to sets for (testing change with multi-dimensional array)
 
 def match_city(HO_city, TEN_city):
-    # for cityDB in cityDB:
-    # if tempCityDB == 'Glendale':
-    # print('MATCH')
-
+    #create a temp set to check for match using .intersection()
     #make arrays sets for .intersection()
     HO_city_set = set(HO_city)
     TEN_city_set = set(TEN_city)
 
-    #Test import
-    #print("HO_city_set: ", HO_city_set)
-    #print("TEN_city_set: ", TEN_city_set)
+    # Test import
+#    print("HO_city_set: ", HO_city_set)
+#    print("TEN_city_set: ", TEN_city_set)
 
+    # Check for match
+    # If match found add to global matchedDB
     if set(HO_city_set).intersection(TEN_city_set):
         print("CITY MATCH")
 
         # add to matchedDB
-       # global matchedDB, HO_rentDB 
-       # matchedDB = matchedDB + HO_rentDB
+#        global matchedDB, HO_city
+#        matchedDB = matchedDB + HO_city
 
-        #print updated matchedDB (testing)
-        #print(matchedDB)
-    #Else do nothing    
+        # add weights
+
+    #Else no matchdo nothing    
     else:
         print("NO City Match")
 

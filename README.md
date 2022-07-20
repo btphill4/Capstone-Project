@@ -7,7 +7,7 @@ Aisha Tenant Matching Application
 - Create Data structure to hold matches (or array of python tuples)
 - Decide on weights for questions / how it is stored
 
-## **Planning and Notes:**
+# **Planning and Notes:**
 ## Filter Method
 - Eliminates potential matches if most important matches do not match
 - Scoring system with weights in each category (most important, medium, and least) out of 100 and only saves if the person does not get filtered out by most important questions
