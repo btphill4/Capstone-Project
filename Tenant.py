@@ -1,7 +1,7 @@
-# Class: HomeOwner
-# Holds data values for HomeOwner DB
+# Class: Tenant
+# Holds data values for Tenant DB
 
-class HomeOwner:
+class Tenant:
     #in order based on schema.txt
     def __init__(self, appid, city, rent_range_start, rent_range_end,
         lease_or_rent, lease_length, has_children, 
@@ -69,6 +69,8 @@ class HomeOwner:
 
         def get_appid(self):
             print("appplication ID: " + self.appid)
-
+        
+        def get_MatchPercent(self):
+            print("matchPercent:  ", matchPercent)
         #pass avoids empty object error          
         pass
