@@ -282,20 +282,26 @@ def match_leaseType(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 8. Is there a preferred neighborhood you would like to rent within your specified area?
 # Input: String
-def match_neighborhoodPref():
-    print("Match Neighborhood: ")
+def match_neighborhoodPref(ex_Ten: Tenant, ex_HO: HomeOwner):
+    if ex_Ten.preferred_neighborhood == ex_HO.preferred_neighborhood:
+        print("neighborhood MATCHED")
+    else:
+        print("neighborhood NOT MATCHED")
 #end match_neighborhoodPref()
 
 # 9. What is the maximum number of housemates you are willing to live with?
 # Input: 1, 2, 3, 4, 5, 5+
-def match_MaxRoomates():
-    print("Match max roomates")
+def match_MaxRoomates(ex_Ten: Tenant, ex_HO: HomeOwner):
+    if (ex_Ten.max_house_mates <= ex_HO.max_house_mates):
+        print("max roommates MATCHED")
+    else:
+        print("max roommates NOT MATCHED")
 #end match_MaxRoomates():
 
 # 11. Please give us a range for the age of the women you would like to co-live with or type “does not matter”
 # Input: Range of numbers(might be check box), or string "does not matter"
 # Current Ranges: 18-20, 21-30, 31-40, 41-50, 50+
-def match_AgeRange():
+def match_AgeRange(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match age range")
 #end match ageRange()
 
