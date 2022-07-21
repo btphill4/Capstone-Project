@@ -34,6 +34,13 @@ ex_HO_1 = HomeOwner(3, 'Glendale', 1000, 2000, 'rent', 0, False, 0,
                 2, 3, 1, 4, 5, 1, 2, '', 
                 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, '', 0)
 
+
+#Home OWners added to a list
+list_of_HO = []
+list_of_HO.append(ex_HO)
+list_of_HO.append(ex_HO_1)
+
+
 # Show that db_connect() works
 #print_list_index(HO_list, 1)
 #print_list_all(HO_list)
@@ -71,9 +78,14 @@ match_HavePets(ex_Ten, ex_HO)
 match_HavePets(ex_Ten, ex_HO_1)
 
 match_MoveDate(ex_Ten, ex_HO)
+match_MoveDate(ex_Ten, ex_HO_1)
+
+#~~~~~~~~~~ Medium Importance Questions ~~~~~~~~~~#
+
+
 
 #~~~~~~~~~~ Low Importance Questions ~~~~~~~~~~#
 
-
+match_personality()
 match_FridayNight(ex_Ten, ex_HO)
 
