@@ -107,13 +107,18 @@ boolHavePets_TEN = True
 boolHavePets_HO = True
 petTypes_HO = ["dog", "cat", "lizard"]
 petTypes_TEN = ["dog", "cat"]
-match_HavePets()
+
+match_HavePets(boolHavePets_HO,boolHavePets_TEN, petTypes_HO, petTypes_TEN)
 
 # Q17: Move in date
 match_MoveDate()
 
 # Q12: Lease Type
-match_leaseType()
+leaseType1 = "month-to-month"
+leaseType2 = "lease"
+
+match_leaseType(leaseType1, leaseType2)
+match_leaseType(leaseType1, leaseType1)
 
 # ~~~~~~~~~~ Medium Important Questions ~~~~~~~~~~ #
 
