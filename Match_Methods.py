@@ -8,6 +8,8 @@ import nltk
 
 #Imports db_connect() from 
 from prototype.dbconnect import *
+from Tenant import *
+from HomeOwners import *
 
 #From dbconnect.py
 list1 = db_connect()
@@ -44,9 +46,13 @@ def connect_to_db():
 def initial_filter_db(id):
     print("hi")
 
-def print_list_index(x):
-    print(list1[x])
+def print_list_index(list, x):
+    print(list[x], '/n')
 
+def print_list_all(lists):
+    print("Entire list: ")
+    print(*lists, sep = '\n\n')
+    print("\n\n")
 #~~~~~~~~~ Matching METHODS ~~~~~~~~~#
 
 #~~~~~~~~~~ Most important Questions ~~~~~~~~~~#
@@ -62,32 +68,22 @@ def match_workSchedule():
 # 7. In which city are you looking to rent? HANDLED WITH SQL
 # Input: string
 
-def match_city(HO_city, TEN_city):
-    #create a temp set to check for match using .intersection()
-    #make arrays sets for .intersection()
-    HO_city_set = set(HO_city)
-    TEN_city_set = set(TEN_city)
+def match_city(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Match city function: ")
 
-    # Test import
-#    print("HO_city_set: ", HO_city_set)
-#    print("TEN_city_set: ", TEN_city_set)
+    if ex_Ten.city == ex_HO.city:
+        #match is good
+        print("City MATCHED for Tenant ID #: ",
+                ex_Ten.appid, " and HomeOwner ID #: ", 
+                ex_HO.appid)
 
-    # Check for match
-    # If match found add to global matchedDB
-    if set(HO_city_set).intersection(TEN_city_set):
-        print("CITY MATCH")
-
-        # add to matchedDB
-#        global matchedDB, HO_city
-#        matchedDB = matchedDB + HO_city
-
-        # add weights
-
-    #Else no matchdo nothing    
+        # Add to matched DB
+        #global matchedDB 
+        #matchedDB = matchedDB + ex_HO
     else:
-        print("NO City Match")
-
-#end match_city()
+        print("City NOT MATCHED for Tenant ID #: ",
+                ex_Ten.appid, " and HomeOwner ID #: ", 
+                ex_HO.appid)
 
 # 10. What is the monthly rent range you are looking to pay? HANDLED WITH SQL
 # Input: Range of Numbers 
@@ -96,13 +92,10 @@ def match_city(HO_city, TEN_city):
 # Checks for intersection between HO_rentDB_Set and TEN_rentDB_Set
 # If it found an intersection - add to matched
 # else do nothing -> print not match for testing
-def match_rent(HO_rent, Ten_Rent):
+def match_rent(ex_Ten: Tenant, ex_HO: HomeOwner):
     # Testing Print Statement
-#    print("match_rent function()")
+    print("match_rent function(): ")
 
-    #create sets for arrays
-    HO_rent_set = set(HO_rent)
-    TEN_rent_set = set(Ten_Rent)
     
     # Print Temp sets (Testing)
 #    print("HO_rent_set: ", HO_rent_set)
@@ -302,8 +295,16 @@ def match_personality():
 #    Netflix
 #    Other (please specify)
 # Input: Checkbox, string other
-def match_FridayNight():
-    print("match friday night")
+# Note: can make 0 or 1 values for checked/not checked and test equality
+def match_FridayNight(ex_Tenant: Tenant, ex_HO: HomeOwner):
+    print("match friday night: ")
+
+    if ex_Tenant.q21_1 == ex_HO.q21_1:
+        #match is good
+        print("FRIDAY NIGHT Q21_1 MATCHED")
+
+    else:
+        print("FRIDAY NIGHT NOT MATCHED")
 #end match_FridayNight()
 
 # 27. Please let us know your favorite hobbies, and what you do on your days off for enjoyment.
@@ -315,6 +316,9 @@ def match_hobbies():
 
 #~~~~~~~~~ END Matching METHODS ~~~~~~~~~#
 
+
+def print_matchedDB():
+    print('\n\n', matchedDB)
 
 
 
