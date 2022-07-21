@@ -13,7 +13,7 @@ class HomeOwner:
         q24_2, q24_3, q24_4, q24_5, q24_6, q24_7,
         q26_1, q26_2, q26_3, q26_4, q26_5, q26_6, q26_7,
         addition_info, q18_1, q18_2, q18_3, q18_4, 
-        q21_1, q21_2, q21_3, q21_4, q21_5, q21_6, q27
+        q21_1, q21_2, q21_3, q21_4, q21_5, q21_6, q27, matchPercent
                   ):
         self.appid = appid
         self.city = city
@@ -63,12 +63,12 @@ class HomeOwner:
         self.q21_5 = q21_5
         self.q21_6 = q21_6
         self.q27 = q27
-
+        self.matchPercent = matchPercent
 
         #class methods if needed here
 
         def get_appid(self):
             print("appplication ID: " + self.appid)
-            
+
         #pass avoids empty object error          
         pass

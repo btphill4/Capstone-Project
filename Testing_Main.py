@@ -45,8 +45,8 @@ with open(os.path.join(sys.path[0], "HomeOwnerdb.csv"), 'r') as HomeOwnerDB:
 # ~~~~~~ CSV is now imported and added to arrays(importedHODB, importedTenDB) ~~~~~~ #
 
 # Print entire DB: 
-print(importedHODB)
-print(importedTenDB)
+#print(importedHODB)
+#print(importedTenDB)
 
 # Print specific index:
 #print(importedDB[100])
@@ -56,13 +56,18 @@ print(importedTenDB)
 
 # ~~~~~~~~~~Matching starts here~~~~~~~~~~ #
 
-# Copy omportedDB to a tempDB to not alter the list
+#Old way to copy DB to array
+# Copy importedDB to a tempDB to not alter the list
 tempTenantDB = importedTenDB
 tempHomeOwnerDB = importedHODB
 matchedDB = []
 
 #print to Test that the DB was copied
 #print(tempDB[1])
+
+#Connects to DB and saves to HO_list
+HO_list = db_connect()
+print(HO_list[0])
 
 
 # ~~~~~~~~~~ Most Important Questions ~~~~~~~~~~ #
