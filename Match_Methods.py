@@ -284,18 +284,26 @@ def match_leaseType(ex_Ten: Tenant, ex_HO: HomeOwner):
 # Input: String
 def match_neighborhoodPref(ex_Ten: Tenant, ex_HO: HomeOwner):
     if ex_Ten.preferred_neighborhood == ex_HO.preferred_neighborhood:
-        print("neighborhood MATCHED")
+        print("neighborhood MATCHED with Tenant ID #: ",
+        ex_Ten.appid, "and HomeOwner ID #: ",
+        ex_HO.appid)
     else:
-        print("neighborhood NOT MATCHED")
+        print("neighborhood NOT MATCHED",
+        ex_Ten.appid, "and HomeOwner ID #: ",
+        ex_HO.appid)
 #end match_neighborhoodPref()
 
 # 9. What is the maximum number of housemates you are willing to live with?
 # Input: 1, 2, 3, 4, 5, 5+
 def match_MaxRoomates(ex_Ten: Tenant, ex_HO: HomeOwner):
     if (ex_Ten.max_house_mates <= ex_HO.max_house_mates):
-        print("max roommates MATCHED")
+        print("max roommates MATCHED",
+        ex_Ten.appid, "and HomeOwner ID #: ",
+        ex_HO.appid)
     else:
-        print("max roommates NOT MATCHED")
+        print("max roommates NOT MATCHED",
+        ex_Ten.appid, "and HomeOwner ID #: ",
+        ex_HO.appid)
 #end match_MaxRoomates():
 
 # 11. Please give us a range for the age of the women you would like to co-live with or type “does not matter”
