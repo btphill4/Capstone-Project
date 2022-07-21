@@ -64,13 +64,13 @@ CREATE TABLE homeownerapp(
   q24_7 numeric NOT NULL, -- smoking
 
   -- q26 housemate
-  q24_1 numeric NOT NULL, -- kitchen use
-  q24_2 numeric NOT NULL, -- neatness
-  q24_3 numeric NOT NULL, -- kitchen cleanliness
-  q24_4 numeric NOT NULL, -- guests often visit
-  q24_5 numeric NOT NULL, -- household cleanliness
-  q24_6 numeric NOT NULL, -- recreational cannabis
-  q24_7 numeric NOT NULL, -- smoking
+  q26_1 numeric NOT NULL, -- kitchen use
+  q26_2 numeric NOT NULL, -- neatness
+  q26_3 numeric NOT NULL, -- kitchen cleanliness
+  q26_4 numeric NOT NULL, -- guests often visit
+  q26_5 numeric NOT NULL, -- household cleanliness
+  q26_6 numeric NOT NULL, -- recreational cannabis
+  q26_7 numeric NOT NULL, -- smoking
 
   -- q28
   additional_info TEXT,
