@@ -227,8 +227,8 @@ def match_HavePets(ex_Ten: Tenant, ex_HO: HomeOwner):
         if(ex_Ten.personal_pets_text == True):
             print("Tenant #", ex_Ten.appid, "Pet type: ", ex_Ten.children_ages)
         if(ex_HO.personal_pets_text == True):
-            print("HomeOwner # ", ex_HO.appid, "Pet type: ", ex_HO.children_ages)
-        print('\n')
+            print("HomeOwner # ", ex_HO.appid, "Pet type: ", ex_HO.children_ages, '\n')
+        #print('\n')
     #add to matched array
 
     else: 
@@ -238,8 +238,8 @@ def match_HavePets(ex_Ten: Tenant, ex_HO: HomeOwner):
         if(ex_Ten.personal_pets_bool == True):
             print("Tenant #", ex_Ten.appid, "Pet type: ", ex_Ten.personal_pets_text)
         if(ex_HO.personal_pets_bool == True):
-            print("HomeOwner # ", ex_HO.appid, "Pet type: ", ex_HO.personal_pets_text)
-        print('\n')
+            print("HomeOwner # ", ex_HO.appid, "Pet type: ", ex_HO.personal_pets_text , '\n')
+        #print('\n')
 
 #end match_HavePets()
 
@@ -250,12 +250,12 @@ def match_MoveDate(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match move date UNFINISHED LOGIC: ")
 
     if ex_Ten.move_in_date == ex_HO.move_in_date:
-        print("Have pets NOT MATCHED with Tenant ID #: ", 
+        print("Move date  MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, "for move in date: ", ex_Ten.move_in_date, '\n')
     
     else:
-        print("Have pets NOT MATCHED with Tenant ID #: ", 
+        print("Move date NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
@@ -368,8 +368,40 @@ def match_TellUs():
     #Laid back
     #Other (please specify)
 # Input: check box or string other
-def match_personality():
-    print("match personality")
+def match_personality(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Match Personality: ")
+    
+    # Carefree
+    if ex_Ten.q18_1 == ex_HO.q18_1:
+        print("Personality Q18_1 (Carefree) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
+        
+        #add logic to adjust the weight according to 
+    else:
+        print("Personality Q18_1 (Carefree) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
+
+    # Outgoing
+    if ex_Ten.q18_1 == ex_HO.q18_1:
+        print("Personality Q18_1 (Carefree) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
+    else:
+        print("Personality Q18_1 (Carefree) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
+
+    #Laid Back
+    if ex_Ten.q18_1 == ex_HO.q18_1:
+        print("Personality Q18_1 (Carefree) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
+    else:
+        print("Personality Q18_1 (Carefree) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
 #end match_personality()
 
 # 21. What does your ideal Friday night look like? Please check all boxes that apply.
@@ -381,19 +413,64 @@ def match_personality():
 #    Other (please specify)
 # Input: Checkbox, string other
 # Note: can make 0 or 1 values for checked/not checked and test equality
-def match_FridayNight(ex_Tenant: Tenant, ex_HO: HomeOwner):
+def match_FridayNight(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("match friday night: UNFINISHED LOGIC")
 
-    if ex_Tenant.q21_1 == ex_HO.q21_1:
+    if ex_Ten.q21_1 == ex_HO.q21_1:
         #match is good
-        print("FRIDAY NIGHT Q21_1 MATCHED with Tenant ID #: ", 
-        ex_Tenant.appid, "and HomeOwner ID #: ", 
+        print("FRIDAY NIGHT Q21_1(Movie night with friends/housemates) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
     else:
-        print("FRIDAY NIGHT NOT MATCHED with Tenant ID #: ", 
-        ex_Tenant.appid, "and HomeOwner ID #: ", 
+        print("FRIDAY NIGHT Q21_1(Movie night with friends/housemates) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
+
+    if ex_Ten.q21_2 == ex_HO.q21_2:
+        #match is good
+        print("FRIDAY NIGHT Q21_2(Night out) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    else:
+        print("FRIDAY NIGHT Q21_2(Night out) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    if ex_Ten.q21_3 == ex_HO.q21_3:
+        #match is good
+        print("FRIDAY NIGHT Q21_3(Bar hopping) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    else:
+        print("FRIDAY NIGHT Q21_3(Bar hopping) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    if ex_Ten.q21_4 == ex_HO.q21_4:
+        #match is good
+        print("FRIDAY NIGHT Q21_4(Self-care night to wind down) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    else:
+        print("FRIDAY NIGHT Q21_4(Self-care night to wind down) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    if ex_Ten.q21_5 == ex_HO.q21_5:
+        #match is good
+        print("FRIDAY NIGHT Q21_5(Netflix) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    else:
+        print("FRIDAY NIGHT Q21_5(Netflix) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    
 #end match_FridayNight()
 
 # 27. Please let us know your favorite hobbies, and what you do on your days off for enjoyment.
