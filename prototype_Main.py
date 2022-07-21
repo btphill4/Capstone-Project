@@ -1,6 +1,6 @@
 # Import Numpy for np.isin array functions
 from nis import match
-import numpy as np
+#import numpy as np
 from Match_Methods import *
 from Tenant import *
 from pprint import pprint
@@ -27,7 +27,7 @@ ex_HO = HomeOwner(2, 'Phoenix', 600, 900, 'lease', 6, True, 6,
                 2, 3, 1, 4, 5, 1, 2, '', 
                 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, '', 0)
 
-ex_HO_1 = HomeOwner(3, 'Glendale', 1000, 2000, 'lease', 6, False, 0, 
+ex_HO_1 = HomeOwner(3, 'Glendale', 1000, 2000, 'rent', 0, False, 0, 
                 False, False, '', False, '', 'Jan 2023',
                  'what do you do', 'neighborhood', 3, '18-21', 'peace and quiet', 
                 1, 3, 5, 4, 5, 3, 5, 4, 3, 2,
