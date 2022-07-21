@@ -16,12 +16,12 @@ from nltk.tokenize import sent_tokenize
 
 # Database host is database address (localhost if on local computer)
 # Database name is name of database
-db_host = "ec2-18-215-96-22.compute-1.amazonaws.com"   # address of database
-db_name = "db926f75ofgha2"      # name of database
+db_host = "ec2-54-165-90-230.compute-1.amazonaws.com"
+db_name = "d6hp3i25m6gslc"
 
 # Data base username/pass
-db_user = "glkawdwwyajxsd"        # login name
-db_pass = "ab13a8d4d623d059a6c6fa355da18839af9ce573edc56ae8ab09ba0b99b70a72"      # login password
+db_user = "uqqcowyaruajrk"
+db_pass = "e8828f90c6df41a82eac46bcb552a9cdf32a5b109db1d72ec7cb9ad988030475"
 db_port = 5432
 
 # can use a user account only with permissions to read from database to make sure
@@ -45,6 +45,6 @@ for x in range(0, cursor.rowcount):
     item = cursor.fetchone()
     list.append(dict(zip(colnames, item)))
 
-print(list[0])    
+print(list[0])
 
 connect.close()
