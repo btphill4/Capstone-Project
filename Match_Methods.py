@@ -263,11 +263,16 @@ def match_MoveDate(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 12. Would you like to rent month to month or on a lease basis?
 # Input: either month-to-month or Lease basis, if lease basis number input for how long
-def match_leaseType(leaseType1, leaseType2):
+def match_leaseType(ex_Ten: Tenant, ex_HO: HomeOwner):
     #Initial testing print
 #    print("Match lease type")
-    if leaseType1 == leaseType2:
-        print("Lease type MATCHED")
+    if ex_Ten.lease_or_rent == ex_HO.lease_or_rent:
+        print("Lease Type MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
+        print("Lease Type wanted: " , ex_Ten.lease_or_rent)
+        if ex_Ten.lease_or_rent == 'lease':
+            print("Lease Length: ", ex_Ten.lea)
     else:
         print("Lease type NOT MATCHED")
 #end match_leaseType():
@@ -327,7 +332,7 @@ def match_amenitiesImportance():
     #Guests often visit
     #Household Cleanliness
     #Recreational Cannabis
-    #Smoking
+    #Smoking <- ASK ABOUT SEPERATE QUESTION
 # Input: Range of numbers 1 to 5
 # Note: subtract tenant number from home owner number, add all together and divide by 6 and smaller number better match 
 # 0 = 100% 
@@ -383,7 +388,7 @@ def match_personality():
 # Input: Checkbox, string other
 # Note: can make 0 or 1 values for checked/not checked and test equality
 def match_FridayNight(ex_Tenant: Tenant, ex_HO: HomeOwner):
-    print("match friday night: ")
+    print("match friday night: UNFINISHED LOGIC")
 
     if ex_Tenant.q21_1 == ex_HO.q21_1:
         #match is good
