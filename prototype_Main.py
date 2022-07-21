@@ -13,25 +13,25 @@ import csv
 
 # Connects to DB and saves to HO_list
 HO_list = db_connect()
-ex_Ten = Tenant(1, 'Phoenix', 600, 900, 'lease', 6, True, 6, 
+ex_Ten = Tenant(1, 'Phoenix', 600, 900, 'lease', 6, True, 8, 
                 True, True, 'Dog', True, 'cat', 'Jan 2023',
                  'what do you do', 'neighborhood', 3, '18-21', 'peace and quiet', 
                 1, 3, 5, 4, 5, 3, 5, 4, 3, 2,
-                2, 3, 1, 4, 5, 1, 2, '', 
+                2, 3, 1, 4, 5, 1, 2, 'additional info for ex_Ten', 
                 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, '', 0)
 
 ex_HO = HomeOwner(2, 'Phoenix', 600, 900, 'lease', 6, True, 6, 
                 True, True, 'cat', True, 'dog', 'Feb 2023',
                  '', '', 3, '18-21', 'peace and quiet', 
                 1, 3, 5, 4, 5, 3, 5, 4, 3, 2,
-                2, 3, 1, 4, 5, 1, 2, '', 
+                2, 3, 1, 4, 5, 1, 2, 'additional info for ex_HO', 
                 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, '', 0)
 
 ex_HO_1 = HomeOwner(3, 'Glendale', 1000, 2000, 'rent', 0, False, 0, 
                 False, False, '', False, '', 'Jan 2023',
                  'what do you do', 'neighborhood', 3, '18-21', 'peace and quiet', 
                 1, 3, 5, 4, 5, 3, 5, 4, 3, 2,
-                2, 3, 1, 4, 5, 1, 2, '', 
+                2, 3, 1, 4, 5, 1, 2, 'additional info for ex_HO_1', 
                 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, '', 0)
 
 
@@ -83,9 +83,17 @@ match_MoveDate(ex_Ten, ex_HO_1)
 #~~~~~~~~~~ Medium Importance Questions ~~~~~~~~~~#
 
 
+match_RateOthers(ex_Ten, ex_HO)
+match_RateOthers(ex_Ten, ex_HO_1)
+
+match_TellUs(ex_Ten, ex_HO)
+match_TellUs(ex_Ten, ex_HO_1)
 
 #~~~~~~~~~~ Low Importance Questions ~~~~~~~~~~#
 
-match_personality()
+match_personality(ex_Ten, ex_HO)
+match_personality(ex_Ten, ex_HO_1)
+
 match_FridayNight(ex_Ten, ex_HO)
+match_FridayNight(ex_Ten, ex_HO_1)
 

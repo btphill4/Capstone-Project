@@ -69,7 +69,7 @@ def get_sql_query(id):
 
 
 def print_list_index(list, x):
-    print(list[x], '/n')
+    print(list[x], '\n')
 
 def print_list_all(lists):
     print("Entire list: ")
@@ -228,7 +228,7 @@ def match_HavePets(ex_Ten: Tenant, ex_HO: HomeOwner):
             print("Tenant #", ex_Ten.appid, "Pet type: ", ex_Ten.children_ages)
         if(ex_HO.personal_pets_text == True):
             print("HomeOwner # ", ex_HO.appid, "Pet type: ", ex_HO.children_ages, '\n')
-        #print('\n')
+        print('\n')
     #add to matched array
 
     else: 
@@ -239,7 +239,7 @@ def match_HavePets(ex_Ten: Tenant, ex_HO: HomeOwner):
             print("Tenant #", ex_Ten.appid, "Pet type: ", ex_Ten.personal_pets_text)
         if(ex_HO.personal_pets_bool == True):
             print("HomeOwner # ", ex_HO.appid, "Pet type: ", ex_HO.personal_pets_text , '\n')
-        #print('\n')
+        print('\n')
 
 #end match_HavePets()
 
@@ -355,15 +355,93 @@ def match_rateYourself():
 # 0 = 100% 
 # 1 = 80%
 # 2 = 60% ...
-def match_RateOthers():
-    print("Match Rate others")
+def match_RateOthers(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Match Rate others: ")
+
+    #Kitchen use
+    if ex_Ten.q26_1 == ex_HO.q26_1:
+        print("Rating Others Q26_1 (Kitchen Use) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Others Q26_1 (Kitchen Use) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    #Neatness
+    if ex_Ten.q26_2 == ex_HO.q26_2:
+        print("Rating Others Q26_2 (Neatness) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Others Q26_2 (Neatness) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    
+    #Kitchen cleanliness
+    if ex_Ten.q26_3 == ex_HO.q26_3:
+        print("Rating Others Q26_3 (Kitchen cleanliness) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Others Q26_3 (Kitchen cleanliness) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    #Guests often visit
+    if ex_Ten.q26_4 == ex_HO.q26_4:
+        print("Rating Others Q26_4 (Guests often visit) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Others Q26_4 (Guests often visit) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    
+    #Household Cleanliness
+    if ex_Ten.q26_5 == ex_HO.q26_5:
+        print("Rating Others Q26_5 (Household Cleanliness) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Others Q26_5 (Household Cleanliness) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    
+    #Recreational Cannabis
+    if ex_Ten.q26_6 == ex_HO.q26_6:
+        print("Rating Others Q26_6 (Recreational Cannabis) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Others Q26_6 (Recreational Cannabis) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    #Smoking
+    if ex_Ten.q26_7 == ex_HO.q26_7:
+        print("Rating Others Q26_7 (Smoking) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Others Q26_7 (Smoking) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    
+
+    #calculate differences
+    tempSum = ex_Ten.q26_1 - ex_HO.q26_1
+    
 #end match_rateOthers()
 
 # 28. What else would you like us to know about you or about your future housemate(s)?
 # Input: String
 # Note: Natural Language Toolkit?
-def match_TellUs():
-    print("Match Tell us")
+def match_TellUs(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Match Tell us: UNFINISHED LOGIC")
+
+    print("Tenant tell us about yourself Tenant # ", ex_Ten.appid,": ", ex_Ten.addition_info)
+    print("Home Owner tell us about yourself Home Owner # ", ex_HO.appid,": ", ex_HO.addition_info, '\n')
 #end match_TellUs()
 
 
@@ -381,33 +459,46 @@ def match_personality(ex_Ten: Tenant, ex_HO: HomeOwner):
     if ex_Ten.q18_1 == ex_HO.q18_1:
         print("Personality Q18_1 (Carefree) MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
-        ex_HO.appid)
+        ex_HO.appid, '\n')
         
         #add logic to adjust the weight according to 
     else:
         print("Personality Q18_1 (Carefree) NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
-        ex_HO.appid)
+        ex_HO.appid, '\n')
 
     # Outgoing
-    if ex_Ten.q18_1 == ex_HO.q18_1:
-        print("Personality Q18_1 (Carefree) MATCHED with Tenant ID #: ", 
+    if ex_Ten.q18_2 == ex_HO.q18_2:
+        print("Personality Q18_2 (Outgoing) MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
-        ex_HO.appid)
+        ex_HO.appid, '\n')
     else:
-        print("Personality Q18_1 (Carefree) NOT MATCHED with Tenant ID #: ", 
+        print("Personality Q18_2 (Outgoing) NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
-        ex_HO.appid)
+        ex_HO.appid, '\n')
 
-    #Laid Back
-    if ex_Ten.q18_1 == ex_HO.q18_1:
-        print("Personality Q18_1 (Carefree) MATCHED with Tenant ID #: ", 
+    # Laid Back
+    if ex_Ten.q18_3 == ex_HO.q18_3:
+        print("Personality Q18_3 (Laid Back) MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
-        ex_HO.appid)
+        ex_HO.appid, '\n')
     else:
-        print("Personality Q18_1 (Carefree) NOT MATCHED with Tenant ID #: ", 
+        print("Personality Q18_3 (Laid Back) NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
-        ex_HO.appid)
+        ex_HO.appid, '\n')
+
+    # Other
+    if ex_Ten.q18_4 == ex_HO.q18_4:
+        #print("Personality Q18_4 (Other) MATCHED with Tenant ID #: ", 
+        #ex_Ten.appid, "and HomeOwner ID #: ", 
+        #ex_HO.appid)
+        print("Personality Q18_4 (Other) -> Will add later using Natural Language Toolkit", '\n')
+    else:
+        #print("Personality Q18_3 (Laid Back) NOT MATCHED with Tenant ID #: ", 
+        #ex_Ten.appid, "and HomeOwner ID #: ", 
+        #ex_HO.appid)
+        print("Personality Q18_4 (Other) -> Will add later using Natural Language Toolkit", '\n')
+
 #end match_personality()
 
 # 21. What does your ideal Friday night look like? Please check all boxes that apply.
@@ -418,7 +509,7 @@ def match_personality(ex_Ten: Tenant, ex_HO: HomeOwner):
 #    Netflix
 #    Other (please specify)
 # Input: Checkbox, string other
-# Note: can make 0 or 1 values for checked/not checked and test equality
+# Note: can make 0 or 1 values for checked\not checked and test equality
 def match_FridayNight(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("match friday night: UNFINISHED LOGIC")
 
