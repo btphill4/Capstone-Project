@@ -5,7 +5,7 @@ import psycopg2
 
 # natural language toolkit
 import nltk
-
+from HomeOwners import *
 # necessary imports to run the sentiment analyzer
 nltk.download('wordnet')
 nltk.download('vader_lexicon')
@@ -45,6 +45,8 @@ for x in range(0, cursor.rowcount):
     item = cursor.fetchone()
     list.append(dict(zip(colnames, item)))
 
-print(list[0])
+print(list[0]['userid'])    
+HO1 = HomeOwner(cursor.fetchone())
+print(HO1)
 
 connect.close()
