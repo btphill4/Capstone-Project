@@ -60,7 +60,7 @@ def print_list_all(lists):
 # 6. What are your typical workday hours and days of the week? Please fill out in the boxes below as such (for example: 9-5, 9am-5pm)
 # Input: Range of numbers(hours) and string days
 
-def match_workSchedule():
+def match_workSchedule(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match Work Schedule")
 
 #end match_workSchedule():
@@ -75,7 +75,7 @@ def match_city(ex_Ten: Tenant, ex_HO: HomeOwner):
         #match is good
         print("City MATCHED for Tenant ID #: ",
                 ex_Ten.appid, " and HomeOwner ID #: ", 
-                ex_HO.appid)
+                ex_HO.appid, '\n')
 
         # Add to matched DB
         #global matchedDB 
@@ -83,7 +83,7 @@ def match_city(ex_Ten: Tenant, ex_HO: HomeOwner):
     else:
         print("City NOT MATCHED for Tenant ID #: ",
                 ex_Ten.appid, " and HomeOwner ID #: ", 
-                ex_HO.appid)
+                ex_HO.appid, '\n')
 
 # 10. What is the monthly rent range you are looking to pay? HANDLED WITH SQL
 # Input: Range of Numbers 
@@ -96,15 +96,19 @@ def match_rent(ex_Ten: Tenant, ex_HO: HomeOwner):
     # Testing Print Statement
     print("match_rent function(): ")
 
-    
-    # Print Temp sets (Testing)
-#    print("HO_rent_set: ", HO_rent_set)
-#    print("TEN_rent_set: ", TEN_rent_set)
+    #get ranges
+    TenRange = range(ex_Ten.rent_range_start, ex_Ten.rent_range_end)
+    HORange = range(ex_HO.rent_range_start, ex_HO.rent_range_end)
 
+    #put range variables in sets check for intersection
+    TenRange_set = set(TenRange)
+    HORange_set = set(HORange)
     #if match is found
-    if HO_rent_set.intersection(TEN_rent_set):
+    if TenRange_set.intersection(HORange_set):
         #Print if found (testing)
-        print("RENT MATCHED")
+        print("RENT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
 
         # add to matchedDB
 #        global matchedDB, HO_rentDB 
@@ -116,7 +120,9 @@ def match_rent(ex_Ten: Tenant, ex_HO: HomeOwner):
     #if match is not found     
     else:
         # Print if not found (Testing)
-        print("RENT NOT MATCHED")
+        print("RENT NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
 
 #     print(matchedDB)
 # end match_rent()
@@ -124,61 +130,113 @@ def match_rent(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 14. Are you open to living with someone who may have children?
 # Input: Bool (Yes/No)
 
-def match_livingWithKids():
-    print("Match living with kids")
+def match_livingWithKids(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Match open to living with kids: ")
+
+    if ex_Ten.live_with_children == ex_HO.live_with_children:
+        print("Open to living with kids MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    
+    else:
+        print("Open to living with kids NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
 
 #end match_livingWithKids()
 
 # 13. Do you have any children? 
 # Input: Bool (Yes/No), if yes number input age numbers
-def match_HaveKids():
-    print("Match Have Kids")
+def match_HaveKids(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Match Have Kids: ")
+
+    if ex_Ten.has_children == ex_HO.has_children:
+        print("Has kids MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
+        if(ex_Ten.has_children == True):
+            print("Tenant #", ex_Ten.appid, "Childeren ages: ", ex_Ten.children_ages)
+        if(ex_HO.has_children == True):
+            print("HomeOwner # ", ex_HO.appid, "Childeren ages: ", ex_HO.children_ages)
+        print('\n')
+    else: 
+        print("Has kids MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
+        if(ex_Ten.has_children == True):
+            print("Tenant #", ex_Ten.appid, "Childeren ages: ", ex_Ten.children_ages)
+        if(ex_HO.has_children == True):
+            print("HomeOwner # ", ex_HO.appid, "Childeren ages: ", ex_HO.children_ages)
+        print('\n')
+
 #end match_HaveKids()
 
 # 16. Are you open to living with someone who has pets? 
 # Input: Bool
 
-def match_livingWithPets(boolLivingPets_HO, boolLivingPets_TEN):
+def match_livingWithPets(ex_Ten: Tenant, ex_HO: HomeOwner):
     # Testing function print
-#    print("living with pets")
+    print("living with pets")
 
     #if they are equal, they match
-    if boolLivingPets_HO == boolLivingPets_TEN:
-        print("Living with pets MATCHED")
+    if ex_Ten.personal_pets_bool == ex_HO.personal_pets_bool:
+        print("Living with pets MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
     #add to matched array
 
     else: 
-        print("Living with pets NOT MATCHED")
+        print("Living with pets NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
 
 #end match_livingWithPets()
 
 # 15. Do you have any pets?
 # Input: Bool (Yes/No) if yes number input of # of pets and string of types
-def match_HavePets(boolHavePets_HO, boolHavePets_TEN, petTypes_HO, petTypes_TEN):
+def match_HavePets(ex_Ten: Tenant, ex_HO: HomeOwner):
     # Testing Function print   
 #    print("match have pets")
 
-    #if they are equal, they match
-    if boolHavePets_HO == True:
-        #for i in petTypes_HO:
-            #print(petTypes_HO[i])
-        print("HomeOwner pets: ", petTypes_HO)
-    if boolHavePets_TEN == True:
-        #for i in petTypes_TEN:
-            #print(petTypes_HO[i])
-        print("Tenant pets: ", petTypes_TEN)
+    if ex_Ten.personal_pets_bool == ex_HO.personal_pets_bool:
+        print("Have pets MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
+        if(ex_Ten.personal_pets_text == True):
+            print("Tenant #", ex_Ten.appid, "Pet type: ", ex_Ten.children_ages)
+        if(ex_HO.personal_pets_text == True):
+            print("HomeOwner # ", ex_HO.appid, "Pet type: ", ex_HO.children_ages)
+        print('\n')
     #add to matched array
 
     else: 
-        print("Living with pets NOT MATCHED/HAVE NO PETS")
+        print("Have pets NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid)
+        if(ex_Ten.personal_pets_bool == True):
+            print("Tenant #", ex_Ten.appid, "Pet type: ", ex_Ten.personal_pets_text)
+        if(ex_HO.personal_pets_bool == True):
+            print("HomeOwner # ", ex_HO.appid, "Pet type: ", ex_HO.personal_pets_text)
+        print('\n')
 
 #end match_HavePets()
 
 # 17. When would you like to move in?
 # Input: string(month) and number(year) -> Jan 2023
 # Notes: we might be able to use a python library to return number values or something
-def match_MoveDate():
-    print("Match move date")
+def match_MoveDate(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Match move date UNFINISHED LOGIC: ")
+
+    if ex_Ten.move_in_date == ex_HO.move_in_date:
+        print("Have pets NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, "for move in date: ", ex_Ten.move_in_date, '\n')
+    
+    else:
+        print("Have pets NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
 #end match_MoveDate()
 
 # 12. Would you like to rent month to month or on a lease basis?
@@ -301,10 +359,14 @@ def match_FridayNight(ex_Tenant: Tenant, ex_HO: HomeOwner):
 
     if ex_Tenant.q21_1 == ex_HO.q21_1:
         #match is good
-        print("FRIDAY NIGHT Q21_1 MATCHED")
+        print("FRIDAY NIGHT Q21_1 MATCHED with Tenant ID #: ", 
+        ex_Tenant.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
 
     else:
-        print("FRIDAY NIGHT NOT MATCHED")
+        print("FRIDAY NIGHT NOT MATCHED with Tenant ID #: ", 
+        ex_Tenant.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
 #end match_FridayNight()
 
 # 27. Please let us know your favorite hobbies, and what you do on your days off for enjoyment.
