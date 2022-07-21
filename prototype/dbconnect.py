@@ -34,13 +34,27 @@ cursor = connect.cursor()
 
 cursor.execute("""
 
-SELECT * FROM homeownerapp;
+SELECT * FROM homeownerapp
 
 """)
 
-temp = cursor.fetchall()
-for x in temp:
-    print("\n\n")
-    print(x)
+colnames = [desc[0] for desc in cursor.description]
+
+#print(colnames)
+list = []
+#print(temp)
+#for x in range(0, len(colnames)):
+#    list.append((colnames[x], temp[x]))
+
+for x in range(0, cursor.rowcount):
+    item = cursor.fetchone()
+    list.append(dict(zip(colnames, item)))
+
+print(list[0])    
+
+#temp = cursor.fetchall()
+#for x in temp:
+#    print("\n\n")
+#    print(x)
 
 connect.close()
