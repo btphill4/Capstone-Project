@@ -50,7 +50,7 @@ for x in range(0, cursor.rowcount):
     item = cursor.fetchone()
     list.append(dict(zip(colnames, item)))
 
-print(list[0])    
+print(list[0]['userid'])    
 
 #temp = cursor.fetchall()
 #for x in temp:

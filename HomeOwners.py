@@ -34,14 +34,41 @@ class HomeOwner:
         self.max_house_mates = max_house_mates
         self.age_range = age_range
         self.enviroment_type = enviroment_type
-        self.
-        self.
-        self.
-        self.
-        self.
-        self.
-        self.
+        self.q20_1 = q20_1
+        self.q20_2 = q20_2
+        self.q20_3 = q20_3
+        self.q24_1 = q24_1
+        self.q24_2 = q24_2
+        self.q24_3 = q24_3
+        self.q24_4 = q24_4
+        self.q24_5 = q24_5
+        self.q24_6 = q24_6
+        self.q24_7 = q24_7
+        self.q26_1 = q26_1
+        self.q26_2 = q26_2
+        self.q26_3 = q26_3
+        self.q26_4 = q26_4
+        self.q26_5 = q26_5
+        self.q26_6 = q26_6
+        self.q26_7 = q26_7
+        self.addition_info = addition_info
+        self.q18_1 = q18_1
+        self.q18_2 = q18_2
+        self.q18_3 = q18_3
+        self.q18_4 = q18_4
+        self.q21_1 = q21_1
+        self.q21_2 = q21_2
+        self.q21_3 = q21_3
+        self.q21_4 = q21_4
+        self.q21_5 = q21_5
+        self.q21_6 = q21_6
+        self.q27 = q27
 
 
+        #class methods if needed here
+
+        def get_appid(self):
+            print("appplication ID: " + self.appid)
+            
         #pass avoids empty object error          
         pass
