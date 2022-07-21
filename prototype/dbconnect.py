@@ -40,21 +40,11 @@ SELECT * FROM homeownerapp
 
 colnames = [desc[0] for desc in cursor.description]
 
-#print(colnames)
 list = []
-#print(temp)
-#for x in range(0, len(colnames)):
-#    list.append((colnames[x], temp[x]))
-
 for x in range(0, cursor.rowcount):
     item = cursor.fetchone()
     list.append(dict(zip(colnames, item)))
 
 print(list[0]['userid'])    
-
-#temp = cursor.fetchall()
-#for x in temp:
-#    print("\n\n")
-#    print(x)
 
 connect.close()
