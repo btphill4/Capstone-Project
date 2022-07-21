@@ -6,8 +6,16 @@ import psycopg2
 # Import natural language toolkit library
 import nltk
 
+#Imports db_connect() from 
+from prototype.dbconnect import *
 
+#From dbconnect.py
+list1 = db_connect()
+#print(list1[2])
 
+#Global matchedDB array
+global matchedDB
+matchedDB = []
 
 
 #Test function to ensure the file working
@@ -35,6 +43,9 @@ def connect_to_db():
 # returns a list of ids that match the city and rent range
 def initial_filter_db(id):
     print("hi")
+
+def print_list_index(x):
+    print(list1[x])
 
 #~~~~~~~~~ Matching METHODS ~~~~~~~~~#
 
