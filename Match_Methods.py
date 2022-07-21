@@ -41,10 +41,32 @@ def connect_to_db():
     connect = psycopg2.connect(host=db_host, dbname=db_name, user=db_user, password=db_pass, port=db_port)
     return connect
 
-# parameter: an integer representing the ID of the tenant who needs to match with homeowners
-# returns a list of ids that match the city and rent range
-def initial_filter_db(id):
-    print("hi")
+# Input 1: an integer representing the ID of the tenant who needs to match with homeowners
+# Input 2: a cursor object from the connection object
+# Returns: a list of ids that match the city and rent range
+def initial_filter_db(id, cursor):
+    return cursor.execute(get_sql_query(id))
+
+def get_sql_query(id):
+    sql_query_p1 = """
+    SELECT appid
+    FROM homeownerapp
+    WHERE rent_range_start <= (
+        SELECT rent_range_end
+        FROM tenantapp
+        WHERE appid="""
+    sql_query_p2 = """
+    AND rent_range_end>(
+        SELECT rent_range_start
+        FROM tenantapp
+        WHERE appid="""
+    sql_query_p3 = """
+    AND city=(
+        SELECT city
+        FROM tenantapp
+        WHERE appid="""
+    return sql_query_p1 + str(1) + sql_query_p2 + str(1) + sql_query_p3 + str(1)
+
 
 def print_list_index(list, x):
     print(list[x], '/n')
