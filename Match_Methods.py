@@ -116,7 +116,7 @@ def match_city(ex_Ten: Tenant, ex_HO: HomeOwner):
 # else do nothing -> print not match for testing
 def match_rent(ex_Ten: Tenant, ex_HO: HomeOwner):
     # Testing Print Statement
-    print("match_rent function(): ")
+    print("Match Rent: ")
 
     #get ranges
     TenRange = range(ex_Ten.rent_range_start, ex_Ten.rent_range_end)
@@ -182,7 +182,7 @@ def match_HaveKids(ex_Ten: Tenant, ex_HO: HomeOwner):
             print("HomeOwner # ", ex_HO.appid, "Childeren ages: ", ex_HO.children_ages)
         print('\n')
     else: 
-        print("Has kids MATCHED with Tenant ID #: ", 
+        print("Has kids NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid)
         if(ex_Ten.has_children == True):
@@ -198,7 +198,7 @@ def match_HaveKids(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 def match_livingWithPets(ex_Ten: Tenant, ex_HO: HomeOwner):
     # Testing function print
-    print("living with pets")
+    print("Match living with pets: ")
 
     #if they are equal, they match
     if ex_Ten.personal_pets_bool == ex_HO.personal_pets_bool:
@@ -218,7 +218,7 @@ def match_livingWithPets(ex_Ten: Tenant, ex_HO: HomeOwner):
 # Input: Bool (Yes/No) if yes number input of # of pets and string of types
 def match_HavePets(ex_Ten: Tenant, ex_HO: HomeOwner):
     # Testing Function print   
-#    print("match have pets")
+    print("Match have pets: ")
 
     if ex_Ten.personal_pets_bool == ex_HO.personal_pets_bool:
         print("Have pets MATCHED with Tenant ID #: ", 
@@ -265,16 +265,18 @@ def match_MoveDate(ex_Ten: Tenant, ex_HO: HomeOwner):
 # Input: either month-to-month or Lease basis, if lease basis number input for how long
 def match_leaseType(ex_Ten: Tenant, ex_HO: HomeOwner):
     #Initial testing print
-#    print("Match lease type")
+    print("Match lease type: ")
     if ex_Ten.lease_or_rent == ex_HO.lease_or_rent:
         print("Lease Type MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid)
-        print("Lease Type wanted: " , ex_Ten.lease_or_rent)
+        print("Lease Type wanted:" , ex_Ten.lease_or_rent)
         if ex_Ten.lease_or_rent == 'lease':
-            print("Lease Length: ", ex_Ten.lea)
+            print("Lease Length: ", ex_Ten.lease_length, 'Months \n')
+        else:
+            print()
     else:
-        print("Lease type NOT MATCHED")
+        print("Lease type NOT MATCHED", '\n')
 #end match_leaseType():
 
 
@@ -283,27 +285,29 @@ def match_leaseType(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 8. Is there a preferred neighborhood you would like to rent within your specified area?
 # Input: String
 def match_neighborhoodPref(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Match neighborhood preference: ")
     if ex_Ten.preferred_neighborhood == ex_HO.preferred_neighborhood:
         print("neighborhood MATCHED with Tenant ID #: ",
         ex_Ten.appid, "and HomeOwner ID #: ",
-        ex_HO.appid)
+        ex_HO.appid, '\n')
     else:
         print("neighborhood NOT MATCHED",
         ex_Ten.appid, "and HomeOwner ID #: ",
-        ex_HO.appid)
+        ex_HO.appid, '\n')
 #end match_neighborhoodPref()
 
 # 9. What is the maximum number of housemates you are willing to live with?
 # Input: 1, 2, 3, 4, 5, 5+
 def match_MaxRoomates(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Matching max roomates: ")
     if (ex_Ten.max_house_mates <= ex_HO.max_house_mates):
         print("max roommates MATCHED",
         ex_Ten.appid, "and HomeOwner ID #: ",
-        ex_HO.appid)
+        ex_HO.appid, '\n')
     else:
         print("max roommates NOT MATCHED",
         ex_Ten.appid, "and HomeOwner ID #: ",
-        ex_HO.appid)
+        ex_HO.appid, '\n')
 #end match_MaxRoomates():
 
 # 11. Please give us a range for the age of the women you would like to co-live with or type “does not matter”
@@ -315,14 +319,14 @@ def match_AgeRange(ex_Ten: Tenant, ex_HO: HomeOwner):
     if ex_Ten.age_range == ex_HO.age_range:
         print("Age Range type MATCHED with Tenant ID #: ",
         ex_Ten.appid, "and HomeOwner ID #: ",
-        ex_HO.appid, "for age range: ", ex_Ten.age_range)
+        ex_HO.appid, "for age range: ", ex_Ten.age_range, '\n')
 
     else:
         print("Age Range type NOT MATCHED with Tenant ID #: ",
         ex_Ten.appid, "and HomeOwner ID #: ",
         ex_HO.appid, ", Tenant preferred age range: ",
          ex_Ten.age_range, " and Home Owner preferred age range: ",
-         ex_HO.age_range)
+         ex_HO.age_range, '\n')
 
 #end match ageRange()
 
@@ -335,11 +339,11 @@ def match_SocialEnviroment(ex_Ten: Tenant, ex_HO: HomeOwner):
     if ex_Ten.enviroment_type == ex_HO.enviroment_type:
         print("Enviroment type MATCHED with Tenant ID #: ",
         ex_Ten.appid, "and HomeOwner ID #: ",
-        ex_HO.appid)
+        ex_HO.appid, '\n')
     else:
         print("Enviroment type NOT MATCHED with Tenant ID #: ",
         ex_Ten.appid, "and HomeOwner ID #: ",
-        ex_HO.appid)
+        ex_HO.appid, '\n')
 #end match_SocialEnviroment()
 
 # 20. On a scale of 1-5 how would you rate the importance of the following?
@@ -483,10 +487,8 @@ def match_rateYourself(ex_Ten: Tenant, ex_HO: HomeOwner):
 #    Kitchen use
 #    Neatness
 #    Kitchen cleanliness
-#    Guests often visit
-#    Household Cleanliness
-#    Recreational Cannabis
-#    Smoking
+#    Guests oftenmatch_hobbies(ex_Ten, ex_HO)
+
 # Input: Range of numbers 1 to 5
 # Note: subtract tenant number from home owner number, add all together and divide by 6 and smaller number better match 
 # 0 = 100% 
@@ -651,60 +653,60 @@ def match_personality(ex_Ten: Tenant, ex_HO: HomeOwner):
 # Input: Checkbox, string other
 # Note: can make 0 or 1 values for checked\not checked and test equality
 def match_FridayNight(ex_Ten: Tenant, ex_HO: HomeOwner):
-    print("match friday night: UNFINISHED LOGIC")
+    print("Match Friday Night Preference: UNFINISHED LOGIC")
 
     if ex_Ten.q21_1 == ex_HO.q21_1:
         #match is good
-        print("FRIDAY NIGHT Q21_1(Movie night with friends/housemates) MATCHED with Tenant ID #: ", 
+        print("Friday Night Q21_1(Movie night with friends/housemates) MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
     else:
-        print("FRIDAY NIGHT Q21_1(Movie night with friends/housemates) NOT MATCHED with Tenant ID #: ", 
+        print("Friday Night Q21_1(Movie night with friends/housemates) NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
     if ex_Ten.q21_2 == ex_HO.q21_2:
         #match is good
-        print("FRIDAY NIGHT Q21_2(Night out) MATCHED with Tenant ID #: ", 
+        print("Friday Night Q21_2(Night out) MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
     else:
-        print("FRIDAY NIGHT Q21_2(Night out) NOT MATCHED with Tenant ID #: ", 
+        print("Friday Night Q21_2(Night out) NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
     if ex_Ten.q21_3 == ex_HO.q21_3:
         #match is good
-        print("FRIDAY NIGHT Q21_3(Bar hopping) MATCHED with Tenant ID #: ", 
+        print("Friday Night Q21_3(Bar hopping) MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
     else:
-        print("FRIDAY NIGHT Q21_3(Bar hopping) NOT MATCHED with Tenant ID #: ", 
+        print("Friday Night Q21_3(Bar hopping) NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
     if ex_Ten.q21_4 == ex_HO.q21_4:
         #match is good
-        print("FRIDAY NIGHT Q21_4(Self-care night to wind down) MATCHED with Tenant ID #: ", 
+        print("Friday Night Q21_4(Self-care night to wind down) MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
     else:
-        print("FRIDAY NIGHT Q21_4(Self-care night to wind down) NOT MATCHED with Tenant ID #: ", 
+        print("Friday Night Q21_4(Self-care night to wind down) NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
     if ex_Ten.q21_5 == ex_HO.q21_5:
         #match is good
-        print("FRIDAY NIGHT Q21_5(Netflix) MATCHED with Tenant ID #: ", 
+        print("Friday Night Q21_5(Netflix) MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
 
     else:
-        print("FRIDAY NIGHT Q21_5(Netflix) NOT MATCHED with Tenant ID #: ", 
+        print("Friday Night Q21_5(Netflix) NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
     
@@ -713,8 +715,22 @@ def match_FridayNight(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 27. Please let us know your favorite hobbies, and what you do on your days off for enjoyment.
 # Input: String
 # Note: Natural Language Toolkit, not sure how to approach this one
-def match_hobbies():
+# Note2: We might be able to add the strings to a set and check for intersection,
+#        i.e. 'I watch TV' vs 'watching TV' will find 'TV' intersection
+def match_hobbies(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("match hobbies")
+
+    if ex_Ten.q27 == ex_HO.q27:
+        print("Hobbies MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    
+    else:
+        print("Hobbies NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    
 #end match_hobbies()
 
 #~~~~~~~~~ END Matching METHODS ~~~~~~~~~#
