@@ -250,7 +250,7 @@ def match_MoveDate(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match move date UNFINISHED LOGIC: ")
 
     if ex_Ten.move_in_date == ex_HO.move_in_date:
-        print("Move date  MATCHED with Tenant ID #: ", 
+        print("Move date MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, "for move in date: ", ex_Ten.move_in_date, '\n')
     
@@ -310,14 +310,36 @@ def match_MaxRoomates(ex_Ten: Tenant, ex_HO: HomeOwner):
 # Input: Range of numbers(might be check box), or string "does not matter"
 # Current Ranges: 18-20, 21-30, 31-40, 41-50, 50+
 def match_AgeRange(ex_Ten: Tenant, ex_HO: HomeOwner):
-    print("Match age range")
+    print("Match age range: ")
+
+    if ex_Ten.age_range == ex_HO.age_range:
+        print("Age Range type MATCHED with Tenant ID #: ",
+        ex_Ten.appid, "and HomeOwner ID #: ",
+        ex_HO.appid, "for age range: ", ex_Ten.age_range)
+
+    else:
+        print("Age Range type NOT MATCHED with Tenant ID #: ",
+        ex_Ten.appid, "and HomeOwner ID #: ",
+        ex_HO.appid, ", Tenant preferred age range: ",
+         ex_Ten.age_range, " and Home Owner preferred age range: ",
+         ex_HO.age_range)
+
 #end match ageRange()
 
 # 19. What environment would be ideal for you?
 # Input: string: peace and quiet, or someone I can talk to and hang out with, or other
 # Note: Natural Language toolkit for other?
-def match_SocialEnviroment():
-    print("Match social enviroment")
+def match_SocialEnviroment(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Match social enviroment: ")
+
+    if ex_Ten.enviroment_type == ex_HO.enviroment_type:
+        print("Enviroment type MATCHED with Tenant ID #: ",
+        ex_Ten.appid, "and HomeOwner ID #: ",
+        ex_HO.appid)
+    else:
+        print("Enviroment type NOT MATCHED with Tenant ID #: ",
+        ex_Ten.appid, "and HomeOwner ID #: ",
+        ex_HO.appid)
 #end match_SocialEnviroment()
 
 # 20. On a scale of 1-5 how would you rate the importance of the following?
@@ -329,8 +351,39 @@ def match_SocialEnviroment():
 # 0 = 100% 
 # 1 = 80%
 # 2 = 60% ...
-def match_amenitiesImportance():
-    print("match amenities importance")
+def match_amenitiesImportance(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("match amenities importance: ")
+
+    # Furnished room
+    if ex_Ten.q20_1 == ex_HO.q20_1:
+        print("Rating Amenenities Q20_1 (Furnished room) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Amenenities Q20_1 (Furnished room) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    # Parking
+    if ex_Ten.q20_2 == ex_HO.q20_2:
+        print("Rating Amenenities Q20_2 (Parking) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Amenenities Q20_2 (Parking) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    # Furnished room
+    if ex_Ten.q20_3 == ex_HO.q20_3:
+        print("Rating Amenenities Q20_3 (Furnished room) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Amenenities Q20_3 (Furnished room) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
 #end match_amenitiesImporance()
 
 # 24. On a scale of 1-5 how would you rate YOURSELF for each of the following:
@@ -346,8 +399,84 @@ def match_amenitiesImportance():
 # 0 = 100% 
 # 1 = 80%
 # 2 = 60% ...
-def match_rateYourself():
-    print("match_RateYourself")
+def match_rateYourself(ex_Ten: Tenant, ex_HO: HomeOwner):
+    print("Match Rate Yourself: ")
+
+    # Kitchen Use
+    if ex_Ten.q24_1 == ex_HO.q24_1:
+        print("Rating Yourself Q24_1 (Kitchen Use) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Yourself Q24_1 (Kitchen Use) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    #Neatness
+    if ex_Ten.q24_2 == ex_HO.q24_2:
+        print("Rating Yourself Q24_2 (Neatness) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Yourself Q24_2 (Neatness) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    
+    #Kitchen cleanliness
+    if ex_Ten.q24_3 == ex_HO.q24_3:
+        print("Rating Yourself Q24_3 (Kitchen cleanliness) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Yourself Q24_3 (Kitchen cleanliness) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    #Guests often visit
+    if ex_Ten.q24_4 == ex_HO.q24_4:
+        print("Rating Yourself Q24_4 (Guests often visit) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Yourself Q24_4 (Guests often visit) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    
+    #Household Cleanliness
+    if ex_Ten.q24_5 == ex_HO.q24_5:
+        print("Rating Yourself Q24_5 (Household Cleanliness) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Yourself Q24_5 (Household Cleanliness) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    
+    #Recreational Cannabis
+    if ex_Ten.q24_6 == ex_HO.q24_6:
+        print("Rating Yourself Q24_6 (Recreational Cannabis) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Yourself Q24_6 (Recreational Cannabis) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    #Smoking
+    if ex_Ten.q24_7 == ex_HO.q24_7:
+        print("Rating Yourself Q24_7 (Smoking) MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+    else: 
+        print("Rating Yourself Q24_7 (Smoking) NOT MATCHED with Tenant ID #: ", 
+        ex_Ten.appid, "and HomeOwner ID #: ", 
+        ex_HO.appid, '\n')
+
+    #calculate differences
+    tempSum = abs((ex_Ten.q24_1 - ex_HO.q24_1)) + abs((ex_Ten.q24_2 - ex_HO.q24_2)) 
+    + abs((ex_Ten.q24_3 - ex_HO.q24_3)) + abs((ex_Ten.q24_4 - ex_HO.q24_4)) + abs((ex_Ten.q24_5 - ex_HO.q24_5))
+    + abs((ex_Ten.q24_6 - ex_HO.q24_6)) + abs((ex_Ten.q24_7 - ex_HO.q24_7))
+    print ('tempSum:', tempSum, '\n')
 #end match_rateYourself():
 
 # 26. On a scale of 1-5 how would you like your HOUSEMATE to rate for each of the following:
@@ -438,7 +567,10 @@ def match_RateOthers(ex_Ten: Tenant, ex_HO: HomeOwner):
     
 
     #calculate differences
-    tempSum = ex_Ten.q26_1 - ex_HO.q26_1
+    tempSum = abs((ex_Ten.q26_1 - ex_HO.q26_1)) + abs((ex_Ten.q26_2 - ex_HO.q26_2)) 
+    + abs((ex_Ten.q26_3 - ex_HO.q26_3)) + abs((ex_Ten.q26_4 - ex_HO.q26_4)) + abs((ex_Ten.q26_5 - ex_HO.q26_5))
+    + abs((ex_Ten.q26_6 - ex_HO.q26_6)) + abs((ex_Ten.q26_7 - ex_HO.q26_7))
+    print ('tempSum:', tempSum, '\n')
     
 #end match_rateOthers()
 

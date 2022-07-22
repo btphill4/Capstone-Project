@@ -15,26 +15,26 @@ import csv
 HO_list = db_connect()
 ex_Ten = Tenant(1, 'Phoenix', 600, 900, 'lease', 6, True, 8, 
                 True, True, 'Dog', True, 'cat', 'Jan 2023',
-                 'what do you do', 'neighborhood', 3, '18-21', 'peace and quiet', 
+                 'what do you do', 'neighborhood', 3, '18-20', 'peace and quiet', 
                 1, 3, 5, 4, 5, 3, 5, 4, 3, 2,
                 2, 3, 1, 4, 5, 1, 2, 'additional info for ex_Ten', 
                 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, '', 0)
 
 ex_HO = HomeOwner(2, 'Phoenix', 600, 900, 'lease', 6, True, 6, 
                 True, True, 'cat', True, 'dog', 'Feb 2023',
-                 '', '', 3, '18-21', 'peace and quiet', 
-                1, 3, 5, 4, 5, 3, 5, 4, 3, 2,
-                2, 3, 1, 4, 5, 1, 2, 'additional info for ex_HO', 
+                 'what do you do2', 'neighborhood2', 3, '21-30', 'peace and quiet', 
+                1, 2, 3, 4, 5, 3, 5, 2, 1, 3,
+                1, 5, 5, 1, 5, 1, 2, 'additional info for ex_HO', 
                 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, '', 0)
 
 ex_HO_1 = HomeOwner(3, 'Glendale', 1000, 2000, 'rent', 0, False, 0, 
                 False, False, '', False, '', 'Jan 2023',
-                 'what do you do', 'neighborhood', 3, '18-21', 'peace and quiet', 
-                1, 3, 5, 4, 5, 3, 5, 4, 3, 2,
+                 'what do you do', 'neighborhood', 3, '18-20', 'someone I can talk to and hang out with', 
+                1, 3, 3, 4, 5, 3, 5, 4, 1, 2,
                 2, 3, 1, 4, 5, 1, 2, 'additional info for ex_HO_1', 
                 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, '', 0)
 
-
+HomeOwner()
 #Home OWners added to a list
 list_of_HO = []
 list_of_HO.append(ex_HO)
@@ -64,10 +64,7 @@ match_city(ex_Ten, ex_HO_1) #Fail
 #Match Rent
 match_rent(ex_Ten,ex_HO)    #Pass
 match_rent(ex_Ten, ex_HO_1) #Fail
-
-match_livingWithKids(ex_Ten, ex_HO) #Fail
-match_livingWithKids(ex_Ten, ex_HO_1) #Pass
-
+(ex_Ten.q26_2 - ex_HO.q26_2)
 match_HaveKids(ex_Ten, ex_HO)
 match_HaveKids(ex_Ten, ex_HO_1)
 
@@ -81,7 +78,20 @@ match_MoveDate(ex_Ten, ex_HO)
 match_MoveDate(ex_Ten, ex_HO_1)
 
 #~~~~~~~~~~ Medium Importance Questions ~~~~~~~~~~#
+match_neighborhoodPref(ex_Ten, ex_HO)
+match_neighborhoodPref(ex_Ten, ex_HO_1)
 
+match_MaxRoomates(ex_Ten, ex_HO)
+match_MaxRoomates(ex_Ten, ex_HO_1)
+
+match_AgeRange(ex_Ten, ex_HO)
+match_AgeRange(ex_Ten, ex_HO_1)
+
+match_SocialEnviroment(ex_Ten, ex_HO)
+match_SocialEnviroment(ex_Ten, ex_HO_1)
+
+match_rateYourself(ex_Ten, ex_HO)
+match_rateYourself(ex_Ten, ex_HO_1)
 
 match_RateOthers(ex_Ten, ex_HO)
 match_RateOthers(ex_Ten, ex_HO_1)
