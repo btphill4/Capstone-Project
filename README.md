@@ -2,10 +2,11 @@
 Aisha Tenant Matching Application
 
 # To-Do
-- Link fake DB to code
-- Add logic to methods
-- Create Data structure to hold matches (or array of python tuples)
+- ~~Link fake DB to code~~
+- Add logic to methods -> sort of done
+- Create Data structure to hold matches (or array of python tuples) 
 - Decide on weights for questions / how it is stored
+- Figure out how to create an object from each tuple in the database and store it's respective values
 
 # **Planning and Notes:**
 ## Filter Method:
