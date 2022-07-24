@@ -75,11 +75,11 @@ CREATE TABLE homeownerapp(
   q20_5 numeric NOT NULL, -- personal kitchen
 
   -- q21 ideal friday night
-  q21_1 numeric NOT NULL, -- movie night with friends/housemates
-  q21_2 numeric NOT NULL, -- night out
-  q21_3 numeric NOT NULL, -- bar hopping
-  q21_4 numeric NOT NULL, -- self care night to wind down
-  q21_5 numeric NOT NULL, -- netflix
+  q21_1 boolean NOT NULL, -- movie night with friends/housemates
+  q21_2 boolean NOT NULL, -- night out
+  q21_3 boolean NOT NULL, -- bar hopping
+  q21_4 boolean NOT NULL, -- self care night to wind down
+  q21_5 boolean NOT NULL, -- netflix
   q21_6 TEXT, -- other (please specify)
 
   -- q22 which of the following motivates you to participate in co-living
