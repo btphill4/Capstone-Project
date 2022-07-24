@@ -59,9 +59,9 @@ CREATE TABLE homeownerapp(
   move_in_date date NOT NULL,
 
   -- q18 personality
-  q18_1 numeric NOT NULL, -- carefree
-  q18_2 numeric NOT NULL, -- outgoing
-  q18_3 numeric NOT NULL, -- laid back
+  q18_1 boolean NOT NULL, -- carefree
+  q18_2 boolean NOT NULL, -- outgoing
+  q18_3 boolean NOT NULL, -- laid back
   q18_4 TEXT, -- other (please specify)
 
   -- q19
