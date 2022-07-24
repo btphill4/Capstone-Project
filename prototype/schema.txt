@@ -71,6 +71,8 @@ CREATE TABLE homeownerapp(
   q20_1 numeric NOT NULL, -- furnished room
   q20_2 numeric NOT NULL, -- parking
   q20_3 numeric NOT NULL, -- gym
+  q20_4 numeric NOT NULL, -- personal bathroom
+  q20_5 numeric NOT NULL, -- personal kitchen
 
   -- q21 ideal friday night
   q21_1 numeric NOT NULL, -- movie night with friends/housemates
