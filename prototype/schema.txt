@@ -92,6 +92,23 @@ CREATE TABLE homeownerapp(
   q21_6 TEXT, -- other (please specify)
 
   -- q27 favorite hobbies/what do you do on days off for enjoyment
-  hobbies_text TEXT NOT NULL
+  hobbies_text TEXT NOT NULL,
+
+  -- q4
+  age numeric NOT NULL,
+
+-- NOT NEEDED FOR MATCHING
+
+  -- q1
+  full_name TEXT NOT NULL,
+
+  -- q2
+  phone_number TEXT NOT NULL,
+
+  -- q3
+  email TEXT NOT NULL,
+
+  -- q25 events that you'd like to see
+  future_events TEXT
 
 );
