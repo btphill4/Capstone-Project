@@ -1,0 +1,464 @@
+INSERT INTO homeownerapp VALUES (
+    
+    1,
+
+    'Brittany Lee',
+
+    '555-333-6666',
+
+    'BL@hotmail.com',
+
+    33,
+
+    'High School Teacher',
+
+    'Phoenix',
+
+    'Arcadia',
+
+    2,
+
+    600,
+
+    800,
+
+    'Does not matter',
+
+    'Month-to-month',
+    'n/a',
+
+    false,
+    'n/a',
+
+    false,
+
+    false,
+    'n/a',
+
+    false,
+    'n/a',
+
+    '2023-01-01',
+
+    true,
+    false,
+    false,
+    'n/a',
+
+    'Peace and quiet',
+
+    3,
+    4,
+    3,
+    5,
+    5,
+
+    false,
+    false,
+    false,
+    false,
+    true,
+    'n/a',
+
+    false,
+    true,
+    false,
+    false,
+    'n/a',
+
+    'Knock if you need something',
+
+    5,
+    4,
+    3,
+    2,
+    4,
+    3,
+    4,
+
+    'Monthly Cookouts',
+
+    4,
+    4,
+    4,
+    4,
+    3,
+    5,
+    5,
+
+    'Cycling',
+    'IF they have children or not'
+
+);
+
+INSERT INTO homeownerapp VALUES (
+    
+    2,
+
+    'Gabriel Stevens',
+
+    '222-444-6666',
+
+    'gs@gmail.com',
+
+    33,
+
+    'Piano Instructor',
+
+    'Phoenix',
+
+    'Ahwatukee',
+
+    4,
+
+    700,
+
+    800,
+
+    '21-31',
+
+    'Lease',
+    '1 Year',
+
+    false,
+    'n/a',
+
+    false,
+
+    false,
+    'n/a',
+
+    false,
+    'n/a',
+
+    '2023-08-01',
+
+    false,
+    false,
+    true,
+    'n/a',
+
+    'Peace and quiet',
+
+    5,
+    4,
+    2,
+    4,
+    3,
+
+    false,
+    false,
+    false,
+    true,
+    false,
+    'n/a',
+
+    false,
+    true,
+    false,
+    false,
+    'n/a',
+
+    'Ring Camera',
+
+    4,
+    4,
+    4,
+    4,
+    4,
+    1,
+    1,
+
+    'Social Outings',
+
+    4,
+    5,
+    5,
+    4,
+    5,
+    5,
+    5,
+
+    'Painting',
+    'If they have Pets'
+
+);
+
+INSERT INTO homeownerapp VALUES (
+    
+    3,
+
+    'Samantha Ware',
+
+    '111-999-0000',
+
+    'SWAZZUP@gmail.com',
+
+    29,
+
+    'Caretaker',
+
+    'Phoenix',
+
+    'Tempe',
+
+    1,
+
+    900,
+
+    1200,
+
+    '24-36',
+
+    'Month-to-month',
+    'n/a',
+
+    false,
+    'n/a',
+
+    true,
+
+    true,
+    '1 Dog',
+
+    true,
+    'Dog',
+
+    '2023-11-01',
+
+    false,
+    true,
+    false,
+    'n/a',
+
+    'Someone I can talk to',
+
+    3,
+    1,
+    1,
+    4,
+    2,
+
+    false,
+    true,
+    false,
+    false,
+    false,
+    'n/a',
+
+    false,
+    false,
+    true,
+    false,
+    'n/a',
+
+    'Gated Community',
+
+    2,
+    2,
+    3,
+    3,
+    2,
+    1,
+    1,
+
+    'Outdoor Movie',
+
+    3,
+    1,
+    1,
+    1,
+    1,
+    4,
+    5,
+
+    'Painting',
+    'If they like Star wars'
+
+);
+
+INSERT INTO homeownerapp VALUES (
+    
+    4,
+
+    'Shanna Beatrice',
+
+    '987-654-3210',
+
+    'Beatsfromray@gmail.com',
+
+    23,
+
+    'Nail Salon Specialist',
+
+    'Phoenix',
+
+    'Peoria',
+
+    6,
+
+    500,
+
+    700,
+
+    'Does not matter',
+
+    'Month-to-month',
+    'n/a',
+
+    false,
+    'n/a',
+
+    false,
+
+    true,
+    '1 Cat',
+
+    true,
+    'Cat',
+
+    '2023-07-01',
+
+    true,
+    false,
+    false,
+    'n/a',
+
+    'Someone I can talk to',
+
+    1,
+    2,
+    1,
+    3,
+    3,
+
+    false,
+    false,
+    true,
+    false,
+    false,
+    'n/a',
+
+    true,
+    false,
+    false,
+    false,
+    'n/a',
+
+    'Doorknobs',
+
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+
+    'Cooking',
+
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+
+    'Karaoke',
+    'I don''t mind loud singers'
+
+);
+
+INSERT INTO homeownerapp VALUES (
+    
+    5,
+
+    'Peggy Hill',
+
+    '222-999-0000',
+
+    'Myhusbandsellspropane@gmail.com',
+
+    55,
+
+    'Stay Home mom',
+
+    'Phoenix',
+
+    'Avondale',
+
+    4,
+
+    500,
+
+    700,
+
+    'Does not matter',
+
+    'Lease',
+    '4 Years',
+
+    false,
+    'n/a',
+
+    false,
+
+    false,
+    'n/a',
+
+    false,
+    'n/a',
+
+    '2023-07-01',
+
+    true,
+    false,
+    false,
+    'n/a',
+
+    'Peace and Quiet',
+
+    2,
+    4,
+    2,
+    4,
+    4,
+
+    false,
+    false,
+    false,
+    true,
+    false,
+    'n/a',
+
+    false,
+    false,
+    false,
+    true,
+    'n/a',
+
+    'Fenced Area',
+
+    4,
+    4,
+    4,
+    4,
+    4,
+    1,
+    1,
+
+    'Potluck',
+
+    4,
+    1,
+    4,
+    1,
+    2,
+    5,
+    5,
+
+    'Potluck',
+    'Don''t want any kids'
+
+);
