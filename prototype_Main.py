@@ -17,10 +17,33 @@ cursor = db_con.cursor()
 
 # getting column names
 columns_db(cursor)
-colnames = [desc[0] for desc in cursor.description]
+col = [desc[0] for desc in cursor.description]
 
-# first parameter is tenant ID
-initial_filter_db(1, cursor) 
+
+#### Controls which tenant is used for matching ####
+tenant_id = 1
+#### 
+
+# gets tenant information
+tenant_db(tenant_id, cursor)
+item = cursor.fetchone()
+curr = dict(zip(col, item))
+
+# get tenant : last parameter is matchpercent
+ex_Ten = Tenant(curr[col[0]], curr[col[1]],curr[col[2]], curr[col[3]], curr[col[4]],
+    curr[col[5]], curr[col[6]], curr[col[7]],curr[col[8]], curr[col[9]], curr[col[10]],
+    curr[col[11]], curr[col[12]], curr[col[13]], curr[col[14]], curr[col[15]], curr[col[16]],
+    curr[col[17]], curr[col[18]], curr[col[19]], curr[col[20]], curr[col[21]], curr[col[22]],
+    curr[col[23]], curr[col[24]], curr[col[25]], curr[col[26]], curr[col[27]], curr[col[28]], 
+    curr[col[29]], curr[col[30]], curr[col[31]], curr[col[32]], curr[col[33]], curr[col[34]], 
+    curr[col[35]], curr[col[36]], curr[col[37]], curr[col[38]], curr[col[39]], curr[col[40]], 
+    curr[col[41]], curr[col[42]], curr[col[43]], curr[col[44]], curr[col[45]], curr[col[46]], 
+    curr[col[47]], curr[col[48]], curr[col[49]], curr[col[50]], curr[col[51]], curr[col[52]], 
+    curr[col[53]], curr[col[54]], curr[col[55]], curr[col[56]], curr[col[57]], curr[col[58]], 
+    curr[col[59]], curr[col[60]], 0)
+
+# gets list of homeowner ids that match city and rent range
+initial_filter_db(tenant_id, cursor) 
 howner_list = cursor.fetchall()
 
 # loop for matching with homeowner list
@@ -28,10 +51,52 @@ for uid in howner_list:
     homeowner_db(uid[0], cursor)
     item = cursor.fetchone()
     
-    current_person = dict(zip(colnames, item))
-    print(current_person[colnames[2]])
+    curr = dict(zip(col, item))
+
+    # last parameter is match percent
+    ex_HO = HomeOwner(curr[col[0]], curr[col[1]],curr[col[2]], curr[col[3]], curr[col[4]],
+    curr[col[5]], curr[col[6]], curr[col[7]],curr[col[8]], curr[col[9]], curr[col[10]],
+    curr[col[11]], curr[col[12]], curr[col[13]], curr[col[14]], curr[col[15]], curr[col[16]],
+    curr[col[17]], curr[col[18]], curr[col[19]], curr[col[20]], curr[col[21]], curr[col[22]],
+    curr[col[23]], curr[col[24]], curr[col[25]], curr[col[26]], curr[col[27]], curr[col[28]], 
+    curr[col[29]], curr[col[30]], curr[col[31]], curr[col[32]], curr[col[33]], curr[col[34]], 
+    curr[col[35]], curr[col[36]], curr[col[37]], curr[col[38]], curr[col[39]], curr[col[40]], 
+    curr[col[41]], curr[col[42]], curr[col[43]], curr[col[44]], curr[col[45]], curr[col[46]], 
+    curr[col[47]], curr[col[48]], curr[col[49]], curr[col[50]], curr[col[51]], curr[col[52]], 
+    curr[col[53]], curr[col[54]], curr[col[55]], curr[col[56]], curr[col[57]], curr[col[58]], 
+    curr[col[59]], curr[col[60]], 0)
+
+    print("""\n##########       START OF RESULTS       ##########\n""")
+
+    #~~~~~~~~~~ Most important Questions ~~~~~~~~~~#
+
+    match_city(ex_Ten, ex_HO)   #Pass
+    #match_rent(ex_Ten,ex_HO)    #Pass
+    match_livingWithKids(ex_Ten, ex_HO)
+    match_HaveKids(ex_Ten, ex_HO)
+    match_livingWithPets(ex_Ten, ex_HO)
+    match_HavePets(ex_Ten, ex_HO)
+    match_MoveDate(ex_Ten, ex_HO)
+    match_leaseType(ex_Ten, ex_HO)
+
+    #~~~~~~~~~~ Medium Importance Questions ~~~~~~~~~~#
+
+    match_neighborhoodPref(ex_Ten, ex_HO)
+    match_MaxRoomates(ex_Ten, ex_HO)
+    match_AgeRange(ex_Ten, ex_HO)
+    match_SocialEnvironment(ex_Ten, ex_HO)
+    match_amenitiesImportance(ex_Ten, ex_HO)
+    match_rateYourself(ex_Ten, ex_HO)
+    match_RateOthers(ex_Ten, ex_HO)
+    match_TellUs(ex_Ten, ex_HO)
+
+    #~~~~~~~~~~ Low Importance Questions ~~~~~~~~~~#
+
+    match_personality(ex_Ten, ex_HO)
+    match_FridayNight(ex_Ten, ex_HO)
+    match_hobbies(ex_Ten, ex_HO)
     
-    print("\n")
+    print("""\n##########       END OF RESULTS       ##########\n""")
 
 #HO_list = db_connect()
 #ex_Ten = Tenant(1, 'Phoenix', 600, 900, 'lease', 6, True, 8, 

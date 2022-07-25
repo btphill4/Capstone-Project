@@ -53,20 +53,35 @@ def initial_filter_db(id, cursor):
 def homeowner_db(id, cursor):
     cursor.execute(get_sql_homeowner(id))
 
+# Input 1: an integer representing the ID of the tenant who needs to match with homeowners
+# Input 2: a cursor object from the connection object
+# Returns: nothing but it edits the cursor object
+def tenant_db(id, cursor):
+    cursor.execute(get_sql_tenant(id))
+
 # Input 1: a cursor object from the connection object
 # Returns: nothing but it edits the cursor object
 def columns_db(cursor):
     cursor.execute(get_sql_col_names())
 
+# Input: an intteger representing the ID of the tenant
+# Returns: sql command in string form to get tenant ID
+def get_sql_tenant(id):
+    sql_query = """
+    SELECT *
+    FROM tenantapp
+    WHERE appid="""
+    return sql_query + str(id)
+
 # Input 1: an integer representing the ID of the homeowner
 # Input 2: a cursor object from the connection object
 # Returns: the sql command to get the homeowner information
 def get_sql_homeowner(id):
-    sql_query_p1 = """
+    sql_query = """
     SELECT *
     FROM homeownerapp
     WHERE appid="""
-    return sql_query_p1 + str(id)
+    return sql_query + str(id)
 
 # Input: an integer representing the ID of the tenant
 # Returns: the sql command in string form for matching city and rent range 
@@ -365,18 +380,18 @@ def match_AgeRange(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 19. What environment would be ideal for you?
 # Input: string: peace and quiet, or someone I can talk to and hang out with, or other
 # Note: Natural Language toolkit for other?
-def match_SocialEnviroment(ex_Ten: Tenant, ex_HO: HomeOwner):
+def match_SocialEnvironment(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match social enviroment: ")
 
-    if ex_Ten.enviroment_type == ex_HO.enviroment_type:
-        print("Enviroment type MATCHED with Tenant ID #: ",
+    if ex_Ten.environment_type == ex_HO.environment_type:
+        print("Environment type MATCHED with Tenant ID #: ",
         ex_Ten.appid, "and HomeOwner ID #: ",
         ex_HO.appid, '\n')
     else:
-        print("Enviroment type NOT MATCHED with Tenant ID #: ",
+        print("Environment type NOT MATCHED with Tenant ID #: ",
         ex_Ten.appid, "and HomeOwner ID #: ",
         ex_HO.appid, '\n')
-#end match_SocialEnviroment()
+#end match_SocialEnvironment()
 
 # 20. On a scale of 1-5 how would you rate the importance of the following?
     # Furnished room
@@ -507,9 +522,9 @@ def match_rateYourself(ex_Ten: Tenant, ex_HO: HomeOwner):
         print("Rating Yourself Q24_7 (Smoking) NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
-
+    print(ex_Ten.q24_1)
     #calculate differences
-    tempSum = abs((ex_Ten.q24_1 - ex_HO.q24_1)) + abs((ex_Ten.q24_2 - ex_HO.q24_2)) 
+    tempSum = abs((ex_Ten.q24_1) - ex_HO.q24_1) + abs((ex_Ten.q24_2 - ex_HO.q24_2)) 
     + abs((ex_Ten.q24_3 - ex_HO.q24_3)) + abs((ex_Ten.q24_4 - ex_HO.q24_4)) + abs((ex_Ten.q24_5 - ex_HO.q24_5))
     + abs((ex_Ten.q24_6 - ex_HO.q24_6)) + abs((ex_Ten.q24_7 - ex_HO.q24_7))
     print ('tempSum:', tempSum, '\n')
@@ -614,8 +629,8 @@ def match_RateOthers(ex_Ten: Tenant, ex_HO: HomeOwner):
 def match_TellUs(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match Tell us: UNFINISHED LOGIC")
 
-    print("Tenant tell us about yourself Tenant # ", ex_Ten.appid,": ", ex_Ten.addition_info)
-    print("Home Owner tell us about yourself Home Owner # ", ex_HO.appid,": ", ex_HO.addition_info, '\n')
+    print("Tenant tell us about yourself Tenant # ", ex_Ten.appid,": ", ex_Ten.additional_info)
+    print("Home Owner tell us about yourself Home Owner # ", ex_HO.appid,": ", ex_HO.additional_info, '\n')
 #end match_TellUs()
 
 
@@ -752,7 +767,7 @@ def match_FridayNight(ex_Ten: Tenant, ex_HO: HomeOwner):
 def match_hobbies(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("match hobbies")
 
-    if ex_Ten.q27 == ex_HO.q27:
+    if ex_Ten.hobbies_text == ex_HO.hobbies_text:
         print("Hobbies MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
