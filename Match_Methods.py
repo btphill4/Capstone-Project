@@ -43,10 +43,33 @@ def connect_to_db():
 
 # Input 1: an integer representing the ID of the tenant who needs to match with homeowners
 # Input 2: a cursor object from the connection object
-# Returns: a list of ids that match the city and rent range
+# Returns: nothing but it edits the cursor object
 def initial_filter_db(id, cursor):
-    return cursor.execute(get_sql_query(id))
+    cursor.execute(get_sql_query(id))
 
+# Input 1: an integer representing the ID of the tenant who needs to match with homeowners
+# Input 2: a cursor object from the connection object
+# Returns: nothing but it edits the cursor object
+def homeowner_db(id, cursor):
+    cursor.execute(get_sql_homeowner(id))
+
+# Input 1: a cursor object from the connection object
+# Returns: nothing but it edits the cursor object
+def columns_db(cursor):
+    cursor.execute(get_sql_col_names())
+
+# Input 1: an integer representing the ID of the homeowner
+# Input 2: a cursor object from the connection object
+# Returns: the sql command to get the homeowner information
+def get_sql_homeowner(id):
+    sql_query_p1 = """
+    SELECT *
+    FROM homeownerapp
+    WHERE appid="""
+    return sql_query_p1 + str(id)
+
+# Input: an integer representing the ID of the tenant
+# Returns: the sql command in string form for matching city and rent range 
 def get_sql_query(id):
     sql_query_p1 = """
     SELECT appid
@@ -56,17 +79,26 @@ def get_sql_query(id):
         FROM tenantapp
         WHERE appid="""
     sql_query_p2 = """
-    AND rent_range_end>(
+    )AND rent_range_end>(
         SELECT rent_range_start
         FROM tenantapp
         WHERE appid="""
     sql_query_p3 = """
-    AND city=(
+    )AND city=(
         SELECT city
         FROM tenantapp
         WHERE appid="""
-    return sql_query_p1 + str(1) + sql_query_p2 + str(1) + sql_query_p3 + str(1)
+    sql_query_p4 = """
+    )"""
+    return sql_query_p1 + str(id) + sql_query_p2 + str(id) + sql_query_p3 + str(id) + sql_query_p4
 
+# Input: no input
+# Returns: string for sql command used to get column names
+def get_sql_col_names():
+    return """
+    SELECT *
+    FROM homeownerapp
+    """
 
 def print_list_index(list, x):
     print(list[x], '\n')
