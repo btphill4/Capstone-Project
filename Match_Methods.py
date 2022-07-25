@@ -522,7 +522,8 @@ def match_rateYourself(ex_Ten: Tenant, ex_HO: HomeOwner):
         print("Rating Yourself Q24_7 (Smoking) NOT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
-    print(ex_Ten.q24_1)
+    #print(ex_Ten.q24_1)
+    
     #calculate differences
     tempSum = abs((ex_Ten.q24_1) - ex_HO.q24_1) + abs((ex_Ten.q24_2 - ex_HO.q24_2)) 
     + abs((ex_Ten.q24_3 - ex_HO.q24_3)) + abs((ex_Ten.q24_4 - ex_HO.q24_4)) + abs((ex_Ten.q24_5 - ex_HO.q24_5))
@@ -765,7 +766,7 @@ def match_FridayNight(ex_Ten: Tenant, ex_HO: HomeOwner):
 # Note2: We might be able to add the strings to a set and check for intersection,
 #        i.e. 'I watch TV' vs 'watching TV' will find 'TV' intersection
 def match_hobbies(ex_Ten: Tenant, ex_HO: HomeOwner):
-    print("match hobbies")
+    print("Match hobbies")
 
     if ex_Ten.hobbies_text == ex_HO.hobbies_text:
         print("Hobbies MATCHED with Tenant ID #: ", 
