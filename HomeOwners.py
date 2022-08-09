@@ -82,5 +82,11 @@ class HomeOwner:
         def get_appid(self):
             print("appplication ID: " + self.appid)
 
+        def updateMatchPercent(self, value):
+            self.matchPercent = self.matchPercent + value
+
+        def get_MatchPercent(self):
+            print("Homeowner:", self.appid ,"Match Percent:", self.matchPercent)
+
         #pass avoids empty object error          
         pass

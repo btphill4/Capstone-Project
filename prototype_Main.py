@@ -97,8 +97,10 @@ for uid in howner_list:
     match_FridayNight(ex_Ten, ex_HO)
     match_hobbies(ex_Ten, ex_HO)
     
+    print("\n TOTAL MATCH PERCENT for Homeowner", ex_HO.appid, ":", ex_HO.matchPercent)
     print("""\n##########       END OF RESULTS       ##########\n""")
 
+    
 #HO_list = db_connect()
 #ex_Ten = Tenant(1, 'Phoenix', 600, 900, 'lease', 6, True, 8, 
 #                True, True, 'Dog', True, 'cat', 'Jan 2023',

@@ -128,6 +128,7 @@ def print_list_all(lists):
 
 # 6. What are your typical workday hours and days of the week? Please fill out in the boxes below as such (for example: 9-5, 9am-5pm)
 # Input: Range of numbers(hours) and string days
+# Weight 7%
 
 def match_workSchedule(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match Work Schedule")
@@ -136,12 +137,18 @@ def match_workSchedule(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 7. In which city are you looking to rent? HANDLED WITH SQL
 # Input: string
+# Weight 9%
 
 def match_city(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match city function: ")
 
     if ex_Ten.city == ex_HO.city:
         #match is good
+
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 9
+        
+        #printing test statement
         print("City MATCHED for Tenant ID #: ",
                 ex_Ten.appid, " and HomeOwner ID #: ", 
                 ex_HO.appid, '\n')
@@ -156,11 +163,14 @@ def match_city(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 10. What is the monthly rent range you are looking to pay? HANDLED WITH SQL
 # Input: Range of Numbers 
+# Weight 9%
 
 # ~~~~~~~~~~~ match rent function ~~~~~~~~~~~ #
 # Checks for intersection between HO_rentDB_Set and TEN_rentDB_Set
 # If it found an intersection - add to matched
 # else do nothing -> print not match for testing
+# Weight 9%
+
 def match_rent(ex_Ten: Tenant, ex_HO: HomeOwner):
     # Testing Print Statement
     print("Match Rent: ")
@@ -174,6 +184,9 @@ def match_rent(ex_Ten: Tenant, ex_HO: HomeOwner):
     HORange_set = set(HORange)
     #if match is found
     if TenRange_set.intersection(HORange_set):
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 9
+
         #Print if found (testing)
         print("RENT MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
@@ -182,9 +195,6 @@ def match_rent(ex_Ten: Tenant, ex_HO: HomeOwner):
         # add to matchedDB
 #        global matchedDB, HO_rentDB 
 #        matchedDB = matchedDB + HO_rentDB
-
-        # print updated matchedDB (testing)
-#        print(matchedDB)
 
     #if match is not found     
     else:
@@ -198,11 +208,16 @@ def match_rent(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 14. Are you open to living with someone who may have children?
 # Input: Bool (Yes/No)
+# Weight 7%
 
 def match_livingWithKids(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match open to living with kids: ")
 
     if ex_Ten.live_with_children == ex_HO.live_with_children:
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 7
+
+        #print testing statement
         print("Open to living with kids MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
@@ -216,13 +231,21 @@ def match_livingWithKids(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 13. Do you have any children? 
 # Input: Bool (Yes/No), if yes number input age numbers
+# Weight 6%
+
 def match_HaveKids(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match Have Kids: ")
 
     if ex_Ten.has_children == ex_HO.has_children:
+
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 6
+
         print("Has kids MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid)
+
+        #print HO and Tenant kids ages
         if(ex_Ten.has_children == True):
             print("Tenant #", ex_Ten.appid, "Childeren ages: ", ex_Ten.children_ages)
         if(ex_HO.has_children == True):
@@ -242,6 +265,7 @@ def match_HaveKids(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 16. Are you open to living with someone who has pets? 
 # Input: Bool
+# Weight 5%
 
 def match_livingWithPets(ex_Ten: Tenant, ex_HO: HomeOwner):
     # Testing function print
@@ -249,6 +273,10 @@ def match_livingWithPets(ex_Ten: Tenant, ex_HO: HomeOwner):
 
     #if they are equal, they match
     if ex_Ten.personal_pets_bool == ex_HO.personal_pets_bool:
+
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 5
+
         print("Living with pets MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, '\n')
@@ -263,11 +291,16 @@ def match_livingWithPets(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 15. Do you have any pets?
 # Input: Bool (Yes/No) if yes number input of # of pets and string of types
+# Weight 5%
+
 def match_HavePets(ex_Ten: Tenant, ex_HO: HomeOwner):
     # Testing Function print   
     print("Match have pets: ")
 
     if ex_Ten.personal_pets_bool == ex_HO.personal_pets_bool:
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 5
+
         print("Have pets MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid)
@@ -293,10 +326,14 @@ def match_HavePets(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 17. When would you like to move in?
 # Input: string(month) and number(year) -> Jan 2023
 # Notes: we might be able to use a python library to return number values or something
+# Weight 8%
+
 def match_MoveDate(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match move date UNFINISHED LOGIC: ")
 
     if ex_Ten.move_in_date == ex_HO.move_in_date:
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 5
         print("Move date MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid, "for move in date: ", ex_Ten.move_in_date, '\n')
@@ -310,10 +347,15 @@ def match_MoveDate(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 12. Would you like to rent month to month or on a lease basis?
 # Input: either month-to-month or Lease basis, if lease basis number input for how long
+# Weight 7%
+
 def match_leaseType(ex_Ten: Tenant, ex_HO: HomeOwner):
     #Initial testing print
     print("Match lease type: ")
     if ex_Ten.lease_or_rent == ex_HO.lease_or_rent:
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 7
+
         print("Lease Type MATCHED with Tenant ID #: ", 
         ex_Ten.appid, "and HomeOwner ID #: ", 
         ex_HO.appid)
@@ -331,9 +373,14 @@ def match_leaseType(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 8. Is there a preferred neighborhood you would like to rent within your specified area?
 # Input: String
+# Weight 4.5%
+
 def match_neighborhoodPref(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match neighborhood preference: ")
     if ex_Ten.preferred_neighborhood == ex_HO.preferred_neighborhood:
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 4.5
+
         print("neighborhood MATCHED with Tenant ID #: ",
         ex_Ten.appid, "and HomeOwner ID #: ",
         ex_HO.appid, '\n')
@@ -345,9 +392,14 @@ def match_neighborhoodPref(ex_Ten: Tenant, ex_HO: HomeOwner):
 
 # 9. What is the maximum number of housemates you are willing to live with?
 # Input: 1, 2, 3, 4, 5, 5+
+# Weight 4.5%
+
 def match_MaxRoomates(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Matching max roomates: ")
     if (ex_Ten.max_house_mates <= ex_HO.max_house_mates):
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 4.5
+
         print("max roommates MATCHED",
         ex_Ten.appid, "and HomeOwner ID #: ",
         ex_HO.appid, '\n')
@@ -360,10 +412,15 @@ def match_MaxRoomates(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 11. Please give us a range for the age of the women you would like to co-live with or type “does not matter”
 # Input: Range of numbers(might be check box), or string "does not matter"
 # Current Ranges: 18-20, 21-30, 31-40, 41-50, 50+
+# Weight 3%
+
 def match_AgeRange(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match age range: ")
 
     if ex_Ten.age_range == ex_HO.age_range:
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 3
+
         print("Age Range type MATCHED with Tenant ID #: ",
         ex_Ten.appid, "and HomeOwner ID #: ",
         ex_HO.appid, "for age range: ", ex_Ten.age_range, '\n')
@@ -380,10 +437,15 @@ def match_AgeRange(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 19. What environment would be ideal for you?
 # Input: string: peace and quiet, or someone I can talk to and hang out with, or other
 # Note: Natural Language toolkit for other?
+# Weight 4.5%
+
 def match_SocialEnvironment(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match social enviroment: ")
 
     if ex_Ten.environment_type == ex_HO.environment_type:
+        #add percent to match percent 
+        ex_HO.matchPercent = ex_HO.matchPercent + 4.5
+        
         print("Environment type MATCHED with Tenant ID #: ",
         ex_Ten.appid, "and HomeOwner ID #: ",
         ex_HO.appid, '\n')
@@ -402,6 +464,8 @@ def match_SocialEnvironment(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 0 = 100% 
 # 1 = 80%
 # 2 = 60% ...
+# Weight 4.5%
+
 def match_amenitiesImportance(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("match amenities importance: ")
 
@@ -450,6 +514,8 @@ def match_amenitiesImportance(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 0 = 100% 
 # 1 = 80%
 # 2 = 60% ...
+# Weight 4.5%
+
 def match_rateYourself(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match Rate Yourself: ")
 
@@ -542,6 +608,8 @@ def match_rateYourself(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 0 = 100% 
 # 1 = 80%
 # 2 = 60% ...
+# Weight 4.5%
+
 def match_RateOthers(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match Rate others: ")
 
@@ -627,6 +695,8 @@ def match_RateOthers(ex_Ten: Tenant, ex_HO: HomeOwner):
 # 28. What else would you like us to know about you or about your future housemate(s)?
 # Input: String
 # Note: Natural Language Toolkit?
+# Weight 3%
+
 def match_TellUs(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match Tell us: UNFINISHED LOGIC")
 
@@ -642,6 +712,8 @@ def match_TellUs(ex_Ten: Tenant, ex_HO: HomeOwner):
     #Laid back
     #Other (please specify)
 # Input: check box or string other
+# Weight 1%
+
 def match_personality(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match Personality: ")
     
@@ -700,6 +772,8 @@ def match_personality(ex_Ten: Tenant, ex_HO: HomeOwner):
 #    Other (please specify)
 # Input: Checkbox, string other
 # Note: can make 0 or 1 values for checked\not checked and test equality
+# Weight 1%
+
 def match_FridayNight(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match Friday Night Preference: UNFINISHED LOGIC")
 
@@ -765,6 +839,8 @@ def match_FridayNight(ex_Ten: Tenant, ex_HO: HomeOwner):
 # Note: Natural Language Toolkit, not sure how to approach this one
 # Note2: We might be able to add the strings to a set and check for intersection,
 #        i.e. 'I watch TV' vs 'watching TV' will find 'TV' intersection
+# Weight 1%
+
 def match_hobbies(ex_Ten: Tenant, ex_HO: HomeOwner):
     print("Match hobbies")
 
@@ -780,6 +856,9 @@ def match_hobbies(ex_Ten: Tenant, ex_HO: HomeOwner):
 
     
 #end match_hobbies()
+
+# 22. Which of the following motivates you to participate in co-living? Please check all boxes that apply
+
 
 #~~~~~~~~~ END Matching METHODS ~~~~~~~~~#
 
