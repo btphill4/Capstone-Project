@@ -71,7 +71,6 @@ for uid in howner_list:
     #~~~~~~~~~~ Most important Questions ~~~~~~~~~~#
     print("Tenant ID:", ex_Ten.appid)
     print("HomeOwner ID: ", ex_HO.appid, '\n')
-    
     match_city(ex_Ten, ex_HO)   #Pass
     #match_rent(ex_Ten,ex_HO)    #Pass
     match_livingWithKids(ex_Ten, ex_HO)
