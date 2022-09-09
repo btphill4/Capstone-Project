@@ -105,7 +105,6 @@ for uid in howner_list:
 #ex_Ten = Tenant(1, 'Phoenix', 600, 900, 'lease', 6, True, 8, 
 #                True, True, 'Dog', True, 'cat', 'Jan 2023',
 #                 'what do you do', 'neighborhood', 3, '18-20', 'peace and quiet', 
-#                1, 3, 5, 4, 5, 3, 5, 4, 3, 2,
 #                2, 3, 1, 4, 5, 1, 2, 'additional info for ex_Ten', 
 #                1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 'Camping', 0)
 
