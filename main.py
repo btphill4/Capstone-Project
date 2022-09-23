@@ -27,11 +27,11 @@ from methods import *
 
 
 ex_employer = Employer("Employer_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
-                    1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, "Gardening", 
+                    1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Gardening", "Driving", "Babysitting"], 
                     "348 Wheat Boom Dr #11, Oakville, ON L6H 0V1", 0, 1, 1, 1, 1, 1, 0)
 
 ex_employee = Employee("Employee_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
-                    1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, "Gardening", 
+                    1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Babysitting", "Gardening"] , 
                     "498 Markland St Unit 4, Markham, ON L6C 1Z6, Canada", 0, 1, 1, 1, 1, 1, 0)
 
 # print(ex_employee)

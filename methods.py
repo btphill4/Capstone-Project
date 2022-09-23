@@ -2,8 +2,9 @@
 
 # Install for geopy -> pip install geopy
 # Install for pandas -> pip install pandas
-# from asyncio.windows_events import NULL
 
+# Library imports
+# from asyncio.windows_events import NULL
 from Employer import Employer
 from Employee import Employee
 import psycopg2 
@@ -30,13 +31,23 @@ from geopy import *
 # filter job type i.e. Gardening, etc method
 def filter_jobType(ex_Employee: Employee, ex_Employer: Employer):
     print("filter_jobType() function: \n")
-    if ex_Employee.job_skills == ex_Employer.job_skills:
 
-        # job is matched
-        print("Job Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name +
-                " for job(s): " + ex_Employee.job_skills)
+    jobs_Employee_set = set(ex_Employee.job_skills)
+    jobs_Employer_set = set(ex_Employer.job_skills)
 
-    elif ex_Employee.job_skills != ex_Employer.job_skills:
+    if set(jobs_Employee_set).intersection(jobs_Employer_set):
+        print("SETS MATCHED for: " + ex_Employer.employer_name + " and " + ex_Employee.employee_name)
+        
+        # print("Job Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name +
+        #         " for job(s): " + ex_Employee.job_skills)
+
+    # if ex_Employee.job_skills == ex_Employer.job_skills:
+
+    #     # job is matched
+    #     print("Job Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name +
+    #             " for job(s): " + ex_Employee.job_skills)
+
+    else: #ex_Employee.job_skills != ex_Employer.job_skills:
         print("Jobs NOT Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name)
 
 
