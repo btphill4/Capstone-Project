@@ -3,30 +3,42 @@
 # Install for geopy -> pip install geopy
 # Install for pandas -> pip install pandas
 from asyncio.windows_events import NULL
+
+from Employer import Employer
+from Employee import Employee
 import psycopg2 
 import pandas 
 import numpy
 from geopy import *
 
 # connect to database method (From previous project)
-def connect_to_db():
-    # Database host is database address
-    # Database name is name of database
-    db_host = "ec2-54-165-90-230.compute-1.amazonaws.com"
-    db_name = "d6hp3i25m6gslc"
+# def connect_to_db():
+#     # Database host is database address
+#     # Database name is name of database
+#     db_host = "ec2-54-165-90-230.compute-1.amazonaws.com"
+#     db_name = "d6hp3i25m6gslc"
 
-    # Data base username/pass
-    db_user = "uqqcowyaruajrk"
-    db_pass = "e8828f90c6df41a82eac46bcb552a9cdf32a5b109db1d72ec7cb9ad988030475"
-    db_port = 5432
+#     # Data base username/pass
+#     db_user = "uqqcowyaruajrk"
+#     db_pass = "e8828f90c6df41a82eac46bcb552a9cdf32a5b109db1d72ec7cb9ad988030475"
+#     db_port = 5432
 
-    connect = psycopg2.connect(host=db_host, dbname=db_name, user=db_user, password=db_pass, port=db_port)
-    return connect
+#     connect = psycopg2.connect(host=db_host, dbname=db_name, user=db_user, password=db_pass, port=db_port)
+#     return connect
 
 
 # filter job type i.e. Gardening, etc method
-def filter_jobType():
+def filter_jobType(ex_Employee: Employee, ex_Employer: Employer):
     print("filter_jobType() function: \n")
+    if ex_Employee.job_skills == ex_Employer.job_skills:
+
+        # job is matched
+        print("Job Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name +
+                " for job(s): " + ex_Employee.job_skills)
+
+    elif ex_Employee.job_skills != ex_Employer.job_skills:
+        print("Jobs NOT Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name)
+
 
 
 # filter Day and Time method
