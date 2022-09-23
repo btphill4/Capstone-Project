@@ -1,8 +1,9 @@
 # File to hold our main function that will be ran 
-# from methods import *
 from Employer import Employer
 from Employee import Employee
-from pprint import pprint
+# from pprint import pprint
+from methods import *
+
 
 # from pyscog2 import connect
 
@@ -24,24 +25,12 @@ from pprint import pprint
 # item = cursor.fetchone()
 # curr = dict(zip(col, item))
 
-def filter_jobType(ex_Employee: Employee, ex_Employer: Employer):
-    print("filter_jobType() function: \n")
-    if ex_Employee.job_skills == ex_Employer.job_skills:
 
-        # job is matched
-        print("Job Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name +
-                " for job(s): " + ex_Employee.job_skills)
-
-    elif ex_Employee.job_skills != ex_Employer.job_skills:
-        print("Jobs NOT Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name)
-
-
-
-ex_employer = Employer("Employer1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
+ex_employer = Employer("Employer_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, "Gardening", 
                     "348 Wheat Boom Dr #11, Oakville, ON L6H 0V1", 0, 1, 1, 1, 1, 1, 0)
 
-ex_employee = Employee("Employee1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
+ex_employee = Employee("Employee_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, "Gardening", 
                     "498 Markland St Unit 4, Markham, ON L6C 1Z6, Canada", 0, 1, 1, 1, 1, 1, 0)
 
