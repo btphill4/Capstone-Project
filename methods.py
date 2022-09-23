@@ -36,6 +36,7 @@ def filter_time():
 
 # calculate and filter distance method
 # Run for entire list? or individual?
+# For checking next distance, add class value NewDistance and check if newDistance == NULL at start and then run with newDistance
 def calc_distance():
     print("calc_distance() function: \n")
 
