@@ -25,7 +25,9 @@ from methods import *
 # item = cursor.fetchone()
 # curr = dict(zip(col, item))
 
+# ==============================================================================
 
+# Test objects
 ex_employer = Employer("Employer_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Gardening", "Driving", "Babysitting"], 
                     "348 Wheat Boom Dr #11, Oakville, ON L6H 0V1", 0, 1, 1, 1, 1, 1, 0)
@@ -34,7 +36,12 @@ ex_Worker = Worker("Worker_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0
                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Babysitting", "Gardening"] , 
                     "498 Markland St Unit 4, Markham, ON L6C 1Z6, Canada", 0, 1, 1, 1, 1, 1, 0)
 
+
 # print(ex_Worker)
+
+
+
+# ==============================================================================
 
 # Method Calls
 
@@ -43,6 +50,9 @@ filter_jobType(ex_Worker, ex_employer)
 filter_time(ex_Worker, ex_employer)
 
 calc_distance(ex_Worker, ex_employer)
+
+output()
+# ==============================================================================
 
 # testing geopy -> need to fix "None" in method
 print()
