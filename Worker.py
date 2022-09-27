@@ -1,17 +1,17 @@
-# Employee Class Objects
+# Worker Class Objects
 
 from time import timezone
 
 
-class Employee:
+class Worker:
     #in order based on schema.txt
-    def __init__(self, employee_name, employee_id, timeslot_id, timezone, hour_0, hour_1, hour_2,
+    def __init__(self, worker_name, worker_id, timeslot_id, timezone, hour_0, hour_1, hour_2,
         hour_3, hour_4, hour_5, hour_6, hour_7, hour_8, hour_9, hour_10, hour_11, hour_12,
         hour_13, hour_14, hour_15, hour_16, hour_17, hour_18, hour_19, hour_20, hour_21, hour_22, 
         hour_23, job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday):
 
-        self.employee_name = employee_name
-        self.employee_id = employee_id
+        self.worker_name = worker_name
+        self.worker_id = worker_id
         self.timeslot_id = timeslot_id
         self.timezone = timezone
         self.hour_0 = hour_0

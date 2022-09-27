@@ -1,6 +1,6 @@
 # File to hold our main function that will be ran 
 from Employer import Employer
-from Employee import Employee
+from Worker import Worker
 # from pprint import pprint
 from methods import *
 
@@ -30,23 +30,25 @@ ex_employer = Employer("Employer_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1
                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Gardening", "Driving", "Babysitting"], 
                     "348 Wheat Boom Dr #11, Oakville, ON L6H 0V1", 0, 1, 1, 1, 1, 1, 0)
 
-ex_employee = Employee("Employee_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
+ex_Worker = Worker("Worker_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Babysitting", "Gardening"] , 
                     "498 Markland St Unit 4, Markham, ON L6C 1Z6, Canada", 0, 1, 1, 1, 1, 1, 0)
 
-# print(ex_employee)
+# print(ex_Worker)
 
 # Method Calls
 
-filter_jobType(ex_employee, ex_employer)
+filter_jobType(ex_Worker, ex_employer)
 
-filter_time(ex_employee, ex_employer)
+filter_time(ex_Worker, ex_employer)
 
-calc_distance(ex_employee, ex_employer)
+calc_distance(ex_Worker, ex_employer)
 
 # testing geopy -> need to fix "None" in method
-print(ex_employee.address)
-ex_employee_add = ex_employee.address
-print(ex_employee_add)
-employee_Location = geolocater.geocode(ex_employee_add)
-print(employee_Location)
+print()
+print(ex_Worker.address)
+ex_Worker_add = ex_Worker.address
+print(ex_Worker_add)
+
+Worker_Location = geolocater.geocode(ex_Worker_add)
+print(Worker_Location)

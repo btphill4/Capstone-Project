@@ -6,7 +6,7 @@
 # Library imports
 # from asyncio.windows_events import NULL
 from Employer import Employer
-from Employee import Employee
+from Worker import Worker
 import psycopg2 
 import pandas 
 import numpy
@@ -35,50 +35,58 @@ geolocater = Nominatim(user_agent="http")
 
 
 # filter job type i.e. Gardening, etc method
-def filter_jobType(ex_Employee: Employee, ex_Employer: Employer):
+def filter_jobType(ex_Worker: Worker, ex_Employer: Employer):
     print("filter_jobType() function: \n")
 
-    jobs_Employee_set = set(ex_Employee.job_skills)
+    jobs_Worker_set = set(ex_Worker.job_skills)
     jobs_Employer_set = set(ex_Employer.job_skills)
 
-    if set(jobs_Employee_set).intersection(jobs_Employer_set):
-        print("SETS MATCHED for: " + ex_Employer.employer_name + " and " + ex_Employee.employee_name + "\n")
+    if set(jobs_Worker_set).intersection(jobs_Employer_set):
+        print("SETS MATCHED for: " + ex_Employer.employer_name + " and " + ex_Worker.worker_name + "\n")
 
-        # print("Job Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name +
-        #         " for job(s): " + ex_Employee.job_skills)
+        # print("Job Matched for: " + ex_Worker.worker_name + " and " + ex_Employer.employer_name +
+        #         " for job(s): " + ex_Worker.job_skills)
 
-    # if ex_Employee.job_skills == ex_Employer.job_skills:
+    # if ex_Worker.job_skills == ex_Employer.job_skills:
 
     #     # job is matched
-    #     print("Job Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name +
-    #             " for job(s): " + ex_Employee.job_skills)
+    #     print("Job Matched for: " + ex_Worker.worker_name + " and " + ex_Employer.employer_name +
+    #             " for job(s): " + ex_Worker.job_skills)
 
-    else: #ex_Employee.job_skills != ex_Employer.job_skills:
-        print("Jobs NOT Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name + "\n")
+    else: #ex_Worker.job_skills != ex_Employer.job_skills:
+        print("Jobs NOT Matched for: " + ex_Worker.worker_name + " and " + ex_Employer.employer_name + "\n")
 
 
 
 # filter Day and Time method
-def filter_time(ex_Employee: Employee, ex_Employer: Employer):
+def filter_time(ex_Worker: Worker, ex_Employer: Employer):
     print("filter_time() function: \n")
 
 
 # calculate and filter distance method
+# limit distance to 20 miles or less -> if more than 20, remove from list
 # Run for entire list? or individual?
 # For checking next distance, add class value NewDistance and check if newDistance == NULL at start and then run with newDistance
-def calc_distance(ex_Employee: Employee, ex_Employer: Employer):
+def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
     print("calc_distance() function: \n")
 
+    # Testing 
+    print("Worker Address test:")
+    print(ex_Worker.address)
+
+    print("\nEmployer Address Test: ")
+    print(ex_Employer.address)
+
     # set address to temp location variables
-    employee_Location = geolocater.geocode(ex_Employee.address)
+    Worker_Location = geolocater.geocode(ex_Worker.address)
     employer_Location = geolocater.geocode(ex_Employer.address)
 
-    print("Employee Address: ")
-    print(employee_Location )
+    print("Worker Address: ")
+    print(Worker_Location )
     print("\nEmployer Address: " )
     print(employer_Location)
 
-    # print("Distance in miles: " + str("{:.2f}".format(GD((employee_Location.latitude, employee_Location.longitude), 
+    # print("Distance in miles: " + str("{:.2f}".format(GD((Worker_Location.latitude, Worker_Location.longitude), 
     # (employer_Location.latitude, employer_Location.longitude)).miles)) + " miles")
 
 

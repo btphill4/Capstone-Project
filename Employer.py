@@ -52,6 +52,7 @@ class Employer:
         
         #class methods if needed here
         def addressToString(self):
+            print("Employer address: " + self.address)
             tempAddress = self.address
             return tempAddress
         # def get_appid(self):
