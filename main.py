@@ -39,3 +39,14 @@ ex_employee = Employee("Employee_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1
 # Method Calls
 
 filter_jobType(ex_employee, ex_employer)
+
+filter_time(ex_employee, ex_employer)
+
+calc_distance(ex_employee, ex_employer)
+
+# testing geopy -> need to fix "None" in method
+print(ex_employee.address)
+ex_employee_add = ex_employee.address
+print(ex_employee_add)
+employee_Location = geolocater.geocode(ex_employee_add)
+print(employee_Location)

@@ -11,6 +11,12 @@ import psycopg2
 import pandas 
 import numpy
 from geopy import *
+from geopy.geocoders import Nominatim
+from geopy.distance import geodesic as GD
+from geopy import distance
+
+geolocater = Nominatim(user_agent="http")
+
 
 # connect to database method (From previous project)
 # def connect_to_db():
@@ -36,8 +42,8 @@ def filter_jobType(ex_Employee: Employee, ex_Employer: Employer):
     jobs_Employer_set = set(ex_Employer.job_skills)
 
     if set(jobs_Employee_set).intersection(jobs_Employer_set):
-        print("SETS MATCHED for: " + ex_Employer.employer_name + " and " + ex_Employee.employee_name)
-        
+        print("SETS MATCHED for: " + ex_Employer.employer_name + " and " + ex_Employee.employee_name + "\n")
+
         # print("Job Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name +
         #         " for job(s): " + ex_Employee.job_skills)
 
@@ -48,20 +54,33 @@ def filter_jobType(ex_Employee: Employee, ex_Employer: Employer):
     #             " for job(s): " + ex_Employee.job_skills)
 
     else: #ex_Employee.job_skills != ex_Employer.job_skills:
-        print("Jobs NOT Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name)
+        print("Jobs NOT Matched for: " + ex_Employee.employee_name + " and " + ex_Employer.employer_name + "\n")
 
 
 
 # filter Day and Time method
-def filter_time():
+def filter_time(ex_Employee: Employee, ex_Employer: Employer):
     print("filter_time() function: \n")
 
 
 # calculate and filter distance method
 # Run for entire list? or individual?
 # For checking next distance, add class value NewDistance and check if newDistance == NULL at start and then run with newDistance
-def calc_distance():
+def calc_distance(ex_Employee: Employee, ex_Employer: Employer):
     print("calc_distance() function: \n")
+
+    # set address to temp location variables
+    employee_Location = geolocater.geocode(ex_Employee.address)
+    employer_Location = geolocater.geocode(ex_Employer.address)
+
+    print("Employee Address: ")
+    print(employee_Location )
+    print("\nEmployer Address: " )
+    print(employer_Location)
+
+    # print("Distance in miles: " + str("{:.2f}".format(GD((employee_Location.latitude, employee_Location.longitude), 
+    # (employer_Location.latitude, employer_Location.longitude)).miles)) + " miles")
+
 
 
 # output?
