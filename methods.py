@@ -37,8 +37,8 @@ geolocater = Nominatim(user_agent="http")
 
 # filter job type i.e. Gardening, etc method
 def filter_jobType(ex_Worker: Worker, ex_Employer: Employer):
-    print("filter_jobType() function for Worker " + ex_Worker.worker_name + 
-                " and Employer " + ex_Employer.employer_name + "\n")
+    print("Filter_jobType() function for Worker " + ex_Worker.worker_name + 
+                " and Employer " + ex_Employer.employer_name + ":\n")
 
     jobs_Worker_set = set(ex_Worker.job_skills)
     jobs_Employer_set = set(ex_Employer.job_skills)
@@ -58,8 +58,8 @@ def filter_jobType(ex_Worker: Worker, ex_Employer: Employer):
 
 # filter Day and Time method
 def filter_time(ex_Worker: Worker, ex_Employer: Employer):
-    print("filter_time() function for Worker " + ex_Worker.worker_name + 
-                " and Employer " + ex_Employer.employer_name + "\n")
+    print("Filter_time() function for Worker " + ex_Worker.worker_name + 
+                " and Employer " + ex_Employer.employer_name + ":\n")
 
 # ==============================================================================================
 
@@ -69,7 +69,7 @@ def filter_time(ex_Worker: Worker, ex_Employer: Employer):
 # For checking next distance, add class value NewDistance and check if newDistance == NULL at start and then run with newDistance
 def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
     print("calc_distance() function for Worker " + ex_Worker.worker_name + 
-                " and Employer " + ex_Employer.employer_name + "\n")
+                " and Employer " + ex_Employer.employer_name + ":\n")
 
     # Testing 
     # print("Worker Address test:")
@@ -91,7 +91,7 @@ def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
     # Distance is less than 20 miles check
     if GD((worker_Location.latitude, worker_Location.longitude), 
         (employer_Location.latitude, employer_Location.longitude)).miles >= 20:
-        print("Distance in miles is greater than 20\n")
+        print("\nDistance in miles is greater than 20\n")
     else:
         print("\nDistance in miles: " + str("{:.2f}".format(GD((worker_Location.latitude, worker_Location.longitude), 
         (employer_Location.latitude, employer_Location.longitude)).miles)) + " miles\n")
@@ -102,7 +102,7 @@ def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
 
 # output?
 def output():
-    print("Output() function: \n")
+    print("Output() function: STILL IN PROGRESS\n")
 
 
 

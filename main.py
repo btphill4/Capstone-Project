@@ -51,16 +51,16 @@ ex_Worker1 = Worker("Worker_2", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 
 
 # Method Calls
 print("==============================================================================================\n")
-print("Begin Filtering\n")
+print("Begin Filtering for " + ex_Worker.worker_name + " and " + ex_employer.employer_name + ":\n")
 
 filter_jobType(ex_Worker, ex_employer)
 
 filter_time(ex_Worker, ex_employer)
 
 calc_distance(ex_Worker, ex_employer)
-
+print("End Filtering Iteration # \n")
 print("==============================================================================================\n")
-print("Filter 2")
+print("Filter Iteration # for " + ex_Worker.worker_name + " and " + ex_employer.employer_name + ":\n")
 
 filter_jobType(ex_Worker1, ex_employer)
 
@@ -69,6 +69,9 @@ filter_time(ex_Worker1, ex_employer)
 calc_distance(ex_Worker1, ex_employer)
 
 output()
+print("End Filtering Iteration # \n")
+print("==============================================================================================")
+
 # ==============================================================================
 
 # testing geopy -> need to fix "None" in method
