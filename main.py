@@ -25,17 +25,23 @@ from methods import *
 # item = cursor.fetchone()
 # curr = dict(zip(col, item))
 
+
+
 # ==============================================================================
 
 # Test objects
 ex_employer = Employer("Employer_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Gardening", "Driving", "Babysitting"], 
-                    "348 Wheat Boom Dr #11, Oakville, ON L6H 0V1", 0, 1, 1, 1, 1, 1, 0)
+                    "2083 Palmer Avenue", 0, 1, 1, 1, 1, 1, 0)
 
 ex_Worker = Worker("Worker_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Babysitting", "Gardening", "Cooking"] , 
-                    "498 Markland St Unit 4, Markham, ON L6C 1Z6, Canada", 0, 1, 1, 1, 1, 1, 0)
+                    "2064 Maywood St", 0, 1, 1, 1, 1, 1, 0)
 
+# alternate worker -> different jobs -> distance > 20 miles
+ex_Worker1 = Worker("Worker_2", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
+                    1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Cooking"] , 
+                    "145 Roe Ave", 0, 1, 1, 1, 1, 1, 0)
 
 # print(ex_Worker)
 
@@ -44,12 +50,23 @@ ex_Worker = Worker("Worker_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0
 # ==============================================================================
 
 # Method Calls
+print("==============================================================================================\n")
+print("Begin Filtering\n")
 
 filter_jobType(ex_Worker, ex_employer)
 
 filter_time(ex_Worker, ex_employer)
 
-# calc_distance(ex_Worker, ex_employer)
+calc_distance(ex_Worker, ex_employer)
+
+print("==============================================================================================\n")
+print("Filter 2")
+
+filter_jobType(ex_Worker1, ex_employer)
+
+filter_time(ex_Worker1, ex_employer)
+
+calc_distance(ex_Worker1, ex_employer)
 
 output()
 # ==============================================================================

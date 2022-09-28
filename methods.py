@@ -33,10 +33,12 @@ geolocater = Nominatim(user_agent="http")
 #     connect = psycopg2.connect(host=db_host, dbname=db_name, user=db_user, password=db_pass, port=db_port)
 #     return connect
 
+# ==============================================================================================
 
 # filter job type i.e. Gardening, etc method
 def filter_jobType(ex_Worker: Worker, ex_Employer: Employer):
-    print("filter_jobType() function: \n")
+    print("filter_jobType() function for Worker " + ex_Worker.worker_name + 
+                " and Employer " + ex_Employer.employer_name + "\n")
 
     jobs_Worker_set = set(ex_Worker.job_skills)
     jobs_Employer_set = set(ex_Employer.job_skills)
@@ -52,40 +54,51 @@ def filter_jobType(ex_Worker: Worker, ex_Employer: Employer):
         print("Available jobs for Employer " + ex_Employer.employer_name + ": " 
                         + str(ex_Employer.job_skills) + "\n")
 
+# ==============================================================================================
 
 # filter Day and Time method
 def filter_time(ex_Worker: Worker, ex_Employer: Employer):
-    print("filter_time() function: \n")
+    print("filter_time() function for Worker " + ex_Worker.worker_name + 
+                " and Employer " + ex_Employer.employer_name + "\n")
 
+# ==============================================================================================
 
 # calculate and filter distance method
 # limit distance to 20 miles or less -> if more than 20, remove from list
 # Run for entire list? or individual?
 # For checking next distance, add class value NewDistance and check if newDistance == NULL at start and then run with newDistance
 def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
-    print("calc_distance() function: \n")
+    print("calc_distance() function for Worker " + ex_Worker.worker_name + 
+                " and Employer " + ex_Employer.employer_name + "\n")
 
     # Testing 
-    print("Worker Address test:")
-    print(ex_Worker.address)
+    # print("Worker Address test:")
+    # print(ex_Worker.address)
 
-    print("\nEmployer Address Test: ")
-    print(ex_Employer.address)
+    # print("\nEmployer Address Test: ")
+    # print(ex_Employer.address)
     
     # set address to temp location variables
     worker_Location = geolocater.geocode(ex_Worker.address)
     employer_Location = geolocater.geocode(ex_Employer.address)
     
 
-    print("\nWorker Address: ")
+    print("Worker Address: ")
     print(worker_Location )
     print("\nEmployer Address: " )
     print(employer_Location)
 
-    # print("Distance in miles: " + str("{:.2f}".format(GD((worker_Location.latitude, worker_Location.longitude), 
-    # (employer_Location.latitude, employer_Location.longitude)).miles)) + " miles")
+    # Distance is less than 20 miles check
+    if GD((worker_Location.latitude, worker_Location.longitude), 
+        (employer_Location.latitude, employer_Location.longitude)).miles >= 20:
+        print("Distance in miles is greater than 20\n")
+    else:
+        print("\nDistance in miles: " + str("{:.2f}".format(GD((worker_Location.latitude, worker_Location.longitude), 
+        (employer_Location.latitude, employer_Location.longitude)).miles)) + " miles\n")
+        print("Distance in Kilometers: " + str("{:.2f}".format(GD((worker_Location.latitude, worker_Location.longitude), 
+        (employer_Location.latitude, employer_Location.longitude)).kilometers)) + " KM\n")
 
-
+# ==============================================================================================
 
 # output?
 def output():
