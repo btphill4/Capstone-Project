@@ -33,7 +33,7 @@ ex_employer = Employer("Employer_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1
                     "348 Wheat Boom Dr #11, Oakville, ON L6H 0V1", 0, 1, 1, 1, 1, 1, 0)
 
 ex_Worker = Worker("Worker_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
-                    1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Babysitting", "Gardening"] , 
+                    1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Babysitting", "Gardening", "Cooking"] , 
                     "498 Markland St Unit 4, Markham, ON L6C 1Z6, Canada", 0, 1, 1, 1, 1, 1, 0)
 
 
@@ -49,16 +49,16 @@ filter_jobType(ex_Worker, ex_employer)
 
 filter_time(ex_Worker, ex_employer)
 
-calc_distance(ex_Worker, ex_employer)
+# calc_distance(ex_Worker, ex_employer)
 
 output()
 # ==============================================================================
 
 # testing geopy -> need to fix "None" in method
 print()
-print(ex_Worker.address)
-ex_Worker_add = ex_Worker.address
-print(ex_Worker_add)
+# print(ex_Worker.address)
+# ex_Worker_add = ex_Worker.address
+# print(ex_Worker_add)
 
-Worker_Location = geolocater.geocode(ex_Worker_add)
-print(Worker_Location)
+# Worker_Location = geolocater.geocode(ex_Worker_add)
+# print(Worker_Location)

@@ -41,21 +41,16 @@ def filter_jobType(ex_Worker: Worker, ex_Employer: Employer):
     jobs_Worker_set = set(ex_Worker.job_skills)
     jobs_Employer_set = set(ex_Employer.job_skills)
 
-    if set(jobs_Worker_set).intersection(jobs_Employer_set):
-        print("SETS MATCHED for: " + ex_Employer.employer_name + " and " + ex_Worker.worker_name + "\n")
-
-        # print("Job Matched for: " + ex_Worker.worker_name + " and " + ex_Employer.employer_name +
-        #         " for job(s): " + ex_Worker.job_skills)
-
-    # if ex_Worker.job_skills == ex_Employer.job_skills:
-
-    #     # job is matched
-    #     print("Job Matched for: " + ex_Worker.worker_name + " and " + ex_Employer.employer_name +
-    #             " for job(s): " + ex_Worker.job_skills)
+    if jobs_Worker_set.intersection(jobs_Employer_set):
+        print("SETS MATCHED for: " + ex_Employer.employer_name + " and " + ex_Worker.worker_name)
+        print("For jobs: " + str(jobs_Employer_set.intersection(jobs_Worker_set)))
+        print()
 
     else: #ex_Worker.job_skills != ex_Employer.job_skills:
         print("Jobs NOT Matched for: " + ex_Worker.worker_name + " and " + ex_Employer.employer_name + "\n")
-
+        print("Available jobs for Worker " + ex_Worker.worker_name + ": " + str(ex_Worker.job_skills) + "\n")
+        print("Available jobs for Employer " + ex_Employer.employer_name + ": " 
+                        + str(ex_Employer.job_skills) + "\n")
 
 
 # filter Day and Time method
@@ -76,17 +71,18 @@ def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
 
     print("\nEmployer Address Test: ")
     print(ex_Employer.address)
-
+    
     # set address to temp location variables
-    Worker_Location = geolocater.geocode(ex_Worker.address)
+    worker_Location = geolocater.geocode(ex_Worker.address)
     employer_Location = geolocater.geocode(ex_Employer.address)
+    
 
-    print("Worker Address: ")
-    print(Worker_Location )
+    print("\nWorker Address: ")
+    print(worker_Location )
     print("\nEmployer Address: " )
     print(employer_Location)
 
-    # print("Distance in miles: " + str("{:.2f}".format(GD((Worker_Location.latitude, Worker_Location.longitude), 
+    # print("Distance in miles: " + str("{:.2f}".format(GD((worker_Location.latitude, worker_Location.longitude), 
     # (employer_Location.latitude, employer_Location.longitude)).miles)) + " miles")
 
 
