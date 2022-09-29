@@ -115,11 +115,16 @@ def get_route(ex_Worker: Worker, ex_Employer: Employer):
            'end_point':end_point,
            'distance':distance
           }
+
+    # set distance to miles and kilometers
     distance_Miles = getMetersToMiles(distance)
     distance_Kilometers = getMetersToKilometers(distance)
-    # str("{:.2f}".format(
+
+    # print output -> remove for final product?
     print("Distance in miles: " + str("{:.2f}".format(distance_Miles)) + " Miles")
     print("Distance in kilometers: " + str("{:.2f}".format(distance_Kilometers)) + " Kilometers\n")
+
+    # return everything -> maybe change to just return distance
     return out
 
 # method for printing to a map
