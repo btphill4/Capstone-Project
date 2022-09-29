@@ -3,7 +3,7 @@ from Employer import Employer
 from Worker import Worker
 # from pprint import pprint
 from methods import *
-
+import time
 
 # from pyscog2 import connect
 
@@ -30,7 +30,7 @@ from methods import *
 # ==============================================================================
 
 # Test objects
-ex_employer = Employer("Employer_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
+ex_Employer = Employer("Employer_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Gardening", "Driving", "Babysitting"], 
                     "2083 Palmer Avenue", 0, 1, 1, 1, 1, 1, 0)
 
@@ -51,22 +51,31 @@ ex_Worker1 = Worker("Worker_2", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 
 
 # Method Calls
 print("==============================================================================================\n")
-print("Begin Filtering for " + ex_Worker.worker_name + " and " + ex_employer.employer_name + ":\n")
+print("Begin Filtering for " + ex_Worker.worker_name + " and " + ex_Employer.employer_name + ":\n")
 
-filter_jobType(ex_Worker, ex_employer)
+filter_jobType(ex_Worker, ex_Employer)
 
-filter_time(ex_Worker, ex_employer)
+filter_time(ex_Worker, ex_Employer)
 
-calc_distance(ex_Worker, ex_employer)
+get_route(ex_Worker, ex_Employer)
+
+# calc_distance(ex_Worker, ex_Employer)
 print("End Filtering Iteration # \n")
+
+
 print("==============================================================================================\n")
-print("Filter Iteration # for " + ex_Worker.worker_name + " and " + ex_employer.employer_name + ":\n")
+print("Filter Iteration # for " + ex_Worker.worker_name + " and " + ex_Employer.employer_name + ":\n")
 
-filter_jobType(ex_Worker1, ex_employer)
+# sleep for API call restriction
+time.sleep(1)
 
-filter_time(ex_Worker1, ex_employer)
+filter_jobType(ex_Worker1, ex_Employer)
 
-calc_distance(ex_Worker1, ex_employer)
+filter_time(ex_Worker1, ex_Employer)
+
+get_route(ex_Worker1, ex_Employer)
+
+# calc_distance(ex_Worker1, ex_Employer)
 
 output()
 print("End Filtering Iteration # \n")

@@ -14,7 +14,11 @@ from geopy import *
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic as GD
 from geopy import distance
+import requests
+import folium
+import polyline
 
+# Uses https://nominatim.openstreetmap.org/ui/search.html 
 geolocater = Nominatim(user_agent="http")
 
 
@@ -63,7 +67,89 @@ def filter_time(ex_Worker: Worker, ex_Employer: Employer):
 
 # ==============================================================================================
 
+# Methods for calc_distance
+# getMetersToMiles() used for get_Route
+def getMetersToMiles(meters):
+    return meters*0.000621371192
+
+def getMetersToKilometers(meters):
+    return meters/1000
+
+# get_route calculates the distance from one point to another
+def get_route(ex_Worker: Worker, ex_Employer: Employer):
+    print("get_route() function: for Worker " + ex_Worker.worker_name + 
+                " and Employer " + ex_Employer.employer_name + ":\n")
+
+    # Set Worker/Employer Addresses to extract latidude/longitude
+    worker_Location = geolocater.geocode(ex_Worker.address)
+    employer_Location = geolocater.geocode(ex_Employer.address)
+
+    # Address testing 
+    # print("Worker Address: ")
+    # print(worker_Location )
+    # print("\nEmployer Address: " )
+    # print(employer_Location)
+
+    # Worker Longitude and latidute -> pickup/starting
+    pickup_long = worker_Location.longitude
+    pickup_lat = worker_Location.latitude
+
+    # Employer Longitude and latitude
+    dropoff_lon = employer_Location.longitude
+    dropoff_lat = employer_Location.latitude
+
+    loc = "{},{};{},{}".format(pickup_long, pickup_lat, dropoff_lon, dropoff_lat)
+    url = "https://router.project-osrm.org/route/v1/driving/"
+    r = requests.get(url + loc) 
+    if r.status_code!= 200:
+        return {}
+  
+    res = r.json()   
+    routes = polyline.decode(res['routes'][0]['geometry'])
+    start_point = [res['waypoints'][0]['location'][1], res['waypoints'][0]['location'][0]]
+    end_point = [res['waypoints'][1]['location'][1], res['waypoints'][1]['location'][0]]
+    distance = res['routes'][0]['distance']
+    
+    out = {'route':routes,
+           'start_point':start_point,
+           'end_point':end_point,
+           'distance':distance
+          }
+    distance_Miles = getMetersToMiles(distance)
+    distance_Kilometers = getMetersToKilometers(distance)
+    # str("{:.2f}".format(
+    print("Distance in miles: " + str("{:.2f}".format(distance_Miles)) + " Miles")
+    print("Distance in kilometers: " + str("{:.2f}".format(distance_Kilometers)) + " Kilometers\n")
+    return out
+
+# method for printing to a map
+# def get_map(route):
+    
+#     m = folium.Map(location=[(route['start_point'][0] + route['end_point'][0])/2, 
+#                              (route['start_point'][1] + route['end_point'][1])/2], 
+#                    zoom_start=13)
+
+#     folium.PolyLine(
+#         route['route'],
+#         weight=8,
+#         color='blue',
+#         opacity=0.6
+#     ).add_to(m)
+
+#     folium.Marker(
+#         location=route['start_point'],
+#         icon=folium.Icon(icon='play', color='green')
+#     ).add_to(m)
+
+#     folium.Marker(
+#         location=route['end_point'],
+#         icon=folium.Icon(icon='stop', color='red')
+#     ).add_to(m)
+
+#     return m
+
 # calculate and filter distance method
+# Uses https://nominatim.openstreetmap.org/ui/search.html
 # limit distance to 20 miles or less -> if more than 20, remove from list
 # Run for entire list? or individual?
 # For checking next distance, add class value NewDistance and check if newDistance == NULL at start and then run with newDistance
@@ -82,16 +168,19 @@ def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
     worker_Location = geolocater.geocode(ex_Worker.address)
     employer_Location = geolocater.geocode(ex_Employer.address)
     
-
-    print("Worker Address: ")
-    print(worker_Location )
-    print("\nEmployer Address: " )
-    print(employer_Location)
+    # Used for testing
+    # print("Worker Address: ")
+    # print(worker_Location )
+    # print("\nEmployer Address: " )
+    # print(employer_Location)
 
     # Distance is less than 20 miles check
+    # Check if greater than 20 miles
     if GD((worker_Location.latitude, worker_Location.longitude), 
         (employer_Location.latitude, employer_Location.longitude)).miles >= 20:
         print("\nDistance in miles is greater than 20\n")
+
+    # else return the distance
     else:
         print("\nDistance in miles: " + str("{:.2f}".format(GD((worker_Location.latitude, worker_Location.longitude), 
         (employer_Location.latitude, employer_Location.longitude)).miles)) + " miles\n")
