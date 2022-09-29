@@ -59,6 +59,9 @@ filter_time(ex_Worker, ex_Employer)
 
 get_route(ex_Worker, ex_Employer)
 
+# for time checking get_route
+# tic = time.perf_counter()
+
 # calc_distance(ex_Worker, ex_Employer)
 print("End Filtering Iteration # \n")
 
@@ -66,10 +69,14 @@ print("End Filtering Iteration # \n")
 print("==============================================================================================\n")
 print("Filter Iteration # for " + ex_Worker.worker_name + " and " + ex_Employer.employer_name + ":\n")
 
-# sleep for API call restriction
+# sleep for API call restriction 1 second restriction
 time.sleep(1)
 
 filter_jobType(ex_Worker1, ex_Employer)
+
+# # Check time for API calls
+# toc = time.perf_counter()
+# print(f"Time between computations: {toc-tic:0.5f} seconds\n")
 
 filter_time(ex_Worker1, ex_Employer)
 
