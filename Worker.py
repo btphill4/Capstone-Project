@@ -2,7 +2,7 @@
 
 from time import timezone
 
-
+# change to helper
 class Worker:
     #in order based on schema.txt
     def __init__(self, worker_name, worker_id, timeslot_id, timezone, hour_0, hour_1, hour_2,
