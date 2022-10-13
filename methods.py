@@ -65,6 +65,7 @@ def filter_time(ex_Worker: Worker, ex_Employer: Employer):
     print("Filter_time() function for Worker " + ex_Worker.worker_name + 
                 " and Employer " + ex_Employer.employer_name + ":\n")
 
+    
 # ==============================================================================================
 
 # Methods for calc_distance
@@ -126,6 +127,8 @@ def get_route(ex_Worker: Worker, ex_Employer: Employer):
 
     # return everything -> maybe change to just return distance
     return out
+
+# ==============================================================================================
 
 # method for printing to a map
 # def get_map(route):
@@ -191,6 +194,43 @@ def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
         (employer_Location.latitude, employer_Location.longitude)).miles)) + " miles\n")
         print("Distance in Kilometers: " + str("{:.2f}".format(GD((worker_Location.latitude, worker_Location.longitude), 
         (employer_Location.latitude, employer_Location.longitude)).kilometers)) + " KM\n")
+
+# ==============================================================================================
+
+def filter_days(ex_Worker: Worker, ex_Employer: Employer):
+    print("calc_days() function for Worker " + ex_Worker.worker_name + 
+                " and Employer " + ex_Employer.employer_name + ":\n")
+    # Check each day
+    if ex_Worker.sunday == ex_Employer.sunday:
+        print("Sunday Matched")
+    else:
+        print("Sunday Not Matched")
+    if ex_Worker.monday == ex_Employer.monday:
+        print("Monday Matched")
+    else:
+        print("Monday NOT Matched")
+    if ex_Worker.tuesday == ex_Employer.tuesday:
+        print("Tuesday Matched")
+    else:
+        print("Tuesday NOT Matched")
+    if ex_Worker.wednesday == ex_Employer.wednesday:
+        print("Wednesday Matched")
+    else:
+        print("Wednesday Not Matched")
+    if ex_Worker.thursday == ex_Employer.thursday:
+        print("Thursday Matched")
+    else:
+        print("Thursday Not Matched")
+    if ex_Worker.friday == ex_Employer.friday:
+        print("Friday Matched")
+    else:
+        print("Friday Not Matched")
+    if ex_Worker.saturday == ex_Employer.saturday:
+        print("Saturday Matched")
+    else:
+        print("Saturday Not Matched")
+
+    print()
 
 # ==============================================================================================
 

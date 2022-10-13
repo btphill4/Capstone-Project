@@ -30,20 +30,29 @@ import time
 # ==============================================================================
 
 # Test objects
-ex_Employer = Employer("Employer_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
-                    1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Gardening", "Driving", "Babysitting"], 
-                    "2083 Palmer Avenue", 0, 1, 1, 1, 1, 1, 0)
+# ex_Employer = Employer("Employer_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
+#                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Gardening", "Driving", "Babysitting"], 
+#                     "2083 Palmer Avenue", 0, 1, 1, 1, 1, 1, 0)
 
-ex_Worker = Worker("Worker_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
-                    1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Babysitting", "Gardening", "Cooking"] , 
-                    "2064 Maywood St", 0, 1, 1, 1, 1, 1, 0)
+# ex_Worker = Worker("Worker_1", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
+#                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Babysitting", "Gardening", "Cooking"] , 
+#                     "2064 Maywood St", 0, 1, 1, 1, 1, 1, 0)
 
-# alternate worker -> different jobs -> distance > 20 miles
-ex_Worker1 = Worker("Worker_2", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
-                    1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Cooking"] , 
-                    "145 Roe Ave", 0, 1, 1, 1, 1, 1, 0)
+# # alternate worker -> different jobs -> distance > 20 miles
+# ex_Worker1 = Worker("Worker_2", 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 
+#                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Cooking"] , 
+#                     "145 Roe Ave", 0, 1, 1, 1, 1, 1, 0)
 
-# print(ex_Worker)
+ex_Employer1 = Employer("Employer_2", 2, 1, 0, 8, 13, ["Gardening", "Driving", "Babysitting"],
+                    "3041 RIDGETOP ROAD Ottawa, Ontario K0A1T0", 0, 1, 1, 1, 1, 1, 0 )
+
+ex_Worker2 = Worker("Worker2", 3, 1, 0,  10, 13, ["Babysitting", "Gardening", "Cooking"], 
+                    "70 RALLIDALE STREET Ottawa", 0, 0, 1, 1, 0, 1, 0 )
+
+ex_Worker3 = Worker("Worker3", 3, 0, 0, 15, 18, ["Cooking"], 
+                    "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0 )
+
+# print(ex_Worker)["Babysitting", "Gardening", "Cooking"], 
 
 
 
@@ -51,13 +60,15 @@ ex_Worker1 = Worker("Worker_2", 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 
 
 # Method Calls
 print("==============================================================================================\n")
-print("Begin Filtering for " + ex_Worker.worker_name + " and " + ex_Employer.employer_name + ":\n")
+print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer1.employer_name + ":\n")
 
-filter_jobType(ex_Worker, ex_Employer)
+filter_jobType(ex_Worker2, ex_Employer1)
 
-filter_time(ex_Worker, ex_Employer)
+filter_days(ex_Worker2, ex_Employer1)
 
-get_route(ex_Worker, ex_Employer)
+filter_time(ex_Worker2, ex_Employer1)
+
+get_route(ex_Worker2, ex_Employer1)
 
 # for time checking get_route
 # tic = time.perf_counter()
@@ -67,20 +78,22 @@ print("End Filtering Iteration # \n")
 
 
 print("==============================================================================================\n")
-print("Filter Iteration # for " + ex_Worker.worker_name + " and " + ex_Employer.employer_name + ":\n")
+print("Filter Iteration # for " + ex_Worker3.worker_name + " and " + ex_Employer1.employer_name + ":\n")
 
 # sleep for API call restriction 1 second restriction
 time.sleep(1)
 
-filter_jobType(ex_Worker1, ex_Employer)
+filter_jobType(ex_Worker3, ex_Employer1)
 
 # # Check time for API calls
 # toc = time.perf_counter()
 # print(f"Time between computations: {toc-tic:0.5f} seconds\n")
 
-filter_time(ex_Worker1, ex_Employer)
+filter_days(ex_Worker3, ex_Employer1)
 
-get_route(ex_Worker1, ex_Employer)
+filter_time(ex_Worker3, ex_Employer1)
+
+get_route(ex_Worker3, ex_Employer1)
 
 # calc_distance(ex_Worker1, ex_Employer)
 
