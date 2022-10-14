@@ -54,7 +54,16 @@ ex_Worker3 = Worker("Worker3", 3, 0, 0, 15, 18, ["Cooking"],
 
 # print(ex_Worker)["Babysitting", "Gardening", "Cooking"], 
 
+# ==============================================================================
 
+# Order of filtering
+# 1) filter job skills (remove from list of workers/helpers)
+# 2) filter days
+# 3) filter time
+# 4) filter distance (over 20 miles?)
+# 5) sort by distance 
+# 6) add top closest match to worker# list 
+# 7) Redo loop until all helpers have 1 left in list
 
 # ==============================================================================
 
