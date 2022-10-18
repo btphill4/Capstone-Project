@@ -261,7 +261,7 @@ def filter_time(ex_Worker: Worker, ex_Employer: Employer):
     print()
 
 
-# ==============================================================================================
+# ============================================================================================== 
 def filter_gender(ex_Worker: Worker, ex_Employer: Employer):
     print("filter_gender() function for Worker ")
 

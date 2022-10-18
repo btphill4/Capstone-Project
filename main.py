@@ -72,8 +72,8 @@ Worker_list.append(ex_Worker3)
 # 3) filter time
 # 4) filter distance (over 20 miles?)
 # 5) sort by distance 
-# 6) add top closest match to worker# list 
-# 7) Redo loop until all helpers have 1 left in list
+# 6) add top closest match to worker# lists
+# 7) Redo loop until all helpers have 1 left in lists
 
 # ==============================================================================
 
@@ -125,6 +125,7 @@ output()
 print("End Filtering Iteration #" + str(i) + "\n")
 print("==============================================================================================")
 i = i+1
+
 # ==============================================================================
 
 # testing geopy -> need to fix "None" in method
