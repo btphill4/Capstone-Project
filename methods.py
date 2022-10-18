@@ -5,6 +5,7 @@
 
 # Library imports
 # from asyncio.windows_events import NULL
+# from asyncio.windows_events import NULL
 from Employer import Employer
 from Worker import Worker
 import psycopg2 
@@ -233,7 +234,48 @@ def filter_days(ex_Worker: Worker, ex_Employer: Employer):
     print()
 
 # ==============================================================================================
+# time filtering
+def filter_time(ex_Worker: Worker, ex_Employer: Employer):
+    print("filter_time() function for Worker " + ex_Worker.worker_name + 
+                " and Employer " + ex_Employer.employer_name + ":\n")
 
+    # set time range to variable -> worker
+    worker_range = range(ex_Worker.start_time,ex_Worker.end_time+1)
+    employer_range = range(ex_Employer.start_time, ex_Employer.end_time+1)
+
+    # testing
+    # for i in worker_range:
+    #     print(i)
+    # for i in employer_range:
+    #     print(i)
+
+    # convert worker_range to set
+    worker_rangeSet = set(worker_range)
+    intersect = worker_rangeSet.intersection(employer_range)
+
+    if len(intersect) == 0:
+        print("Time does not intersect")
+    else:
+        print(intersect)
+
+    print()
+
+
+# ==============================================================================================
+def filter_gender(ex_Worker: Worker, ex_Employer: Employer):
+    print("filter_gender() function for Worker ")
+
+    # 0 = female
+    # 1 = male
+
+    if ex_Worker.gender == ex_Employer.gender:
+        print("Gender is matched\n")
+    else:
+        print("Gender is not matched\n")
+
+
+
+# ==============================================================================================
 # output?
 def output():
     print("Output() function: STILL IN PROGRESS\n")
