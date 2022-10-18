@@ -5,11 +5,12 @@ from time import timezone
 
 class Employer:
     #in order based on schema.txt
-    def __init__(self, employer_name, employer_id, timeslot_id, timezone, start_time, end_time, 
+    def __init__(self, employer_name, employer_id, gender, timeslot_id, timezone, start_time, end_time, 
     job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday):
 
         self.employer_name = employer_name
         self.employer_id = employer_id
+        self.gender = gender
         self.timeslot_id = timeslot_id
         self.timezone = timezone
         self.start_time = start_time

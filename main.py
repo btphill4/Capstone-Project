@@ -43,20 +43,30 @@ import time
 #                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Cooking"] , 
 #                     "145 Roe Ave", 0, 1, 1, 1, 1, 1, 0)
 
-ex_Employer1 = Employer("Employer_2", 2, 1, 0, 8, 13, ["Gardening", "Driving", "Babysitting"],
+ex_Employer1 = Employer("Employer_2", 2, 0, 1, 0, 8, 13, ["Gardening", "Driving", "Babysitting"],
                     "3041 RIDGETOP ROAD Ottawa, Ontario K0A1T0", 0, 1, 1, 1, 1, 1, 0 )
 
-ex_Worker2 = Worker("Worker2", 3, 1, 0,  10, 13, ["Babysitting", "Gardening", "Cooking"], 
+ex_Worker2 = Worker("Worker2", 2, 1, 0, 1, 10, 13, ["Babysitting", "Gardening", "Cooking"], 
                     "70 RALLIDALE STREET Ottawa", 0, 0, 1, 1, 0, 1, 0 )
 
-ex_Worker3 = Worker("Worker3", 3, 0, 0, 15, 18, ["Cooking"], 
+ex_Worker3 = Worker("Worker3", 3, 0, 0, 0, 15, 18, ["Cooking"], 
                     "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0 )
 
 # print(ex_Worker)["Babysitting", "Gardening", "Cooking"], 
 
+
+# add worker into list
+Worker_list = []
+Worker_list.append(ex_Worker2)
+Worker_list.append(ex_Worker3)
+
+# for obj in Worker_list:
+#     print(obj.worker_name)
+
 # ==============================================================================
 
 # Order of filtering
+# 0) filter gender
 # 1) filter job skills (remove from list of workers/helpers)
 # 2) filter days
 # 3) filter time
@@ -67,9 +77,12 @@ ex_Worker3 = Worker("Worker3", 3, 0, 0, 15, 18, ["Cooking"],
 
 # ==============================================================================
 
+i = 1
 # Method Calls
 print("==============================================================================================\n")
 print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer1.employer_name + ":\n")
+
+filter_gender(ex_Worker2, ex_Employer1)
 
 filter_jobType(ex_Worker2, ex_Employer1)
 
@@ -83,14 +96,16 @@ get_route(ex_Worker2, ex_Employer1)
 # tic = time.perf_counter()
 
 # calc_distance(ex_Worker, ex_Employer)
-print("End Filtering Iteration # \n")
-
+print("End Filtering Iteration #"+ str(i) + "\n")
+i = i+1
 
 print("==============================================================================================\n")
 print("Filter Iteration # for " + ex_Worker3.worker_name + " and " + ex_Employer1.employer_name + ":\n")
 
 # sleep for API call restriction 1 second restriction
 time.sleep(1)
+
+filter_gender(ex_Worker2, ex_Employer1)
 
 filter_jobType(ex_Worker3, ex_Employer1)
 
@@ -107,9 +122,9 @@ get_route(ex_Worker3, ex_Employer1)
 # calc_distance(ex_Worker1, ex_Employer)
 
 output()
-print("End Filtering Iteration # \n")
+print("End Filtering Iteration #" + str(i) + "\n")
 print("==============================================================================================")
-
+i = i+1
 # ==============================================================================
 
 # testing geopy -> need to fix "None" in method

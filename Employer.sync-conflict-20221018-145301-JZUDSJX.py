@@ -1,16 +1,15 @@
-# Worker Class Objects
+# Employee Class Objects
 
 from time import timezone
 
-# change to helper
-class Worker:
+
+class Employer:
     #in order based on schema.txt
-    def __init__(self, worker_name, worker_id, gender, timeslot_id, timezone, start_time, end_time, 
+    def __init__(self, employer_name, employer_id, timeslot_id, timezone, start_time, end_time, 
     job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday):
 
-        self.worker_name = worker_name
-        self.worker_id = worker_id
-        self.gender = gender
+        self.employer_name = employer_name
+        self.employer_id = employer_id
         self.timeslot_id = timeslot_id
         self.timezone = timezone
         self.start_time = start_time
@@ -52,7 +51,10 @@ class Worker:
 
         
         #class methods if needed here
-
+        def addressToString(self):
+            print("Employer address: " + self.address)
+            tempAddress = self.address
+            return tempAddress
         # def get_appid(self):
         #     print("appplication ID: " + self.appid)
 
