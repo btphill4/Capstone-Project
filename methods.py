@@ -118,10 +118,11 @@ def get_route(ex_Worker: Worker, ex_Employer: Employer):
 
     # print output -> remove for final product?
     print("Distance in miles: " + str("{:.2f}".format(distance_Miles)) + " Miles")
-    print("Distance in kilometers: " + str("{:.2f}".format(distance_Kilometers)) + " Kilometers\n")
+    print("Distance in kilometers: " + str("{:.2f}".format(distance_Kilometers)) + " Kilometers")
 
     # return everything -> maybe change to just return distance
-    return out
+    # return 
+    return distance_Miles
 
 # ==============================================================================================
 
@@ -431,22 +432,31 @@ def out_list(ex_Worker: Worker, ex_Employer: Employer):
     if len(intersect) == 0:
         if ex_Worker in output:
             output.remove(ex_Worker)
-            print("FAILED TIME CHECK")
+            print("FAILED TIME CHECK\n")
         else: 
             pass
     # time does intersect
     else:
-        # print(intersect)
+        print("Passed time check for times: ")
+        print(intersect)  
+        print()      
         pass
 
-    get_route(ex_Worker, ex_Employer)
+    temp_miles =get_route(ex_Worker, ex_Employer)
+    if temp_miles >= 20:
+        print("DRIVING DISTANCE FURTHER THAN 20 MILES\n")
+    else: 
+        print()
+        pass
 
-    print("End of list filtering")
+    print("End of list filtering: \n" + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" )
 
     if len(output) <= output_size :
         print("Worker " + ex_Worker.worker_name + " NOT added")
+        print("Current list")
     else:
-        print("Added Worker: " + ex_Worker.worker_name + " to list" )
+        print("Added Worker: " + ex_Worker.worker_name + " to list\n" )
+        print("Updated list: ")
         print(*output)
         # for i in len(output):
         #     print(output[i])
