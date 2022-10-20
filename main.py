@@ -43,14 +43,21 @@ import time
 #                     1, 1, 1, 1, 1, 0 , 0, 0, 0, 0, ["Cooking"] , 
 #                     "145 Roe Ave", 0, 1, 1, 1, 1, 1, 0)
 
-ex_Employer1 = Employer("Employer_2", 2, 0, 1, 0, 8, 13, ["Gardening", "Driving", "Babysitting"],
-                    "3041 RIDGETOP ROAD Ottawa, Ontario K0A1T0", 0, 1, 1, 1, 1, 1, 0 )
+ex_Employer1 = Employer("Employer1", 2, 0, 1, 0, 8, 13, ["Gardening", "Driving", "Babysitting"],
+                    "3041 RIDGETOP ROAD Ottawa, Ontario K0A1T0", 0, 1, 1, 1, 1, 1, 0,
+                    0, 0, 0, 0, 0, 0, 0 )
+
+ex_Employer2 = Employer("Employer2", 3, 0, 0, 0, 15, 18, ["Cooking"], 
+                    "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0,
+                    0, 0, 0, 0, 0, 0, 0 )
 
 ex_Worker2 = Worker("Worker2", 2, 1, 0, 1, 10, 13, ["Babysitting", "Gardening", "Cooking"], 
-                    "70 RALLIDALE STREET Ottawa", 0, 0, 1, 1, 0, 1, 0 )
+                    "70 RALLIDALE STREET Ottawa", 0, 0, 1, 1, 0, 1, 0,
+                    0, 0, 0, 0, 0, 0, 0 )
 
 ex_Worker3 = Worker("Worker3", 3, 0, 0, 0, 15, 18, ["Cooking"], 
-                    "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0 )
+                    "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0,
+                    0, 0, 0, 0, 0, 0, 0 )
 
 # print(ex_Worker)["Babysitting", "Gardening", "Cooking"], 
 
@@ -77,58 +84,102 @@ Worker_list.append(ex_Worker3)
 
 # ==============================================================================
 
+# New Main
 i = 1
-# Method Calls
+print("==============================================================================================")
+print("====================================Iteration " + str(i)+ " ==============================================")
 print("==============================================================================================\n")
+
 print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer1.employer_name + ":\n")
+# checker(ex_Worker2, ex_Employer1)
+out_list(ex_Worker2, ex_Employer1)
 
-filter_gender(ex_Worker2, ex_Employer1)
+i = i + 1
+print("==============================================================================================")
+print("====================================Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
 
-filter_jobType(ex_Worker2, ex_Employer1)
+print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer2.employer_name + ":\n")
+# checker(ex_Worker2, ex_Employer2)
+out_list(ex_Worker2, ex_Employer2)
 
-filter_days(ex_Worker2, ex_Employer1)
+i = i + 1
+print("==============================================================================================")
+print("====================================Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
 
-filter_time(ex_Worker2, ex_Employer1)
+print("Begin Filtering for " + ex_Worker3.worker_name + " and " + ex_Employer1.employer_name + ":\n")
+# checker(ex_Worker3, ex_Employer1)
+out_list(ex_Worker3, ex_Employer1)
 
-get_route(ex_Worker2, ex_Employer1)
+i = i + 1
+print("==============================================================================================")
+print("====================================Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
+print("Begin Filtering for " + ex_Worker3.worker_name + " and " + ex_Employer2.employer_name + ":\n")
+# checker(ex_Worker3, ex_Employer1)
+out_list(ex_Worker3, ex_Employer2)
+
+
+
+
+# i = 1 
+# Method Calls
+# print("==============================================================================================\n")
+# print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer1.employer_name + ":\n")
+
+# filter_gender(ex_Worker2, ex_Employer1)
+
+# filter_jobType(ex_Worker2, ex_Employer1)
+
+# filter_days(ex_Worker2, ex_Employer1)
+
+# filter_time(ex_Worker2, ex_Employer1)
+
+# get_route(ex_Worker2, ex_Employer1)
 
 # for time checking get_route
-# tic = time.perf_counter()
+# tic = time.perf_counter() #
 
-# calc_distance(ex_Worker, ex_Employer)
-print("End Filtering Iteration #"+ str(i) + "\n")
-i = i+1
+# calc_distance(ex_Worker, ex_Employer) #
+# checker(ex_Worker2, ex_Employer1)
+# print("End Filtering Iteration #"+ str(i) + "\n")
+# i = i+1
 
-print("==============================================================================================\n")
-print("Filter Iteration # for " + ex_Worker3.worker_name + " and " + ex_Employer1.employer_name + ":\n")
+# print("==============================================================================================\n")
+# print("Filter Iteration # for " + ex_Worker3.worker_name + " and " + ex_Employer1.employer_name + ":\n")
 
 # sleep for API call restriction 1 second restriction
-time.sleep(1)
+# time.sleep(1)
 
-filter_gender(ex_Worker2, ex_Employer1)
+# filter_gender(ex_Worker2, ex_Employer1)
 
-filter_jobType(ex_Worker3, ex_Employer1)
+# filter_jobType(ex_Worker3, ex_Employer1)
 
-# # Check time for API calls
-# toc = time.perf_counter()
-# print(f"Time between computations: {toc-tic:0.5f} seconds\n")
+# # Check time for API calls #
+# toc = time.perf_counter() #
+# print(f"Time between computations: {toc-tic:0.5f} seconds\n") #
 
-filter_days(ex_Worker3, ex_Employer1)
+# filter_days(ex_Worker3, ex_Employer1)
 
-filter_time(ex_Worker3, ex_Employer1)
+# filter_time(ex_Worker3, ex_Employer1)
 
-get_route(ex_Worker3, ex_Employer1)
+# get_route(ex_Worker3, ex_Employer1)
 
-# calc_distance(ex_Worker1, ex_Employer)
+# calc_distance(ex_Worker1, ex_Employer) #
 
-output()
-print("End Filtering Iteration #" + str(i) + "\n")
-print("==============================================================================================")
-i = i+1
+# checker(ex_Worker3, ex_Employer1)
+# print("End Filtering Iteration #" + str(i) + "\n")
+# print("==============================================================================================")
+# i = i+1
+
+
+
 # ==============================================================================
 
 # testing geopy -> need to fix "None" in method
-print()
+# print()
 # print(ex_Worker.address)
 # ex_Worker_add = ex_Worker.address
 # print(ex_Worker_add)
