@@ -442,7 +442,7 @@ def out_list(ex_Worker: Worker, ex_Employer: Employer):
         print()      
         pass
 
-    temp_miles = get_route(ex_Worker, ex_Employer)
+    temp_miles =get_route(ex_Worker, ex_Employer)
     if temp_miles >= 20:
         print("DRIVING DISTANCE FURTHER THAN 20 MILES\n")
     else: 
