@@ -341,7 +341,7 @@ def checker(ex_Worker: Worker, ex_Employer: Employer):
 # def print_list(output):
     
 def out_list(ex_Worker: Worker, ex_Employer: Employer):
-    print("List: ")
+    # print("List: ")
 
     # add worker to list
     output_size = len(output)
@@ -380,38 +380,38 @@ def out_list(ex_Worker: Worker, ex_Employer: Employer):
     filter_days(ex_Worker, ex_Employer)
     if ex_Worker.sunday_matched == 1:
         pass
-        # output.append(ex_Worker)
     else:
+        # output.append(ex_Worker)
         pass
     if ex_Worker.monday_matched == 1:
         pass
-        # output.append(ex_Worker)
     else:
+        # output.append(ex_Worker)
         pass
     if ex_Worker.tuesday_matched == 1:
         pass
-        # output.append(ex_Worker)
     else:
+        # output.append(ex_Worker)
         pass
     if ex_Worker.wednesday_matched == 1:
         pass
-        # output.append(ex_Worker)
     else:
+        # output.append(ex_Worker)
         pass
     if ex_Worker.thursday_matched == 1:
         pass
-        # output.append(ex_Worker)
     else:
+        # output.append(ex_Worker)
         pass
     if ex_Worker.friday_matched == 1:
         pass
-        # output.append(ex_Worker)
     else:
+        # output.append(ex_Worker)
         pass
     if ex_Worker.saturday_matched == 1:
         pass
-        # output.append(ex_Worker)
     else:
+        # output.append(ex_Worker)
         pass
 
     # time filter
@@ -453,7 +453,8 @@ def out_list(ex_Worker: Worker, ex_Employer: Employer):
 
     if len(output) <= output_size :
         print("Worker " + ex_Worker.worker_name + " NOT added")
-        print("Current list")
+        print("Current list:")
+        print(*output)
     else:
         print("Added Worker: " + ex_Worker.worker_name + " to list\n" )
         print("Updated list: ")
@@ -462,6 +463,9 @@ def out_list(ex_Worker: Worker, ex_Employer: Employer):
         #     print(output[i])
 
     print()
+
+    # returns output(list) to main to return to database(?)
+    # return output 
     
 
 
