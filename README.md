@@ -22,11 +22,11 @@ Aisha Employer/Worker
 - Figure out how to relay the array back to the database/website/app
 
 ## ~~Google-OR method~~
-- ~~implement the google-OR distance matrix to match out algorithm
-- ~~use "pickup" method for picking up a skill and dropping it off to the customer
-- ~~return the route that google-OR displays as best route
-- ~~implement with geoPY / OSRM
-- ~~Return information back to databsae/website/app
+- ~~implement the google-OR distance matrix to match out algorithm~~
+- ~~use "pickup" method for picking up a skill and dropping it off to the customer~~
+- ~~return the route that google-OR displays as best route~~
+- ~~implement with geoPY / OSRM~~
+- ~~Return information back to databsae/website/app~~
 
 ## Other Notes:
 - 
