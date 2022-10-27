@@ -39,14 +39,30 @@ ex_Employer2 = Employer("Employer2", 3, 0, 0, 0, 15, 18, ["Cooking"],
                     "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0,
                     0, 0, 0, 0, 0, 0, 0 )
 
-ex_Worker2 = Worker("Worker2", 2, 1, 0, 1, 10, 13, ["Babysitting", "Gardening", "Cooking"], 
+ex_Employer3 = Employer("Employer3", 3, 0, 0, 0, 10, 18, ["Cooking"], 
+                    "331 Ch. Vanier, Quebec", 0, 1, 1, 1, 1, 1, 0,
+                    0, 0, 0, 0, 0, 0, 0 )
+            
+ex_Worker1 = Worker("Worker1", 2, 1, 0, 1, 10, 13, ["Babysitting", "Cooking"], 
+                    "2014 BOISFRANC CIRCLE", 0, 1, 0, 0, 0, 1, 0,
+                    0, 0, 0, 0, 0, 0, 0 )
+
+ex_Worker2 = Worker("Worker2", 2, 1, 0, 1, 7, 17, ["Babysitting", "Gardening", "Cooking"], 
                     "70 RALLIDALE STREET Ottawa", 0, 0, 1, 1, 0, 1, 0,
                     0, 0, 0, 0, 0, 0, 0 )
 
 ex_Worker3 = Worker("Worker3", 3, 0, 0, 0, 15, 18, ["Cooking"], 
                     "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0,
-                        0, 0, 0, 0, 0, 0, 0 )
+                    0, 0, 0, 0, 0, 0, 0 )
 
+# tutor should not be added to list
+ex_Worker4 = Worker("Worker4", 3, 0, 0, 0, 9, 18, ["Tutoring"], 
+                    "32 ALYSSA CRESCENT, Ontario", 0, 1, 1, 1, 1, 1, 0,
+                    0, 0, 0, 0, 0, 0, 0)
+
+ex_Worker5 = Worker("Worker5", 3, 0, 0, 0, 9, 18, ["Tutoring"], 
+                    "35 Rue de la Futaie, Quebec", 0, 1, 1, 1, 1, 1, 0,
+                    0, 0, 0, 0, 0, 0, 0)
 
 # ==============================================================================
 
@@ -54,8 +70,34 @@ ex_Worker3 = Worker("Worker3", 3, 0, 0, 0, 15, 18, ["Cooking"],
 
 # add worker into list
 Worker_list = []
+Worker_list.append(ex_Worker1)
 Worker_list.append(ex_Worker2)
 Worker_list.append(ex_Worker3)
+Worker_list.append(ex_Worker4)
+Worker_list.append(ex_Worker5)
+
+Employer_List = []
+Employer_List.append(ex_Employer1)
+Employer_List.append(ex_Employer2)
+Employer_List.append(ex_Employer3)
+
+# print("==============================================================================================")
+# print("==============================================================================================")
+# print("==============================================================================================")
+# print("==============================================================================================")
+# print("==============================================================================================")
+# x = 0
+# while x < len(Employer_List):
+#     print(x)
+#     out_list(Worker_list[x], Employer_List[x])
+#     x = x + 1
+
+# print("==============================================================================================")
+# print("==============================================================================================")
+# print("==============================================================================================")
+# print("==============================================================================================")
+# print("==============================================================================================")
+
 
 # Print list of workers -> figure out how to properly print names
 # for obj in Worker_list:
@@ -88,6 +130,35 @@ print("=========================================================================
 print("=================================== Iteration " + str(i)+ " ==============================================")
 print("==============================================================================================\n")
 
+print("Begin Filtering for " + ex_Worker1.worker_name + " and " + ex_Employer1.employer_name + ":\n")
+# checker(ex_Worker2, ex_Employer1)
+out_list(ex_Worker1, ex_Employer1)
+
+
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
+print("Begin Filtering for " + ex_Worker1.worker_name + " and " + ex_Employer2.employer_name + ":\n")
+# checker(ex_Worker2, ex_Employer1)
+out_list(ex_Worker1, ex_Employer2)
+
+
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
+print("Begin Filtering for " + ex_Worker1.worker_name + " and " + ex_Employer3.employer_name + ":\n")
+# checker(ex_Worker2, ex_Employer1)
+out_list(ex_Worker1, ex_Employer3)
+
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
 print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer1.employer_name + ":\n")
 # checker(ex_Worker2, ex_Employer1)
 out_list(ex_Worker2, ex_Employer1)
@@ -100,6 +171,15 @@ print("=========================================================================
 print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer2.employer_name + ":\n")
 # checker(ex_Worker2, ex_Employer2)
 out_list(ex_Worker2, ex_Employer2)
+
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
+print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer3.employer_name + ":\n")
+# checker(ex_Worker2, ex_Employer2)
+out_list(ex_Worker2, ex_Employer3)
 
 i = i + 1
 print("==============================================================================================")
@@ -119,10 +199,74 @@ print("Begin Filtering for " + ex_Worker3.worker_name + " and " + ex_Employer2.e
 # checker(ex_Worker3, ex_Employer1)
 out_list(ex_Worker3, ex_Employer2)
 
-# to calculate run time
-toc = time.perf_counter() #
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
 
-print(f"Total runtime: {toc-tic:0.5f} seconds\n") #
+print("Begin Filtering for " + ex_Worker3.worker_name + " and " + ex_Employer3.employer_name + ":\n")
+# checker(ex_Worker3, ex_Employer1)
+out_list(ex_Worker3, ex_Employer3)
+
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
+print("Begin Filtering for " + ex_Worker4.worker_name + " and " + ex_Employer1.employer_name + ":\n")
+# checker(ex_Worker3, ex_Employer1)
+out_list(ex_Worker4, ex_Employer1)
+
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
+print("Begin Filtering for " + ex_Worker4.worker_name + " and " + ex_Employer2.employer_name + ":\n")
+# checker(ex_Worker3, ex_Employer1)
+out_list(ex_Worker4, ex_Employer2)
+
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
+print("Begin Filtering for " + ex_Worker4.worker_name + " and " + ex_Employer3.employer_name + ":\n")
+# checker(ex_Worker3, ex_Employer1)
+out_list(ex_Worker4, ex_Employer3)
+
+
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
+print("Begin Filtering for " + ex_Worker5.worker_name + " and " + ex_Employer1.employer_name + ":\n")
+# checker(ex_Worker3, ex_Employer1)
+out_list(ex_Worker5, ex_Employer1)
+
+
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
+print("Begin Filtering for " + ex_Worker5.worker_name + " and " + ex_Employer2.employer_name + ":\n")
+# checker(ex_Worker3, ex_Employer1)
+out_list(ex_Worker5, ex_Employer2)
+
+i = i + 1
+print("==============================================================================================")
+print("=================================== Iteration " + str(i)+ " ==============================================")
+print("==============================================================================================\n")
+
+print("Begin Filtering for " + ex_Worker5.worker_name + " and " + ex_Employer3.employer_name + ":\n")
+# checker(ex_Worker3, ex_Employer1)
+out_list(ex_Worker5, ex_Employer3)
+
+# to calculate run time
+toc = time.perf_counter() 
+print(f"Total runtime: {toc-tic:0.5f} seconds\n") 
 
 
 # ==============================================================================
