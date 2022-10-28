@@ -60,7 +60,7 @@ ex_Worker4 = Worker("Worker4", 3, 0, 0, 0, 9, 18, ["Tutoring"],
                     "32 ALYSSA CRESCENT, Ontario", 0, 1, 1, 1, 1, 1, 0,
                     0, 0, 0, 0, 0, 0, 0)
 
-ex_Worker5 = Worker("Worker5", 3, 0, 0, 0, 9, 18, ["Tutoring"], 
+ex_Worker5 = Worker("Worker5", 3, 0, 0, 0, 9, 18, ["Babysitting"], 
                     "35 Rue de la Futaie, Quebec", 0, 1, 1, 1, 1, 1, 0,
                     0, 0, 0, 0, 0, 0, 0)
 
