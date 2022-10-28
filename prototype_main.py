@@ -60,7 +60,7 @@ ex_Worker4 = Worker("Worker4", 3, 0, 0, 0, 9, 18, ["Tutoring"],
                     "32 ALYSSA CRESCENT, Ontario", 0, 1, 1, 1, 1, 1, 0,
                     0, 0, 0, 0, 0, 0, 0)
 
-ex_Worker5 = Worker("Worker5", 3, 0, 0, 0, 9, 18, ["Babysitting"], 
+ex_Worker5 = Worker("Worker5", 3, 0, 0, 0, 9, 18, ["Tutoring"], 
                     "35 Rue de la Futaie, Quebec", 0, 1, 1, 1, 1, 1, 0,
                     0, 0, 0, 0, 0, 0, 0)
 
@@ -126,143 +126,15 @@ i = 1
 # to calculate run time
 tic = time.perf_counter() 
 
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker1.worker_name + " and " + ex_Employer1.employer_name + ":\n")
-# checker(ex_Worker2, ex_Employer1)
-out_list(ex_Worker1, ex_Employer1)
-
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker1.worker_name + " and " + ex_Employer2.employer_name + ":\n")
-# checker(ex_Worker2, ex_Employer1)
-out_list(ex_Worker1, ex_Employer2)
-
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker1.worker_name + " and " + ex_Employer3.employer_name + ":\n")
-# checker(ex_Worker2, ex_Employer1)
-out_list(ex_Worker1, ex_Employer3)
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer1.employer_name + ":\n")
-# checker(ex_Worker2, ex_Employer1)
-out_list(ex_Worker2, ex_Employer1)
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer2.employer_name + ":\n")
-# checker(ex_Worker2, ex_Employer2)
-out_list(ex_Worker2, ex_Employer2)
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker2.worker_name + " and " + ex_Employer3.employer_name + ":\n")
-# checker(ex_Worker2, ex_Employer2)
-out_list(ex_Worker2, ex_Employer3)
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker3.worker_name + " and " + ex_Employer1.employer_name + ":\n")
-# checker(ex_Worker3, ex_Employer1)
-out_list(ex_Worker3, ex_Employer1)
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker3.worker_name + " and " + ex_Employer2.employer_name + ":\n")
-# checker(ex_Worker3, ex_Employer1)
-out_list(ex_Worker3, ex_Employer2)
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker3.worker_name + " and " + ex_Employer3.employer_name + ":\n")
-# checker(ex_Worker3, ex_Employer1)
-out_list(ex_Worker3, ex_Employer3)
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker4.worker_name + " and " + ex_Employer1.employer_name + ":\n")
-# checker(ex_Worker3, ex_Employer1)
-out_list(ex_Worker4, ex_Employer1)
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker4.worker_name + " and " + ex_Employer2.employer_name + ":\n")
-# checker(ex_Worker3, ex_Employer1)
-out_list(ex_Worker4, ex_Employer2)
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker4.worker_name + " and " + ex_Employer3.employer_name + ":\n")
-# checker(ex_Worker3, ex_Employer1)
-out_list(ex_Worker4, ex_Employer3)
-
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker5.worker_name + " and " + ex_Employer1.employer_name + ":\n")
-# checker(ex_Worker3, ex_Employer1)
-out_list(ex_Worker5, ex_Employer1)
-
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker5.worker_name + " and " + ex_Employer2.employer_name + ":\n")
-# checker(ex_Worker3, ex_Employer1)
-out_list(ex_Worker5, ex_Employer2)
-
-i = i + 1
-print("==============================================================================================")
-print("=================================== Iteration " + str(i)+ " ==============================================")
-print("==============================================================================================\n")
-
-print("Begin Filtering for " + ex_Worker5.worker_name + " and " + ex_Employer3.employer_name + ":\n")
-# checker(ex_Worker3, ex_Employer1)
-out_list(ex_Worker5, ex_Employer3)
+count = 1
+for employer in Employer_List:
+    for worker in Worker_list:
+        print("==============================================================================================")
+        print("=================================== Iteration " + str(count)+ " ==============================================")
+        print("==============================================================================================\n")
+        print("Begin Filtering for " + worker.worker_name + " and " + employer.employer_name + ":\n")
+        out_list(worker, employer)
+        count = count + 1
 
 # to calculate run time
 toc = time.perf_counter() 

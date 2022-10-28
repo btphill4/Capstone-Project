@@ -8,7 +8,7 @@ class Employer:
     def __init__(self, employer_name, employer_id, gender, timeslot_id, timezone, start_time, end_time, 
     job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday, 
     sunday_matched, monday_matched, tuesday_matched, wednesday_matched, thursday_matched, friday_matched, 
-    saturday_matched ):
+    saturday_matched, matched_workers ):
 
         self.employer_name = employer_name
         self.employer_id = employer_id
@@ -57,7 +57,7 @@ class Employer:
         self.thursday_matched = thursday_matched
         self.friday_matched = friday_matched
         self.saturday_matched = saturday_matched
-        
+        self.matched_workers = []
 
         
         #class methods if needed here
