@@ -49,7 +49,6 @@ def getRandomEmployee():
     employee = [gender,firstName,lastName,job,time]
     return employee
 
-
 ## Calls- just to check it works
 employee = getRandomEmployee()
 print(employee[0])

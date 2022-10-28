@@ -80,6 +80,9 @@ def getMetersToKilometers(meters):
 
 # get_route calculates the distance from one point to another
 
+def test_route(address):
+    loc = geolocater.geocode(address)
+    return loc
 
 def get_route(ex_Worker: Worker, ex_Employer: Employer):
     # print("get_route() function: for Worker " + ex_Worker.worker_name +
@@ -390,32 +393,35 @@ def checkDistance(ex_Worker: Worker, ex_Employer: Employer):
     temp_miles = get_route(ex_Worker, ex_Employer)
     if temp_miles >= 30:
         print("DRIVING DISTANCE FURTHER THAN 30 MILES\n")
-        return False
     else:
         print()
-        return True
+    return temp_miles
 
 def printMatchedWorkers(ex_Employer: Employer):
     for x in ex_Employer.matched_workers:
-        print(x.worker_name)
+        print(x[0].worker_name)
 
 def out_list(ex_Worker: Worker, ex_Employer: Employer):
-    
+
     if (checkGender(ex_Worker, ex_Employer)):
         if (checkSkills(ex_Worker, ex_Employer)):
             if (checkDays(ex_Worker, ex_Employer)):
                 if (checkTime(ex_Worker, ex_Employer)):
                     print("End of list filtering: \n" +
                         "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-                    if (checkDistance(ex_Worker, ex_Employer)):
-                        ex_Employer.matched_workers.append(ex_Worker)
+                    miles = checkDistance(ex_Worker, ex_Employer)
+                    if (miles <= 30):
+                        ex_Employer.matched_workers.append((ex_Worker, miles))
                         print("Added Worker: " + ex_Worker.worker_name + " to list\n")
                         print("Updated list: ")
                         printMatchedWorkers(ex_Employer)
                     else:
                         print("Worker " + ex_Worker.worker_name +
                             " NOT added for Employer " + ex_Employer.employer_name)
-                        print("Current list for employer:")
-                        printMatchedWorkers(ex_Employer)
+                        if (len(ex_Employer.matched_workers) > 0):
+                            print("Current list for employer:")
+                            printMatchedWorkers(ex_Employer)
+                        else:
+                            print(ex_Employer.employer_name + ": employer no matched workers")
                         
     print()
