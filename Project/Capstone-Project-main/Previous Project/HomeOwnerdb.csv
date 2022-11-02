@@ -1,0 +1,9 @@
+appid,city,neighborhood,rent_range_start,rent_range_end
+1,Phoenix,Downtown Phoenix,500,1000
+2,Phoenix,South Mountain Village,600,1200
+3,Phoenix,North Mountain Village,730,1250
+4,Phoenix,Desert Ridge,800,1300
+5,Phoenix,Arcadia,2000,3000
+6,Phoenix,Chandler,2100,3100
+7,Phoenix,Glendale,1250,2000
+8,Phoenix,Ahwatukee,750,2790

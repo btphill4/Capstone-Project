@@ -1,0 +1,11 @@
+Install pip for python librarys (linux):
+Sudo apt-get pip
+
+Natural Language Toolkit
+pip install nltk
+
+Numpy - number/array library
+pip install numpy
+
+psycopg2
+pip install psycopg2-binary

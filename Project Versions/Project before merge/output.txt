@@ -1,0 +1,423 @@
+==============================================================================================
+=================================== Iteration 1 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer1:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Monday', 'Friday']
+
+Passed time check for times: 
+{10, 11, 12, 13}
+
+Distance Check: 
+Distance in miles: 36.01 Miles
+Distance in kilometers: 57.95 Kilometers
+DRIVING DISTANCE FURTHER THAN 20 MILES
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added Worker: Worker1 to list
+
+Updated list: 
+<Worker.Worker object at 0x7f3dbfbf99a0>
+
+==============================================================================================
+=================================== Iteration 2 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer2:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Monday', 'Friday']
+
+FAILED TIME CHECK
+
+Distance Check: 
+Distance in miles: 13.03 Miles
+Distance in kilometers: 20.97 Kilometers
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Worker Worker1 NOT added for Employer Employer2
+Current list:
+<Worker.Worker object at 0x7f3dbfbf99a0>
+
+==============================================================================================
+=================================== Iteration 3 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer3:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Monday', 'Friday']
+
+Passed time check for times: 
+{10, 11, 12, 13}
+
+Distance Check: 
+Distance in miles: 19.65 Miles
+Distance in kilometers: 31.63 Kilometers
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added Worker: Worker1 to list
+
+Updated list: 
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf99a0>
+
+==============================================================================================
+=================================== Iteration 4 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer1:
+
+Gender Matched
+
+For jobs: {'Gardening', 'Babysitting'}
+
+Days Matched: 
+['Tuesday', 'Wednesday', 'Friday']
+
+Passed time check for times: 
+{8, 9, 10, 11, 12, 13}
+
+Distance Check: 
+Distance in miles: 31.36 Miles
+Distance in kilometers: 50.47 Kilometers
+DRIVING DISTANCE FURTHER THAN 20 MILES
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added Worker: Worker2 to list
+
+Updated list: 
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+
+==============================================================================================
+=================================== Iteration 5 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer2:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Tuesday', 'Wednesday', 'Friday']
+
+Passed time check for times: 
+{16, 17, 15}
+
+Distance Check: 
+Distance in miles: 10.57 Miles
+Distance in kilometers: 17.02 Kilometers
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added Worker: Worker2 to list
+
+Updated list: 
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+
+==============================================================================================
+=================================== Iteration 6 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer3:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Tuesday', 'Wednesday', 'Friday']
+
+Passed time check for times: 
+{10, 11, 12, 13, 14, 15, 16, 17}
+
+Distance Check: 
+Distance in miles: 16.64 Miles
+Distance in kilometers: 26.78 Kilometers
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added Worker: Worker2 to list
+
+Updated list: 
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+
+==============================================================================================
+=================================== Iteration 7 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer1:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+Distance Check: 
+Distance in miles: 24.51 Miles
+Distance in kilometers: 39.45 Kilometers
+DRIVING DISTANCE FURTHER THAN 20 MILES
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Worker Worker3 NOT added for Employer Employer1
+Current list:
+<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60>
+
+==============================================================================================
+=================================== Iteration 8 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer2:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+Passed time check for times: 
+{16, 17, 18, 15}
+
+Distance Check: 
+Distance in miles: 0.00 Miles
+Distance in kilometers: 0.00 Kilometers
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added Worker: Worker3 to list
+
+Updated list: 
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+<Worker.Worker object at 0x7f3db1a9e790>
+
+==============================================================================================
+=================================== Iteration 9 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer3:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+Passed time check for times: 
+{16, 17, 18, 15}
+
+Distance Check: 
+Distance in miles: 7.20 Miles
+Distance in kilometers: 11.58 Kilometers
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added Worker: Worker3 to list
+
+Updated list: 
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf99a0>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+<Worker.Worker object at 0x7f3dbfbf9a60>
+<Worker.Worker object at 0x7f3db1a9e790>
+<Worker.Worker object at 0x7f3db1a9e790>
+
+==============================================================================================
+=================================== Iteration 10 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer1:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+Passed time check for times: 
+{9, 10, 11, 12, 13}
+
+Distance Check: 
+Distance in miles: 55.92 Miles
+Distance in kilometers: 89.99 Kilometers
+DRIVING DISTANCE FURTHER THAN 20 MILES
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Worker Worker4 NOT added for Employer Employer1
+Current list:
+<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
+
+==============================================================================================
+=================================== Iteration 11 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer2:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+Passed time check for times: 
+{16, 17, 18, 15}
+
+Distance Check: 
+Distance in miles: 32.94 Miles
+Distance in kilometers: 53.01 Kilometers
+DRIVING DISTANCE FURTHER THAN 20 MILES
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Worker Worker4 NOT added for Employer Employer2
+Current list:
+<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
+
+==============================================================================================
+=================================== Iteration 12 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer3:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+Passed time check for times: 
+{10, 11, 12, 13, 14, 15, 16, 17, 18}
+
+Distance Check: 
+Distance in miles: 39.56 Miles
+Distance in kilometers: 63.67 Kilometers
+DRIVING DISTANCE FURTHER THAN 20 MILES
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Worker Worker4 NOT added for Employer Employer3
+Current list:
+<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
+
+==============================================================================================
+=================================== Iteration 13 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer1:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+Passed time check for times: 
+{9, 10, 11, 12, 13}
+
+Distance Check: 
+Distance in miles: 30.04 Miles
+Distance in kilometers: 48.35 Kilometers
+DRIVING DISTANCE FURTHER THAN 20 MILES
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Worker Worker5 NOT added for Employer Employer1
+Current list:
+<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
+
+==============================================================================================
+=================================== Iteration 14 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer2:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+Passed time check for times: 
+{16, 17, 18, 15}
+
+Distance Check: 
+Distance in miles: 6.90 Miles
+Distance in kilometers: 11.11 Kilometers
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Worker Worker5 NOT added for Employer Employer2
+Current list:
+<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
+
+==============================================================================================
+=================================== Iteration 15 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer3:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+Passed time check for times: 
+{10, 11, 12, 13, 14, 15, 16, 17, 18}
+
+Distance Check: 
+Distance in miles: 10.00 Miles
+Distance in kilometers: 16.10 Kilometers
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Worker Worker5 NOT added for Employer Employer3
+Current list:
+<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
+
+Total runtime: 16.87215 seconds
+
