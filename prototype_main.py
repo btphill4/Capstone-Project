@@ -31,38 +31,88 @@ import time
 # Create example class objects 
 # Employer2 and worker3 are exactly the same to ensure matching works
 
-ex_Employer1 = Employer("Employer1", 2, 0, 1, 0, 8, 13, ["Gardening", "Driving", "Babysitting"],
-                    "3041 RIDGETOP ROAD Ottawa, Ontario K0A1T0", 0, 1, 1, 1, 1, 1, 0,
-                    0, 0, 0, 0, 0, 0, 0 )
 
-ex_Employer2 = Employer("Employer2", 3, 0, 0, 0, 15, 18, ["Cooking"], 
-                    "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0,
-                    0, 0, 0, 0, 0, 0, 0 )
 
-ex_Employer3 = Employer("Employer3", 3, 0, 0, 0, 10, 18, ["Cooking"], 
-                    "331 Ch. Vanier, Quebec", 0, 1, 1, 1, 1, 1, 0,
-                    0, 0, 0, 0, 0, 0, 0 )
+ex_Employer1 = Employer("Employer1", 2, 0, 1, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0], 
+["Gardening"], "3041 RIDGETOP ROAD Ottawa, Ontario K0A1T0", 0, 1, 1, 1, 1, 1, 0 )
+
+ex_Employer2 = Employer("Employer2", 3, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  1,  1,  1,  0,  0,  0,  0,  0,  0], 
+["Cooking"], "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0 )
+
+ex_Employer3 = Employer("Employer3", 3, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,  1,  1,  1,  1,  1,  1,  1,  0,  0,  0,  0,  0,  0], 
+["Cooking"], "331 Ch. Vanier, Quebec", 0, 1, 1, 1, 1, 1, 0 )
+
+ex_Employer4 = Employer("Employer4", 3, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0], 
+["Driving"], "27 BLACKSMITH ROAD|Lombardy, Ontario K0G1L0", 1, 1, 1, 1, 1, 1, 1 )
+
+ex_Employer5 = Employer("Employer5", 3, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  1,  1,  0,  0,  0,  0,  0,  0,  0], 
+["Gardening"], "510 VICTORIA STREET|Winchester, Ontario K0C2K0", 1, 1, 1, 1, 1, 1, 1 )
+
+ex_Employer6 = Employer("Employer6", 0, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0], 
+["Cooking"], "1468 DAVID ROAD|Rockland, Ontario K4K1K7", 0, 1, 1, 1, 1, 1, 0)
+
+ex_Employer7 = Employer("Employer7", 0, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,  1,  1,  1,  1,  1,  1,  1,  0,  0,  0,  0,  0,  0], 
+["Driving"], "00 GAGNE ROAD|Hammond, Ontario K0A2A0", 0, 1, 1, 1, 1, 1, 0)
+
+ex_Employer8 = Employer("Employer8", 0, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1], 
+["Babysitting"], "1025 GRENON AVENUE|Ottawa, Ontario K2B8S5", 0, 1, 1, 1, 1, 1, 0)
+
+ex_Employer9 = Employer("Employer9", 0, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0], 
+["Cooking"], "14 HILLTOP CRESCENT|Kemptville, Ontario K0G1J0", 0, 1, 1, 1, 1, 1, 0)
+
+ex_Employer10 = Employer("Employer10", 0, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  0,  0], 
+["Babysitting"], "119 MANOR WAY|Rideau Ferry, Ontario K0G1W0", 0, 1, 1, 1, 1, 1, 0)
+
+ex_Employer11 = Employer("Employer11", 0, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0], 
+["Driving"], "2 ALBERT STREET|Johnstown, Ontario K0E1T1", 0, 1, 1, 1, 1, 1, 0)
+
+ex_Employer12 = Employer("Employer12", 0, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1], 
+["Babysitting"], "607 ROBERT HILL STREET|Almonte, Ontario K0A1A0", 0, 1, 1, 1, 1, 1, 0)
             
-ex_Worker1 = Worker("Worker1", 2, 1, 0, 1, 10, 13, ["Babysitting", "Cooking"], 
-                    "2014 BOISFRANC CIRCLE", 0, 1, 0, 0, 0, 1, 0,
-                    0, 0, 0, 0, 0, 0, 0 )
+ex_Worker1 = Worker("Worker1", 2, 1, 0, 1, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0], 
+["Babysitting", "Cooking", "Gardening"], "2014 BOISFRANC CIRCLE", 0, 1, 0, 0, 0, 1, 0 )
 
-ex_Worker2 = Worker("Worker2", 2, 1, 0, 1, 7, 17, ["Babysitting", "Gardening", "Cooking"], 
-                    "70 RALLIDALE STREET Ottawa", 0, 0, 1, 1, 0, 1, 0,
-                    0, 0, 0, 0, 0, 0, 0 )
+ex_Worker2 = Worker("Worker2", 2, 1, 0, 1, 
+[0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  0,  0], 
+["Babysitting", "Gardening", "Cooking"], "70 RALLIDALE STREET Ottawa", 0, 0, 1, 1, 0, 1, 0 )
 
-ex_Worker3 = Worker("Worker3", 3, 0, 0, 0, 15, 18, ["Cooking"], 
-                    "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0,
-                    0, 0, 0, 0, 0, 0, 0 )
+ex_Worker3 = Worker("Worker3", 3, 0, 0, 0, 
+[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1], 
+["Cooking", "Babysitting", "Driving"], "514 GILMOUR STREET Ottawa, Ontario K1R5L4", 0, 1, 1, 1, 1, 1, 0 )
 
-# tutor should not be added to list
-ex_Worker4 = Worker("Worker4", 3, 0, 0, 0, 9, 18, ["Tutoring"], 
-                    "32 ALYSSA CRESCENT, Ontario", 0, 1, 1, 1, 1, 1, 0,
-                    0, 0, 0, 0, 0, 0, 0)
+ex_Worker4 = Worker("Worker4", 3, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,  1,  1,  1,  1,  1,  1,  1,  0,  0,  0,  0,  0,  0], 
+["Tutoring", "Gardening"], "32 ALYSSA CRESCENT, Ontario", 0, 1, 1, 1, 1, 1, 0 )
 
-ex_Worker5 = Worker("Worker5", 3, 0, 0, 0, 9, 18, ["Tutoring"], 
-                    "35 Rue de la Futaie, Quebec", 0, 1, 1, 1, 1, 1, 0,
-                    0, 0, 0, 0, 0, 0, 0)
+ex_Worker5 = Worker("Worker5", 3, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,  1,  1,  1,  1,  1,  1,  1,  0,  0,  0,  0,  0,  0], 
+["Tutoring"], "35 Rue de la Futaie, Quebec", 0, 1, 1, 1, 1, 1, 0 )
+
+ex_Worker6 = Worker("Worker6", 0, 0, 0, 0, 
+[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0], 
+["Cooking", "Driving", "Babysitting", "Gardening"], "7 BRIDGE STREET N|Kemptville, Ontario K0G1J0", 0, 1, 1, 1, 1, 1, 0)
+
+ex_Worker7 = Worker("Worker7", 0, 0, 0, 0, 
+[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1], 
+["Cooking", "Driving", "Babysitting"], "172 CARSS AVENUE|Smiths Falls, Ontario K7A4B1", 0, 1, 1, 1, 1, 1, 0)
+
+ex_Worker8 = Worker("Worker8", 0, 0, 0, 0, 
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1], 
+["Driving", "Babysitting", "Gardening", "Cooking"], "15 DIAMOND LANE|White Lake, Ontario K0A3L0", 0, 1, 1, 1, 1, 1, 0)
+
 
 # ==============================================================================
 
@@ -75,11 +125,25 @@ Worker_list.append(ex_Worker2)
 Worker_list.append(ex_Worker3)
 Worker_list.append(ex_Worker4)
 Worker_list.append(ex_Worker5)
+Worker_list.append(ex_Worker6)
+Worker_list.append(ex_Worker7)
+Worker_list.append(ex_Worker8)
 
 Employer_List = []
 Employer_List.append(ex_Employer1)
 Employer_List.append(ex_Employer2)
 Employer_List.append(ex_Employer3)
+Employer_List.append(ex_Employer4)
+Employer_List.append(ex_Employer5)
+Employer_List.append(ex_Employer6)
+Employer_List.append(ex_Employer7)
+Employer_List.append(ex_Employer8)
+Employer_List.append(ex_Employer9)
+Employer_List.append(ex_Employer10)
+Employer_List.append(ex_Employer11)
+Employer_List.append(ex_Employer12)
+
+
 
 # print("==============================================================================================")
 # print("==============================================================================================")
@@ -135,6 +199,33 @@ for employer in Employer_List:
         print("Begin Filtering for " + worker.worker_name + " and " + employer.employer_name + ":\n")
         out_list(worker, employer)
         count = count + 1
+        time.sleep(2)
+
+
+
+# sort
+for employer in Employer_List:
+    for i in range(len(employer.matched_workers)):
+        min_idx = i
+        for j in range(i+1, len(employer.matched_workers)):
+            if (employer.matched_workers[j][1] < employer.matched_workers[min_idx][1]):
+                min_idx = j
+        (employer.matched_workers[i], employer.matched_workers[min_idx]) = (employer.matched_workers[min_idx], employer.matched_workers[i])
+
+
+for employer in Employer_List:
+    print(employer.employer_name)
+    for item in employer.matched_workers:
+        print("\t" + item[0].worker_name + ": " + str(item[1]))
+    print()
+
+hasJob = []
+for employer in Employer_List:
+    for worker in employer.matched_workers:
+        if (worker[0].worker_name not in hasJob):
+           print(employer.employer_name + ": assigned to " + worker[0].worker_name)
+           hasJob.append(worker[0].worker_name)
+           break
 
 # to calculate run time
 toc = time.perf_counter() 

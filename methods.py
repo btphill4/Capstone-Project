@@ -6,6 +6,7 @@
 # Library imports
 # from asyncio.windows_events import NULL
 # from asyncio.windows_events import NULL
+from multiprocessing.dummy import Array
 from Employer import Employer
 from Worker import Worker
 import psycopg2
@@ -18,6 +19,7 @@ from geopy import distance
 import requests
 import folium
 import polyline
+import numpy as np
 
 # Uses https://nominatim.openstreetmap.org/ui/search.html
 geolocater = Nominatim(user_agent="http")
@@ -79,6 +81,9 @@ def getMetersToKilometers(meters):
 
 # get_route calculates the distance from one point to another
 
+def test_route(address):
+    loc = geolocater.geocode(address)
+    return loc
 
 def get_route(ex_Worker: Worker, ex_Employer: Employer):
     # print("get_route() function: for Worker " + ex_Worker.worker_name +
@@ -212,78 +217,45 @@ def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
 def filter_days(ex_Worker: Worker, ex_Employer: Employer):
     # print("calc_days() function for Worker " + ex_Worker.worker_name +
     #             " and Employer " + ex_Employer.employer_name + ":\n")
-
+    matched_days = []
     # Check each day set to 1 if matched, 0 if not matched
     # Sunday check
     if ex_Worker.sunday == ex_Employer.sunday:
         # print("Sunday Matched")
-        ex_Worker.sunday_matched = 1
-        ex_Employer.sunday_matched = 1
-    else:
-        # print("Sunday Not Matched")
-        ex_Worker.sunday_matched = 0
-        ex_Employer.sunday_matched = 0
+        matched_days.append("Sunday")
 
     # Monday Check
     if ex_Worker.monday == ex_Employer.monday:
         # print("Monday Matched")
-        ex_Worker.monday_matched = 1
-        ex_Employer.monday_matched = 1
-    else:
-        # print("Monday NOT Matched")
-        ex_Worker.monday_matched = 0
-        ex_Employer.monday_matched = 0
+        matched_days.append("Monday")
 
     # Tuesday Check
     if ex_Worker.tuesday == ex_Employer.tuesday:
         # print("Tuesday Matched")
-        ex_Worker.tuesday_matched = 1
-        ex_Employer.tuesday_matched = 1
-    else:
-        # print("Tuesday NOT Matched")
-        ex_Worker.tuesday_matched = 0
-        ex_Employer.tuesday_matched = 0
+        matched_days.append("Tuesday")
+
     # Wednesday Check
     if ex_Worker.wednesday == ex_Employer.wednesday:
         # print("Wednesday Matched")
-        ex_Worker.wednesday_matched = 1
-        ex_Employer.wednesday_matched = 1
-    else:
-        # print("Wednesday Not Matched")
-        ex_Worker.wednesday_matched = 1
-        ex_Employer.wednesday_matched = 1
+        matched_days.append("Wednesday")
 
     # Thursday check
     if ex_Worker.thursday == ex_Employer.thursday:
         # print("Thursday Matched")
-        ex_Worker.thursday_matched = 1
-        ex_Employer.thursday_matched = 1
-    else:
-        # print("Thursday Not Matched")
-        ex_Worker.thursday_matched = 0
-        ex_Employer.thursday_matched = 0
+        matched_days.append("Thursday")
 
     # Friday check
     if ex_Worker.friday == ex_Employer.friday:
         # print("Friday Matched")
-        ex_Worker.friday_matched = 1
-        ex_Employer.friday_matched = 1
-    else:
-        # print("Friday Not Matched")
-        ex_Worker.friday_matched = 0
-        ex_Employer.friday_matched = 0
+        matched_days.append("Friday")
 
     # Saturday Check
     if ex_Worker.saturday == ex_Employer.saturday:
         # print("Saturday Matched")
-        ex_Worker.saturday_matched = 1
-        ex_Employer.saturday_matched = 1
-    else:
-        # print("Saturday Not Matched")
-        ex_Worker.saturday_matched = 0
-        ex_Employer.saturday_matched = 0
+        matched_days.append("Saturday")
 
     print()
+    return matched_days
 
 # ==============================================================================================
 # time filtering
@@ -357,97 +329,41 @@ def checker(ex_Worker: Worker, ex_Employer: Employer):
 
 # def print_list(output):
 
-
-def out_list(ex_Worker: Worker, ex_Employer: Employer):
-    # print("List: ")
-
-    # add worker to list
-    output_size = len(output)
-    output.append(ex_Worker)
-
+def checkGender(ex_Worker: Worker, ex_Employer: Employer):
     # Gender check
     if ex_Worker.gender == ex_Worker.gender:
         print("Gender Matched\n")
-        pass
+        return True
     else:
-        if ex_Worker in output:
-            output.remove(ex_Worker)
-            print("FAILED GENDER CHECK\n")
-        else:
-            pass
+        print("FAILED GENDER CHECK\n")
+        return False
 
+def checkSkills(ex_Worker: Worker, ex_Employer: Employer):
     # skills check
     jobs_Worker_set = set(ex_Worker.job_skills)
     jobs_Employer_set = set(ex_Employer.job_skills)
 
     if jobs_Worker_set.intersection(jobs_Employer_set):
-        # if ex_Worker not in output:
-        #     output.append(ex_Worker)
         print("For jobs: " + str(jobs_Employer_set.intersection(jobs_Worker_set)))
+        return True
     else:
-        if ex_Worker in output:
-            output.remove(ex_Worker)
-            print("FAILED JOB SKILLS CHECK")
-        else:
-            pass
+        print("FAILED JOB SKILLS CHECK")
+        return False
 
+def checkDays(ex_Worker: Worker, ex_Employer: Employer):
     # days check -> figure out days
-    days_list = []
-    filter_days(ex_Worker, ex_Employer)
-    if ex_Worker.sunday_matched == 1 and ex_Worker.sunday == 1:
-        days_list.append("Sunday")
+    days_list = filter_days(ex_Worker, ex_Employer)
 
-    else:
-        # output.append(ex_Worker)
-        pass
-    if ex_Worker.monday_matched == 1 and ex_Worker.monday == 1:
-        days_list.append("Monday")
-
-    else:
-        # output.append(ex_Worker)
-        pass
-    if ex_Worker.tuesday_matched == 1 and ex_Worker.tuesday == 1:
-        days_list.append("Tuesday")
-
-    else:
-        # output.append(ex_Worker)
-        pass
-    if ex_Worker.wednesday_matched == 1 and ex_Worker.wednesday == 1:
-        days_list.append("Wednesday")
-
-    else:
-        # output.append(ex_Worker)
-        pass
-    if ex_Worker.thursday_matched == 1 and ex_Worker.thursday == 1:
-        days_list.append("Thursday")
-
-    else:
-        # output.append(ex_Worker)
-        pass
-    if ex_Worker.friday_matched == 1 and ex_Worker.friday == 1:
-        days_list.append("Friday")
-
-    else:
-        # output.append(ex_Worker)
-        pass
-    if ex_Worker.saturday_matched == 1 and ex_Worker.saturday == 1:
-        days_list.append("Satuday")
-    else:
-        # output.append(ex_Worker)
-        pass
-
-    # if no days matched remove
-    if len(days_list) == 0:
+    if (len(days_list)) == 0:
         print("Days were NOT matched")
-        if ex_Worker in output:
-            output.remove(ex_Worker)
-        else:
-            pass
+        return False
     else:
         print("Days Matched: ")
         print(days_list)
         print()
+        return True
 
+def checkTime(ex_Worker: Worker, ex_Employer: Employer):
     # time filter
     worker_range = range(ex_Worker.start_time, ex_Worker.end_time+1)
     employer_range = range(ex_Employer.start_time, ex_Employer.end_time+1)
@@ -464,75 +380,65 @@ def out_list(ex_Worker: Worker, ex_Employer: Employer):
 
     # time does not intersect
     if len(intersect) == 0:
-        if ex_Worker in output:
-            output.remove(ex_Worker)
-            print("FAILED TIME CHECK\n")
-        else:
-            pass
-    # time does intersect
+        print("FAILED TIME CHECK\n")
+        return False
     else:
         print("Passed time check for times: ")
         print(intersect)
         print()
-        pass
+        return True
 
+def checkTimeArray(ex_Worker: Worker, ex_Employer: Employer):
+    
+    # get time availability for both in the form of 24 boolean numpy array
+    work_array = np.array(ex_Worker.time_array)
+    employ_array = np.array(ex_Employer.time_array)
+
+    # subtract the employer array from the worker array to see if there are any negative numbers
+    result_array = np.subtract(work_array, employ_array)
+
+    # if there are any negative numbers, return false, otherwise return True
+    if (-1 in result_array.tolist()):
+        return False
+    return True
+
+def checkDistance(ex_Worker: Worker, ex_Employer: Employer):
     # Distance check
     print("Distance Check: ")
     temp_miles = get_route(ex_Worker, ex_Employer)
-    if temp_miles >= 20:
-        print("DRIVING DISTANCE FURTHER THAN 20 MILES\n")
-        # if ex_Worker in output:
-        # output.remove(ex_Worker)
-        # else:
-        # pass
+    if temp_miles >= 30:
+        print("DRIVING DISTANCE FURTHER THAN 30 MILES\n")
     else:
         print()
-        pass
+    return temp_miles
 
-    print("End of list filtering: \n" +
-          "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+def printMatchedWorkers(ex_Employer: Employer):
+    for x in ex_Employer.matched_workers:
+        print(x[0].worker_name)
 
-    # Don't add to list
-    if len(output) <= output_size:
-        print("Worker " + ex_Worker.worker_name +
-              " NOT added for Employer " + ex_Employer.employer_name)
-        print("Current list:")
-        print(*output)
-    # add to list
-    else:
-        print("Added Worker: " + ex_Worker.worker_name + " to list\n")
-        print("Updated list: ")
-        # print(*output)
-        i = 0
-        while i < len(output):
-            print(output[i])
-            i = i + 1
+def out_list(ex_Worker: Worker, ex_Employer: Employer):
 
+    if (checkGender(ex_Worker, ex_Employer)):
+        if (checkSkills(ex_Worker, ex_Employer)):
+            if (checkDays(ex_Worker, ex_Employer)):
+                if (checkTimeArray(ex_Worker, ex_Employer)):
+                #if (checkTime(ex_Worker, ex_Employer)):
+                    print("End of list filtering: \n" +
+                        "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+                    miles = checkDistance(ex_Worker, ex_Employer)
+                    if (miles <= 30):
+                        ex_Employer.matched_workers.append((ex_Worker, miles))
+                        ex_Worker.matched_employers.append((ex_Employer, miles))
+                        print("Added Worker: " + ex_Worker.worker_name + " to list\n")
+                        print("Updated list: ")
+                        printMatchedWorkers(ex_Employer)
+                    else:
+                        print("Worker " + ex_Worker.worker_name +
+                            " NOT added for Employer " + ex_Employer.employer_name)
+                        if (len(ex_Employer.matched_workers) > 0):
+                            print("Current list for employer:")
+                            printMatchedWorkers(ex_Employer)
+                        else:
+                            print(ex_Employer.employer_name + ": employer no matched workers")
+                        
     print()
-
-    # returns output(list) to main to return to database(?)
-    # return output
-
-
-# Example from last project
-# def match_city(ex_Ten: Tenant, ex_HO: HomeOwner):
-#    print("Match city function: ")
-#
-#    if ex_Ten.city == ex_HO.city:
-    #match is good
-
-    # add percent to match percent
-#        ex_HO.matchPercent = ex_HO.matchPercent + 9
-
-    # printing test statement
-#        print("City MATCHED for Tenant ID #: ",
-#                ex_Ten.appid, " and HomeOwner ID #: ",
-#                ex_HO.appid, '\n')
-
-    # Add to matched DB
-    #global matchedDB
-    #matchedDB = matchedDB + ex_HO
-#    else:
-#        print("City NOT MATCHED for Tenant ID #: ",
-#                ex_Ten.appid, " and HomeOwner ID #: ",
-#                ex_HO.appid, '\n')

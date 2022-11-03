@@ -5,18 +5,15 @@ from time import timezone
 # change to helper
 class Worker:
     #in order based on schema.txt
-    def __init__(self, worker_name, worker_id, gender, timeslot_id, timezone, start_time, end_time, 
-    job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday, 
-    sunday_matched, monday_matched, tuesday_matched, wednesday_matched, thursday_matched, friday_matched, 
-    saturday_matched):
+    def __init__(self, worker_name, worker_id, gender, timeslot_id, timezone, time_array, 
+    job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday ):
 
         self.worker_name = worker_name
         self.worker_id = worker_id
         self.gender = gender
         self.timeslot_id = timeslot_id
         self.timezone = timezone
-        self.start_time = start_time
-        self.end_time = end_time
+        self.time_array = time_array
         # self.hour_0 = hour_0
         # self.hour_1 = hour_1
         # self.hour_2 = hour_2
@@ -50,14 +47,14 @@ class Worker:
         self.thursday = thursday
         self.friday = friday
         self.saturday = saturday
-        self.sunday_matched = sunday_matched
-        self.monday_matched = monday_matched
-        self.tuesday_matched = tuesday_matched
-        self.wednesday_matched = wednesday_matched
-        self.thursday_matched = thursday_matched
-        self.friday_matched = friday_matched
-        self.saturday_matched = saturday_matched
-        
+        #self.sunday_matched = sunday_matched
+        #self.monday_matched = monday_matched
+        #self.tuesday_matched = tuesday_matched
+        #self.wednesday_matched = wednesday_matched
+        #self.thursday_matched = thursday_matched
+        #self.friday_matched = friday_matched
+        #self.saturday_matched = saturday_matched
+        self.matched_employers = []
 
         
         #class methods if needed here
