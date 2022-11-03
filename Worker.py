@@ -5,7 +5,7 @@ from time import timezone
 # change to helper
 class Worker:
     #in order based on schema.txt
-    def __init__(self, worker_name, worker_id, gender, timeslot_id, timezone, start_time, end_time, 
+    def __init__(self, worker_name, worker_id, gender, timeslot_id, timezone, time_array, 
     job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday ):
 
         self.worker_name = worker_name
@@ -13,8 +13,7 @@ class Worker:
         self.gender = gender
         self.timeslot_id = timeslot_id
         self.timezone = timezone
-        self.start_time = start_time
-        self.end_time = end_time
+        self.time_array = time_array
         # self.hour_0 = hour_0
         # self.hour_1 = hour_1
         # self.hour_2 = hour_2
@@ -55,7 +54,7 @@ class Worker:
         #self.thursday_matched = thursday_matched
         #self.friday_matched = friday_matched
         #self.saturday_matched = saturday_matched
-        
+        self.matched_employers = []
 
         
         #class methods if needed here

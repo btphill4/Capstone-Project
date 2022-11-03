@@ -19,6 +19,7 @@ from geopy import distance
 import requests
 import folium
 import polyline
+import numpy as np
 
 # Uses https://nominatim.openstreetmap.org/ui/search.html
 geolocater = Nominatim(user_agent="http")
@@ -387,6 +388,20 @@ def checkTime(ex_Worker: Worker, ex_Employer: Employer):
         print()
         return True
 
+def checkTimeArray(ex_Worker: Worker, ex_Employer: Employer):
+    
+    # get time availability for both in the form of 24 boolean numpy array
+    work_array = np.array(ex_Worker.time_array)
+    employ_array = np.array(ex_Employer.time_array)
+
+    # subtract the employer array from the worker array to see if there are any negative numbers
+    result_array = np.subtract(work_array, employ_array)
+
+    # if there are any negative numbers, return false, otherwise return True
+    if (-1 in result_array.tolist()):
+        return False
+    return True
+
 def checkDistance(ex_Worker: Worker, ex_Employer: Employer):
     # Distance check
     print("Distance Check: ")
@@ -406,12 +421,14 @@ def out_list(ex_Worker: Worker, ex_Employer: Employer):
     if (checkGender(ex_Worker, ex_Employer)):
         if (checkSkills(ex_Worker, ex_Employer)):
             if (checkDays(ex_Worker, ex_Employer)):
-                if (checkTime(ex_Worker, ex_Employer)):
+                if (checkTimeArray(ex_Worker, ex_Employer)):
+                #if (checkTime(ex_Worker, ex_Employer)):
                     print("End of list filtering: \n" +
                         "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                     miles = checkDistance(ex_Worker, ex_Employer)
                     if (miles <= 30):
                         ex_Employer.matched_workers.append((ex_Worker, miles))
+                        ex_Worker.matched_employers.append((ex_Employer, miles))
                         print("Added Worker: " + ex_Worker.worker_name + " to list\n")
                         print("Updated list: ")
                         printMatchedWorkers(ex_Employer)
