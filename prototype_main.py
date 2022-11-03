@@ -189,7 +189,6 @@ Employer_List.append(ex_Employer12)
 i = 1
 # to calculate run time
 tic = time.perf_counter() 
-
 count = 1
 for employer in Employer_List:
     for worker in Worker_list:
@@ -199,7 +198,7 @@ for employer in Employer_List:
         print("Begin Filtering for " + worker.worker_name + " and " + employer.employer_name + ":\n")
         out_list(worker, employer)
         count = count + 1
-        time.sleep(2)
+        time.sleep(1)
 
 
 

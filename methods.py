@@ -11,7 +11,6 @@ from Employer import Employer
 from Worker import Worker
 import psycopg2
 import pandas
-import numpy
 from geopy import *
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic as GD
@@ -44,8 +43,8 @@ output = []
 # ==============================================================================================
 
 # filter job type i.e. Gardening, etc method
-
-
+# sets job skills as a set and checks for intersection
+# returns -> none
 def filter_jobType(ex_Worker: Worker, ex_Employer: Employer):
     # print("Filter_jobType() function for Worker " + ex_Worker.worker_name +
     #             " and Employer " + ex_Employer.employer_name + ":\n")
@@ -68,23 +67,25 @@ def filter_jobType(ex_Worker: Worker, ex_Employer: Employer):
               + str(ex_Employer.job_skills) + "\n")
 
 # ==============================================================================================
-
-
 # Methods for calc_distance
 # getMetersToMiles() used for get_Route
+# returns miles or kilometers
+
 def getMetersToMiles(meters):
     return meters*0.000621371192
-
 
 def getMetersToKilometers(meters):
     return meters/1000
 
+# ==============================================================================================
 # get_route calculates the distance from one point to another
 
 def test_route(address):
     loc = geolocater.geocode(address)
     return loc
 
+# sets address to geocode values, calculates driving distance using longitude and latidude
+# returns distance in miles to worker address and employer address
 def get_route(ex_Worker: Worker, ex_Employer: Employer):
     # print("get_route() function: for Worker " + ex_Worker.worker_name +
     #             " and Employer " + ex_Employer.employer_name + ":\n")
@@ -107,6 +108,7 @@ def get_route(ex_Worker: Worker, ex_Employer: Employer):
     dropoff_lon = employer_Location.longitude
     dropoff_lat = employer_Location.latitude
 
+    # sets location in proper format and calls OSRM
     loc = "{},{};{},{}".format(
         pickup_long, pickup_lat, dropoff_lon, dropoff_lat)
     url = "https://router.project-osrm.org/route/v1/driving/"
@@ -114,6 +116,8 @@ def get_route(ex_Worker: Worker, ex_Employer: Employer):
     if r.status_code != 200:
         return {}
 
+    # calculates the route based on OSRM 
+    # sets start_point, end_point and distance and sets it to out
     res = r.json()
     routes = polyline.decode(res['routes'][0]['geometry'])
     start_point = [res['waypoints'][0]['location']
@@ -122,13 +126,14 @@ def get_route(ex_Worker: Worker, ex_Employer: Employer):
                  [1], res['waypoints'][1]['location'][0]]
     distance = res['routes'][0]['distance']
 
+    # can be used to output the route, starting/ending point and distance (meters)
     out = {'route': routes,
            'start_point': start_point,
            'end_point': end_point,
            'distance': distance
            }
 
-    # set distance to miles and kilometers
+    # set distance(meters) to miles and kilometers
     distance_Miles = getMetersToMiles(distance)
     distance_Kilometers = getMetersToKilometers(distance)
 
@@ -138,45 +143,14 @@ def get_route(ex_Worker: Worker, ex_Employer: Employer):
     print("Distance in kilometers: " +
           str("{:.2f}".format(distance_Kilometers)) + " Kilometers")
 
-    # return everything -> maybe change to just return distance
     # return
     return distance_Miles
 
 # ==============================================================================================
-
-# method for printing to a map
-# def get_map(route):
-
-#     m = folium.Map(location=[(route['start_point'][0] + route['end_point'][0])/2,
-#                              (route['start_point'][1] + route['end_point'][1])/2],
-#                    zoom_start=13)
-
-#     folium.PolyLine(
-#         route['route'],
-#         weight=8,
-#         color='blue',
-#         opacity=0.6
-#     ).add_to(m)
-
-#     folium.Marker(
-#         location=route['start_point'],
-#         icon=folium.Icon(icon='play', color='green')
-#     ).add_to(m)
-
-#     folium.Marker(
-#         location=route['end_point'],
-#         icon=folium.Icon(icon='stop', color='red')
-#     ).add_to(m)
-
-#     return m
-
-# calculate and filter distance method
-# Uses https://nominatim.openstreetmap.org/ui/search.html
-# limit distance to 20 miles or less -> if more than 20, remove from list
-# Run for entire list? or individual?
-# For checking next distance, add class value NewDistance and check if newDistance == NULL at start and then run with newDistance
-
-
+# original distance calculations 
+# -> only returns straight line distance not driving distance
+# used for testing address validity 
+# returns -> none
 def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
     print("calc_distance() function for Worker " + ex_Worker.worker_name +
           " and Employer " + ex_Employer.employer_name + ":\n")
@@ -213,7 +187,8 @@ def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
 
 # ==============================================================================================
 
-
+# checks for the matched days by adding them to a list of matched_days
+# returns matched_days for out_filter()
 def filter_days(ex_Worker: Worker, ex_Employer: Employer):
     # print("calc_days() function for Worker " + ex_Worker.worker_name +
     #             " and Employer " + ex_Employer.employer_name + ":\n")
@@ -259,8 +234,8 @@ def filter_days(ex_Worker: Worker, ex_Employer: Employer):
 
 # ==============================================================================================
 # time filtering
-
-
+# prints intersection
+# returns -> none
 def filter_time(ex_Worker: Worker, ex_Employer: Employer):
     # print("filter_time() function for Worker " + ex_Worker.worker_name +
     #             " and Employer " + ex_Employer.employer_name + ":\n")
@@ -288,6 +263,8 @@ def filter_time(ex_Worker: Worker, ex_Employer: Employer):
 
 
 # ==============================================================================================
+# Filters gender by checking first if they are matched
+# then returns if they are female matched or male matched
 def filter_gender(ex_Worker: Worker, ex_Employer: Employer):
     # print("filter_gender() function for Worker ")
 
@@ -307,7 +284,8 @@ def filter_gender(ex_Worker: Worker, ex_Employer: Employer):
 
 
 # ==============================================================================================
-# output?
+# Check doesn't filter out the objects list 
+# returns information based on the filter methods called 
 def checker(ex_Worker: Worker, ex_Employer: Employer):
     print("checker() function:\n")
     print("Begin filter for " + ex_Worker.worker_name +
@@ -327,8 +305,9 @@ def checker(ex_Worker: Worker, ex_Employer: Employer):
     # end checker
     print("End of check")
 
-# def print_list(output):
-
+# ==============================================================================================
+# checks if genders are matched for what the employer wants
+# returns true or false based on 
 def checkGender(ex_Worker: Worker, ex_Employer: Employer):
     # Gender check
     if ex_Worker.gender == ex_Worker.gender:
@@ -338,6 +317,9 @@ def checkGender(ex_Worker: Worker, ex_Employer: Employer):
         print("FAILED GENDER CHECK\n")
         return False
 
+# ==============================================================================================
+# checks that skills are matched and prints the matched skills
+# returns true or false based on interesetion
 def checkSkills(ex_Worker: Worker, ex_Employer: Employer):
     # skills check
     jobs_Worker_set = set(ex_Worker.job_skills)
@@ -350,6 +332,9 @@ def checkSkills(ex_Worker: Worker, ex_Employer: Employer):
         print("FAILED JOB SKILLS CHECK")
         return False
 
+# ==============================================================================================
+# checks that days are matched 
+# returns true or false based on days_list
 def checkDays(ex_Worker: Worker, ex_Employer: Employer):
     # days check -> figure out days
     days_list = filter_days(ex_Worker, ex_Employer)
@@ -363,6 +348,9 @@ def checkDays(ex_Worker: Worker, ex_Employer: Employer):
         print()
         return True
 
+# ==============================================================================================
+# checks time based on start and end times using intersections 
+# returns intersection list based on matched times
 def checkTime(ex_Worker: Worker, ex_Employer: Employer):
     # time filter
     worker_range = range(ex_Worker.start_time, ex_Worker.end_time+1)
@@ -388,6 +376,9 @@ def checkTime(ex_Worker: Worker, ex_Employer: Employer):
         print()
         return True
 
+# ==============================================================================================
+# Checks time array for availability using numpy
+# returns -> true or false
 def checkTimeArray(ex_Worker: Worker, ex_Employer: Employer):
     
     # get time availability for both in the form of 24 boolean numpy array
@@ -402,6 +393,9 @@ def checkTimeArray(ex_Worker: Worker, ex_Employer: Employer):
         return False
     return True
 
+# ==============================================================================================
+# checkDistance -> not used in out_filter 
+# returns miles 
 def checkDistance(ex_Worker: Worker, ex_Employer: Employer):
     # Distance check
     print("Distance Check: ")
@@ -412,12 +406,18 @@ def checkDistance(ex_Worker: Worker, ex_Employer: Employer):
         print()
     return temp_miles
 
+# ==============================================================================================
+# prints the list of matched workers per employer
+# return -> none
 def printMatchedWorkers(ex_Employer: Employer):
     for x in ex_Employer.matched_workers:
         print(x[0].worker_name)
 
+# ==============================================================================================
+# Filters out the list of workers and employers and returns the matched list
+# return -> list of matched objects
 def out_list(ex_Worker: Worker, ex_Employer: Employer):
-
+    # filters based on order of importance and leaves nested if's when false
     if (checkGender(ex_Worker, ex_Employer)):
         if (checkSkills(ex_Worker, ex_Employer)):
             if (checkDays(ex_Worker, ex_Employer)):
