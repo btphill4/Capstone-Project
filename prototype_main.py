@@ -203,14 +203,8 @@ for employer in Employer_List:
 
 
 # sort
-for employer in Employer_List:
-    for i in range(len(employer.matched_workers)):
-        min_idx = i
-        for j in range(i+1, len(employer.matched_workers)):
-            if (employer.matched_workers[j][1] < employer.matched_workers[min_idx][1]):
-                min_idx = j
-        (employer.matched_workers[i], employer.matched_workers[min_idx]) = (employer.matched_workers[min_idx], employer.matched_workers[i])
-
+sortMatchedWorkers(Employer_List)
+sortMatchedEmployers(Worker_list)
 
 for employer in Employer_List:
     print(employer.employer_name)

@@ -442,3 +442,25 @@ def out_list(ex_Worker: Worker, ex_Employer: Employer):
                             print(ex_Employer.employer_name + ": employer no matched workers")
                         
     print()
+
+# ==============================================================================================
+# Sorts the matched_workers list for each employer 
+def sortMatchedWorkers(Employer_List):
+    for employer in Employer_List:
+        for i in range(len(employer.matched_workers)):
+            min_idx = i
+            for j in range(i+1, len(employer.matched_workers)):
+                if (employer.matched_workers[j][1] < employer.matched_workers[min_idx][1]):
+                    min_idx = j
+            (employer.matched_workers[i], employer.matched_workers[min_idx]) = (employer.matched_workers[min_idx], employer.matched_workers[i])
+
+# ==============================================================================================
+# Sorts the matched_workers list for each employer 
+def sortMatchedEmployers(Worker_List):
+    for worker in Worker_List:
+        for i in range(len(worker.matched_employers)):
+            min_idx = i
+            for j in range(i+1, len(worker.matched_employers)):
+                if (worker.matched_employers[j][1] < worker.matched_employers[min_idx][1]):
+                    min_idx = j
+            (worker.matched_employers[i], worker.matched_employers[min_idx]) = (worker.matched_employers[min_idx], worker.matched_employers[i])
