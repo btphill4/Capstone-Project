@@ -6,28 +6,119 @@ Begin Filtering for Worker1 and Employer1:
 
 Gender Matched
 
-For jobs: {'Babysitting'}
+For jobs: {'Gardening'}
 
 Days Matched: 
-['Monday', 'Friday']
+['Sunday', 'Monday', 'Friday', 'Saturday']
 
-Passed time check for times: 
-{10, 11, 12, 13}
-
-Distance Check: 
-Distance in miles: 36.01 Miles
-Distance in kilometers: 57.95 Kilometers
-DRIVING DISTANCE FURTHER THAN 20 MILES
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Added Worker: Worker1 to list
-
-Updated list: 
-<Worker.Worker object at 0x7f3dbfbf99a0>
 
 ==============================================================================================
 =================================== Iteration 2 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer1:
+
+Gender Matched
+
+For jobs: {'Gardening'}
+
+Days Matched: 
+['Sunday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 31.36 Miles
+Distance in kilometers: 50.47 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker2 NOT added for Employer Employer1
+Employer1: employer no matched workers
+
+==============================================================================================
+=================================== Iteration 3 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer1:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 4 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer1:
+
+Gender Matched
+
+For jobs: {'Gardening'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 5 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer1:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 6 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer1:
+
+Gender Matched
+
+For jobs: {'Gardening'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 7 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer1:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 8 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer1:
+
+Gender Matched
+
+For jobs: {'Gardening'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 28.87 Miles
+Distance in kilometers: 46.46 Kilometers
+
+Added Worker: Worker8 to list
+
+Updated list: 
+Worker8
+
+==============================================================================================
+=================================== Iteration 9 ==============================================
 ==============================================================================================
 
 Begin Filtering for Worker1 and Employer2:
@@ -37,80 +128,11 @@ Gender Matched
 For jobs: {'Cooking'}
 
 Days Matched: 
-['Monday', 'Friday']
+['Sunday', 'Monday', 'Friday', 'Saturday']
 
-FAILED TIME CHECK
-
-Distance Check: 
-Distance in miles: 13.03 Miles
-Distance in kilometers: 20.97 Kilometers
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Worker Worker1 NOT added for Employer Employer2
-Current list:
-<Worker.Worker object at 0x7f3dbfbf99a0>
 
 ==============================================================================================
-=================================== Iteration 3 ==============================================
-==============================================================================================
-
-Begin Filtering for Worker1 and Employer3:
-
-Gender Matched
-
-For jobs: {'Cooking'}
-
-Days Matched: 
-['Monday', 'Friday']
-
-Passed time check for times: 
-{10, 11, 12, 13}
-
-Distance Check: 
-Distance in miles: 19.65 Miles
-Distance in kilometers: 31.63 Kilometers
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Added Worker: Worker1 to list
-
-Updated list: 
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf99a0>
-
-==============================================================================================
-=================================== Iteration 4 ==============================================
-==============================================================================================
-
-Begin Filtering for Worker2 and Employer1:
-
-Gender Matched
-
-For jobs: {'Gardening', 'Babysitting'}
-
-Days Matched: 
-['Tuesday', 'Wednesday', 'Friday']
-
-Passed time check for times: 
-{8, 9, 10, 11, 12, 13}
-
-Distance Check: 
-Distance in miles: 31.36 Miles
-Distance in kilometers: 50.47 Kilometers
-DRIVING DISTANCE FURTHER THAN 20 MILES
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Added Worker: Worker2 to list
-
-Updated list: 
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-
-==============================================================================================
-=================================== Iteration 5 ==============================================
+=================================== Iteration 10 ==============================================
 ==============================================================================================
 
 Begin Filtering for Worker2 and Employer2:
@@ -120,82 +142,21 @@ Gender Matched
 For jobs: {'Cooking'}
 
 Days Matched: 
-['Tuesday', 'Wednesday', 'Friday']
+['Sunday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday']
 
-Passed time check for times: 
-{16, 17, 15}
-
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Distance Check: 
 Distance in miles: 10.57 Miles
 Distance in kilometers: 17.02 Kilometers
 
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Added Worker: Worker2 to list
 
 Updated list: 
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-<Worker.Worker object at 0x7f3dbfbf9a60>
+Worker2
 
 ==============================================================================================
-=================================== Iteration 6 ==============================================
-==============================================================================================
-
-Begin Filtering for Worker2 and Employer3:
-
-Gender Matched
-
-For jobs: {'Cooking'}
-
-Days Matched: 
-['Tuesday', 'Wednesday', 'Friday']
-
-Passed time check for times: 
-{10, 11, 12, 13, 14, 15, 16, 17}
-
-Distance Check: 
-Distance in miles: 16.64 Miles
-Distance in kilometers: 26.78 Kilometers
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Added Worker: Worker2 to list
-
-Updated list: 
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-
-==============================================================================================
-=================================== Iteration 7 ==============================================
-==============================================================================================
-
-Begin Filtering for Worker3 and Employer1:
-
-Gender Matched
-
-FAILED JOB SKILLS CHECK
-
-Days Matched: 
-['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-
-Distance Check: 
-Distance in miles: 24.51 Miles
-Distance in kilometers: 39.45 Kilometers
-DRIVING DISTANCE FURTHER THAN 20 MILES
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Worker Worker3 NOT added for Employer Employer1
-Current list:
-<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60>
-
-==============================================================================================
-=================================== Iteration 8 ==============================================
+=================================== Iteration 11 ==============================================
 ==============================================================================================
 
 Begin Filtering for Worker3 and Employer2:
@@ -205,29 +166,144 @@ Gender Matched
 For jobs: {'Cooking'}
 
 Days Matched: 
-['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-Passed time check for times: 
-{16, 17, 18, 15}
-
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Distance Check: 
 Distance in miles: 0.00 Miles
 Distance in kilometers: 0.00 Kilometers
 
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Added Worker: Worker3 to list
 
 Updated list: 
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-<Worker.Worker object at 0x7f3db1a9e790>
+Worker2
+Worker3
 
 ==============================================================================================
-=================================== Iteration 9 ==============================================
+=================================== Iteration 12 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer2:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 13 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer2:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 14 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer2:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 15 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer2:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 48.67 Miles
+Distance in kilometers: 78.33 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker7 NOT added for Employer Employer2
+Current list for employer:
+Worker2
+Worker3
+
+==============================================================================================
+=================================== Iteration 16 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer2:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 48.40 Miles
+Distance in kilometers: 77.89 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker8 NOT added for Employer Employer2
+Current list for employer:
+Worker2
+Worker3
+
+==============================================================================================
+=================================== Iteration 17 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer3:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 18 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer3:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 16.64 Miles
+Distance in kilometers: 26.78 Kilometers
+
+Added Worker: Worker2 to list
+
+Updated list: 
+Worker2
+
+==============================================================================================
+=================================== Iteration 19 ==============================================
 ==============================================================================================
 
 Begin Filtering for Worker3 and Employer3:
@@ -237,84 +313,22 @@ Gender Matched
 For jobs: {'Cooking'}
 
 Days Matched: 
-['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-Passed time check for times: 
-{16, 17, 18, 15}
-
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Distance Check: 
 Distance in miles: 7.20 Miles
 Distance in kilometers: 11.58 Kilometers
 
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Added Worker: Worker3 to list
 
 Updated list: 
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf99a0>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-<Worker.Worker object at 0x7f3dbfbf9a60>
-<Worker.Worker object at 0x7f3db1a9e790>
-<Worker.Worker object at 0x7f3db1a9e790>
+Worker2
+Worker3
 
 ==============================================================================================
-=================================== Iteration 10 ==============================================
-==============================================================================================
-
-Begin Filtering for Worker4 and Employer1:
-
-Gender Matched
-
-FAILED JOB SKILLS CHECK
-
-Days Matched: 
-['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-
-Passed time check for times: 
-{9, 10, 11, 12, 13}
-
-Distance Check: 
-Distance in miles: 55.92 Miles
-Distance in kilometers: 89.99 Kilometers
-DRIVING DISTANCE FURTHER THAN 20 MILES
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Worker Worker4 NOT added for Employer Employer1
-Current list:
-<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
-
-==============================================================================================
-=================================== Iteration 11 ==============================================
-==============================================================================================
-
-Begin Filtering for Worker4 and Employer2:
-
-Gender Matched
-
-FAILED JOB SKILLS CHECK
-
-Days Matched: 
-['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-
-Passed time check for times: 
-{16, 17, 18, 15}
-
-Distance Check: 
-Distance in miles: 32.94 Miles
-Distance in kilometers: 53.01 Kilometers
-DRIVING DISTANCE FURTHER THAN 20 MILES
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Worker Worker4 NOT added for Employer Employer2
-Current list:
-<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
-
-==============================================================================================
-=================================== Iteration 12 ==============================================
+=================================== Iteration 20 ==============================================
 ==============================================================================================
 
 Begin Filtering for Worker4 and Employer3:
@@ -323,78 +337,8 @@ Gender Matched
 
 FAILED JOB SKILLS CHECK
 
-Days Matched: 
-['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-
-Passed time check for times: 
-{10, 11, 12, 13, 14, 15, 16, 17, 18}
-
-Distance Check: 
-Distance in miles: 39.56 Miles
-Distance in kilometers: 63.67 Kilometers
-DRIVING DISTANCE FURTHER THAN 20 MILES
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Worker Worker4 NOT added for Employer Employer3
-Current list:
-<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
-
 ==============================================================================================
-=================================== Iteration 13 ==============================================
-==============================================================================================
-
-Begin Filtering for Worker5 and Employer1:
-
-Gender Matched
-
-FAILED JOB SKILLS CHECK
-
-Days Matched: 
-['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-
-Passed time check for times: 
-{9, 10, 11, 12, 13}
-
-Distance Check: 
-Distance in miles: 30.04 Miles
-Distance in kilometers: 48.35 Kilometers
-DRIVING DISTANCE FURTHER THAN 20 MILES
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Worker Worker5 NOT added for Employer Employer1
-Current list:
-<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
-
-==============================================================================================
-=================================== Iteration 14 ==============================================
-==============================================================================================
-
-Begin Filtering for Worker5 and Employer2:
-
-Gender Matched
-
-FAILED JOB SKILLS CHECK
-
-Days Matched: 
-['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-
-Passed time check for times: 
-{16, 17, 18, 15}
-
-Distance Check: 
-Distance in miles: 6.90 Miles
-Distance in kilometers: 11.11 Kilometers
-
-End of list filtering: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Worker Worker5 NOT added for Employer Employer2
-Current list:
-<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
-
-==============================================================================================
-=================================== Iteration 15 ==============================================
+=================================== Iteration 21 ==============================================
 ==============================================================================================
 
 Begin Filtering for Worker5 and Employer3:
@@ -403,21 +347,1356 @@ Gender Matched
 
 FAILED JOB SKILLS CHECK
 
+==============================================================================================
+=================================== Iteration 22 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer3:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
 Days Matched: 
-['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-Passed time check for times: 
-{10, 11, 12, 13, 14, 15, 16, 17, 18}
 
-Distance Check: 
-Distance in miles: 10.00 Miles
-Distance in kilometers: 16.10 Kilometers
+==============================================================================================
+=================================== Iteration 23 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer3:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 End of list filtering: 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Worker Worker5 NOT added for Employer Employer3
-Current list:
-<Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf99a0> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3dbfbf9a60> <Worker.Worker object at 0x7f3db1a9e790> <Worker.Worker object at 0x7f3db1a9e790>
+Distance Check: 
+Distance in miles: 51.67 Miles
+Distance in kilometers: 83.15 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
 
-Total runtime: 16.87215 seconds
+Worker Worker7 NOT added for Employer Employer3
+Current list for employer:
+Worker2
+Worker3
+
+==============================================================================================
+=================================== Iteration 24 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer3:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 51.39 Miles
+Distance in kilometers: 82.71 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker8 NOT added for Employer Employer3
+Current list for employer:
+Worker2
+Worker3
+
+==============================================================================================
+=================================== Iteration 25 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer4:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 26 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer4:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 27 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer4:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 55.35 Miles
+Distance in kilometers: 89.07 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker3 NOT added for Employer Employer4
+Employer4: employer no matched workers
+
+==============================================================================================
+=================================== Iteration 28 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer4:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 29 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer4:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 30 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer4:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+
+==============================================================================================
+=================================== Iteration 31 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer4:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 6.76 Miles
+Distance in kilometers: 10.88 Kilometers
+
+Added Worker: Worker7 to list
+
+Updated list: 
+Worker7
+
+==============================================================================================
+=================================== Iteration 32 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer4:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 54.37 Miles
+Distance in kilometers: 87.50 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker8 NOT added for Employer Employer4
+Current list for employer:
+Worker7
+
+==============================================================================================
+=================================== Iteration 33 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer5:
+
+Gender Matched
+
+For jobs: {'Gardening'}
+
+Days Matched: 
+['Monday', 'Friday']
+
+
+==============================================================================================
+=================================== Iteration 34 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer5:
+
+Gender Matched
+
+For jobs: {'Gardening'}
+
+Days Matched: 
+['Tuesday', 'Wednesday', 'Friday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 21.44 Miles
+Distance in kilometers: 34.51 Kilometers
+
+Added Worker: Worker2 to list
+
+Updated list: 
+Worker2
+
+==============================================================================================
+=================================== Iteration 35 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer5:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 36 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer5:
+
+Gender Matched
+
+For jobs: {'Gardening'}
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 9.61 Miles
+Distance in kilometers: 15.47 Kilometers
+
+Added Worker: Worker4 to list
+
+Updated list: 
+Worker2
+Worker4
+
+==============================================================================================
+=================================== Iteration 37 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer5:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 38 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer5:
+
+Gender Matched
+
+For jobs: {'Gardening'}
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+
+==============================================================================================
+=================================== Iteration 39 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer5:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 40 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer5:
+
+Gender Matched
+
+For jobs: {'Gardening'}
+
+Days Matched: 
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 80.80 Miles
+Distance in kilometers: 130.03 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker8 NOT added for Employer Employer5
+Current list for employer:
+Worker2
+Worker4
+
+==============================================================================================
+=================================== Iteration 41 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer6:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 42 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer6:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 31.40 Miles
+Distance in kilometers: 50.53 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker2 NOT added for Employer Employer6
+Employer6: employer no matched workers
+
+==============================================================================================
+=================================== Iteration 43 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer6:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 25.53 Miles
+Distance in kilometers: 41.09 Kilometers
+
+Added Worker: Worker3 to list
+
+Updated list: 
+Worker3
+
+==============================================================================================
+=================================== Iteration 44 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer6:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 45 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer6:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 46 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer6:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 47 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer6:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 73.06 Miles
+Distance in kilometers: 117.58 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker7 NOT added for Employer Employer6
+Current list for employer:
+Worker3
+
+==============================================================================================
+=================================== Iteration 48 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer6:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 72.78 Miles
+Distance in kilometers: 117.13 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker8 NOT added for Employer Employer6
+Current list for employer:
+Worker3
+
+==============================================================================================
+=================================== Iteration 49 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer7:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 50 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer7:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 51 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer7:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 25.11 Miles
+Distance in kilometers: 40.40 Kilometers
+
+Added Worker: Worker3 to list
+
+Updated list: 
+Worker3
+
+==============================================================================================
+=================================== Iteration 52 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer7:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 53 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer7:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 54 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer7:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 55 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer7:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 63.14 Miles
+Distance in kilometers: 101.61 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker7 NOT added for Employer Employer7
+Current list for employer:
+Worker3
+
+==============================================================================================
+=================================== Iteration 56 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer7:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 72.35 Miles
+Distance in kilometers: 116.44 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker8 NOT added for Employer Employer7
+Current list for employer:
+Worker3
+
+==============================================================================================
+=================================== Iteration 57 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer8:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 58 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer8:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 59 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer8:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 8.66 Miles
+Distance in kilometers: 13.94 Kilometers
+
+Added Worker: Worker3 to list
+
+Updated list: 
+Worker3
+
+==============================================================================================
+=================================== Iteration 60 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer8:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 61 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer8:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 62 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer8:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 63 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer8:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 41.77 Miles
+Distance in kilometers: 67.22 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker7 NOT added for Employer Employer8
+Current list for employer:
+Worker3
+
+==============================================================================================
+=================================== Iteration 64 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer8:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 41.49 Miles
+Distance in kilometers: 66.78 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker8 NOT added for Employer Employer8
+Current list for employer:
+Worker3
+
+==============================================================================================
+=================================== Iteration 65 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer9:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 47.52 Miles
+Distance in kilometers: 76.47 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker1 NOT added for Employer Employer9
+Employer9: employer no matched workers
+
+==============================================================================================
+=================================== Iteration 66 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer9:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 25.10 Miles
+Distance in kilometers: 40.40 Kilometers
+
+Added Worker: Worker2 to list
+
+Updated list: 
+Worker2
+
+==============================================================================================
+=================================== Iteration 67 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer9:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 36.02 Miles
+Distance in kilometers: 57.97 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker3 NOT added for Employer Employer9
+Current list for employer:
+Worker2
+
+==============================================================================================
+=================================== Iteration 68 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer9:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 69 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer9:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 70 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer9:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 1.14 Miles
+Distance in kilometers: 1.84 Kilometers
+
+Added Worker: Worker6 to list
+
+Updated list: 
+Worker2
+Worker6
+
+==============================================================================================
+=================================== Iteration 71 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer9:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 24.10 Miles
+Distance in kilometers: 38.78 Kilometers
+
+Added Worker: Worker7 to list
+
+Updated list: 
+Worker2
+Worker6
+Worker7
+
+==============================================================================================
+=================================== Iteration 72 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer9:
+
+Gender Matched
+
+For jobs: {'Cooking'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 67.24 Miles
+Distance in kilometers: 108.22 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker8 NOT added for Employer Employer9
+Current list for employer:
+Worker2
+Worker6
+Worker7
+
+==============================================================================================
+=================================== Iteration 73 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer10:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 74 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer10:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 51.78 Miles
+Distance in kilometers: 83.34 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker2 NOT added for Employer Employer10
+Employer10: employer no matched workers
+
+==============================================================================================
+=================================== Iteration 75 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer10:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 58.52 Miles
+Distance in kilometers: 94.18 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker3 NOT added for Employer Employer10
+Employer10: employer no matched workers
+
+==============================================================================================
+=================================== Iteration 76 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer10:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 77 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer10:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 78 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer10:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 79 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer10:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 10.88 Miles
+Distance in kilometers: 17.51 Kilometers
+
+Added Worker: Worker7 to list
+
+Updated list: 
+Worker7
+
+==============================================================================================
+=================================== Iteration 80 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer10:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 57.55 Miles
+Distance in kilometers: 92.61 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker8 NOT added for Employer Employer10
+Current list for employer:
+Worker7
+
+==============================================================================================
+=================================== Iteration 81 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer11:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 82 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer11:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 83 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer11:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 57.04 Miles
+Distance in kilometers: 91.79 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker3 NOT added for Employer Employer11
+Employer11: employer no matched workers
+
+==============================================================================================
+=================================== Iteration 84 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer11:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 85 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer11:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 86 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer11:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 23.21 Miles
+Distance in kilometers: 37.35 Kilometers
+
+Added Worker: Worker6 to list
+
+Updated list: 
+Worker6
+
+==============================================================================================
+=================================== Iteration 87 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer11:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 40.99 Miles
+Distance in kilometers: 65.97 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker7 NOT added for Employer Employer11
+Current list for employer:
+Worker6
+
+==============================================================================================
+=================================== Iteration 88 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer11:
+
+Gender Matched
+
+For jobs: {'Driving'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 88.26 Miles
+Distance in kilometers: 142.04 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker8 NOT added for Employer Employer11
+Current list for employer:
+Worker6
+
+==============================================================================================
+=================================== Iteration 89 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker1 and Employer12:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 90 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker2 and Employer12:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 91 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker3 and Employer12:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 32.19 Miles
+Distance in kilometers: 51.80 Kilometers
+DRIVING DISTANCE FURTHER THAN 30 MILES
+
+Worker Worker3 NOT added for Employer Employer12
+Employer12: employer no matched workers
+
+==============================================================================================
+=================================== Iteration 92 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker4 and Employer12:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 93 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker5 and Employer12:
+
+Gender Matched
+
+FAILED JOB SKILLS CHECK
+
+==============================================================================================
+=================================== Iteration 94 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker6 and Employer12:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+
+==============================================================================================
+=================================== Iteration 95 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker7 and Employer12:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 28.18 Miles
+Distance in kilometers: 45.35 Kilometers
+
+Added Worker: Worker7 to list
+
+Updated list: 
+Worker7
+
+==============================================================================================
+=================================== Iteration 96 ==============================================
+==============================================================================================
+
+Begin Filtering for Worker8 and Employer12:
+
+Gender Matched
+
+For jobs: {'Babysitting'}
+
+Days Matched: 
+['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+End of list filtering: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distance Check: 
+Distance in miles: 23.59 Miles
+Distance in kilometers: 37.96 Kilometers
+
+Added Worker: Worker8 to list
+
+Updated list: 
+Worker7
+Worker8
+
+Employer1
+	Worker8: 28.8658608614792
+
+Employer2
+	Worker3: 0.0
+	Worker2: 10.573873574264
+
+Employer3
+	Worker3: 7.1981502994856
+	Worker2: 16.6380214483496
+
+Employer4
+	Worker7: 6.7625069567744
+
+Employer5
+	Worker4: 9.6131094371936
+	Worker2: 21.444576166946398
+
+Employer6
+	Worker3: 25.532452964876
+
+Employer7
+	Worker3: 25.1050117218992
+
+Employer8
+	Worker3: 8.6610444968112
+
+Employer9
+	Worker6: 1.143633678876
+	Worker7: 24.098266116620803
+	Worker2: 25.1033961568
+
+Employer10
+	Worker7: 10.8815765885424
+
+Employer11
+	Worker6: 23.207592650008
+
+Employer12
+	Worker8: 23.590170892922398
+	Worker7: 28.1771951693856
+
+Employer1: assigned to Worker8
+Employer2: assigned to Worker3
+Employer3: assigned to Worker2
+Employer4: assigned to Worker7
+Employer5: assigned to Worker4
+Employer9: assigned to Worker6
+Total runtime: 144.08714 seconds
 
