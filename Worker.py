@@ -5,39 +5,25 @@ from time import timezone
 # change to helper
 class Worker:
     #in order based on schema.txt
-    def __init__(self, worker_name, worker_id, gender, timeslot_id, timezone, time_array, 
+    def __init__(self, worker_name, worker_id, gender, timeslot_id, time_array, 
     job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday ):
-
+        
+        
+        self.start_time = 7
+        self.end_time = 14
+        # 10 - 11
+        # 7 - 10, 11 - 14
+        
+        # [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] - workers availability
+        # [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0] - required job time by employer
+        
+        # [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, -1, -1, -1, 0, 0, 0, 0, 0] - result of subtracting
+        
         self.worker_name = worker_name
         self.worker_id = worker_id
         self.gender = gender
         self.timeslot_id = timeslot_id
-        self.timezone = timezone
         self.time_array = time_array
-        # self.hour_0 = hour_0
-        # self.hour_1 = hour_1
-        # self.hour_2 = hour_2
-        # self.hour_3 = hour_3
-        # self.hour_4 = hour_4
-        # self.hour_5 = hour_5
-        # self.hour_6 = hour_6
-        # self.hour_7 = hour_7
-        # self.hour_8 = hour_8
-        # self.hour_9 = hour_9
-        # self.hour_10 = hour_10
-        # self.hour_11 = hour_11
-        # self.hour_12 = hour_12
-        # self.hour_13 = hour_13
-        # self.hour_14 = hour_14
-        # self.hour_15 = hour_15
-        # self.hour_16 = hour_16
-        # self.hour_17 = hour_17
-        # self.hour_18 = hour_18
-        # self.hour_19 = hour_19
-        # self.hour_20 = hour_20
-        # self.hour_21 = hour_21
-        # self.hour_22 = hour_22
-        # self.hour_23 = hour_23
         self.job_skills = job_skills
         self.address = address
         self.sunday = sunday
@@ -47,14 +33,8 @@ class Worker:
         self.thursday = thursday
         self.friday = friday
         self.saturday = saturday
-        #self.sunday_matched = sunday_matched
-        #self.monday_matched = monday_matched
-        #self.tuesday_matched = tuesday_matched
-        #self.wednesday_matched = wednesday_matched
-        #self.thursday_matched = thursday_matched
-        #self.friday_matched = friday_matched
-        #self.saturday_matched = saturday_matched
         self.matched_employers = []
+        self.pay_range_start = 0;
 
         
         #class methods if needed here
