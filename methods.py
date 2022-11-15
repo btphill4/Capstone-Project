@@ -300,52 +300,30 @@ def filter_days(ex_Worker: Worker, ex_Employer: Employer):
 # time filtering
 # prints intersection
 # returns -> none
-def filter_time(ex_Worker: Worker, ex_Employer: Employer):
-    # print("filter_time() function for Worker " + ex_Worker.worker_name +
-    #             " and Employer " + ex_Employer.employer_name + ":\n")
+# def filter_time(ex_Worker: Worker, ex_Employer: Employer):
+#     # print("filter_time() function for Worker " + ex_Worker.worker_name +
+#     #             " and Employer " + ex_Employer.employer_name + ":\n")
 
-    # set time range to variable -> worker
-    worker_range = range(ex_Worker.start_time, ex_Worker.end_time+1)
-    employer_range = range(ex_Employer.start_time, ex_Employer.end_time+1)
+#     # set time range to variable -> worker
+#     worker_range = range(ex_Worker.start_time, ex_Worker.end_time+1)
+#     employer_range = range(ex_Employer.start_time, ex_Employer.end_time+1)
 
-    # testing
-    # for i in worker_range:
-    #     print(i)
-    # for i in employer_range:
-    #     print(i)
+#     # testing
+#     # for i in worker_range:
+#     #     print(i)
+#     # for i in employer_range:
+#     #     print(i)
 
-    # convert worker_range to set
-    worker_rangeSet = set(worker_range)
-    intersect = worker_rangeSet.intersection(employer_range)
+#     # convert worker_range to set
+#     worker_rangeSet = set(worker_range)
+#     intersect = worker_rangeSet.intersection(employer_range)
 
-    #if len(intersect) == 0:
-    #    print("Time does not intersect")
-    #else:
-    #    print(intersect)
+#     #if len(intersect) == 0:
+#     #    print("Time does not intersect")
+#     #else:
+#     #    print(intersect)
 
-    #print()
-
-
-# ==============================================================================================
-# Filters gender by checking first if they are matched
-# then returns if they are female matched or male matched
-#def filter_gender(ex_Worker: Worker, ex_Employer: Employer):
-    # print("filter_gender() function for Worker ")
-
-    # 0 = female
-    # 1 = male
-
-    #if ex_Worker.gender == ex_Employer.gender:
-    #    if ex_Worker.gender == 0:
-    #        print("Gender is matched for female")
-    #    else:
-    #        print("Gender is matched for males")
-
-    #else:
-        #print("Gender is not matched")
-
-    #print()
-
+#     #print()
 
 # ==============================================================================================
 # Check doesn't filter out the objects list 
@@ -362,7 +340,7 @@ def checker(ex_Worker: Worker, ex_Employer: Employer):
     # filter days
     filter_days(ex_Worker, ex_Employer)
     # filter time
-    filter_time(ex_Worker, ex_Employer)
+    # filter_time(ex_Worker, ex_Employer)
     # filter distance
     get_route(ex_Worker, ex_Employer)
 
@@ -373,15 +351,9 @@ def checker(ex_Worker: Worker, ex_Employer: Employer):
 # checks if gender matters to customer and then matches based on their input
 # returns true or false based on 
 def checkGender(ex_Worker: Worker, ex_Employer: Employer):
-    # Gender check
-    # if ex_Worker.gender == ex_Employer.gender:
-    #     #print("Gender Matched\n")
-    #     return True
-    # else:
-    #     #print("FAILED GENDER CHECK\n")
-    #     return False
+    
+    # gender_matters == 1 | doesn't matter == 0
 
-    # matters == 1, doesn't matter == 0
     # Check if gender matters for both
     if ex_Employer.gender_matters == 0 and ex_Worker.gender_matters == 0:
         # print("Passed gender doesn't matter check")
@@ -502,25 +474,6 @@ def checkTimeArray(ex_Worker: Worker, ex_Employer: Employer):
     return True
 
 # ==============================================================================================
-# Checks time array for availability using numpy
-# returns -> true or false
-def checkTimeArray(ex_Worker: Worker, ex_Employer: Employer):
-    
-    # get time availability for both in the form of 24 boolean numpy array
-    work_array = np.array(ex_Worker.time_array)
-    employ_array = np.array(ex_Employer.time_array)
-
-    # subtract the employer array from the worker array to see if there are any negative numbers
-    result_array = np.subtract(work_array, employ_array)
-
-    # if there are any negative numbers, return false, otherwise return True
-    if (-1 in result_array.tolist()):
-        return False
-    return True
-
-
-
-# ==============================================================================================
 # checkDistance -> not used in out_filter 
 # returns miles 
 def checkDistance(address1, address2, dist_dict):
@@ -529,9 +482,12 @@ def checkDistance(address1, address2, dist_dict):
 # ==============================================================================================
 # returns true or false based on whether the employer meets the workers minimum salary 
 def checkPay(ex_Worker: Worker, ex_Employer: Employer):
+    # if the employer rate is equal to or more than ex_Worker rate return true -> good
     if (ex_Employer.payrate >= ex_Worker.payrate):
         return True
-    return False
+    # else return false because payrate is below worker rate
+    else:    
+        return False
 
 # ==============================================================================================
 # prints the list of matched workers per employer
