@@ -328,30 +328,29 @@ def filter_days(ex_Worker: Worker, ex_Employer: Employer):
 # ==============================================================================================
 # Check doesn't filter out the objects list 
 # returns information based on the filter methods called 
-def checker(ex_Worker: Worker, ex_Employer: Employer):
-    print("checker() function:\n")
-    print("Begin filter for " + ex_Worker.worker_name +
-          " and " + ex_Employer.employer_name + ":\n")
+# def checker(ex_Worker: Worker, ex_Employer: Employer):
+#     print("checker() function:\n")
+#     print("Begin filter for " + ex_Worker.worker_name +
+#           " and " + ex_Employer.employer_name + ":\n")
 
-    # gender check
-    checkGender(ex_Worker, ex_Employer)
-    # job check
-    filter_jobType(ex_Worker, ex_Employer)
-    # filter days
-    filter_days(ex_Worker, ex_Employer)
-    # filter time
-    # filter_time(ex_Worker, ex_Employer)
-    # filter distance
-    get_route(ex_Worker, ex_Employer)
+#     # gender check
+#     checkGender(ex_Worker, ex_Employer)
+#     # job check
+#     filter_jobType(ex_Worker, ex_Employer)
+#     # filter days
+#     filter_days(ex_Worker, ex_Employer)
+#     # filter time
+#     # filter_time(ex_Worker, ex_Employer)
+#     # filter distance
+#     get_route(ex_Worker, ex_Employer)
 
-    # end checker
-    print("End of check")
+#     # end checker
+#     print("End of check")
 
 # ==============================================================================================
 # checks if gender matters to customer and then matches based on their input
 # returns true or false based on 
 def checkGender(ex_Worker: Worker, ex_Employer: Employer):
-    
     # gender_matters == 1 | doesn't matter == 0
 
     # Check if gender matters for both
