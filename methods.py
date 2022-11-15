@@ -356,7 +356,7 @@ def checker(ex_Worker: Worker, ex_Employer: Employer):
           " and " + ex_Employer.employer_name + ":\n")
 
     # gender check
-    filter_gender(ex_Worker, ex_Employer)
+    checkGender(ex_Worker, ex_Employer)
     # job check
     filter_jobType(ex_Worker, ex_Employer)
     # filter days
@@ -370,16 +370,59 @@ def checker(ex_Worker: Worker, ex_Employer: Employer):
     print("End of check")
 
 # ==============================================================================================
-# checks if genders are matched for what the employer wants
+# checks if gender matters to customer and then matches based on their input
 # returns true or false based on 
 def checkGender(ex_Worker: Worker, ex_Employer: Employer):
     # Gender check
-    if ex_Worker.gender == ex_Employer.gender:
-        #print("Gender Matched\n")
+    # if ex_Worker.gender == ex_Employer.gender:
+    #     #print("Gender Matched\n")
+    #     return True
+    # else:
+    #     #print("FAILED GENDER CHECK\n")
+    #     return False
+
+    # matters == 1, doesn't matter == 0
+    # Check if gender matters for both
+    if ex_Employer.gender_matters == 0 and ex_Worker.gender_matters == 0:
+        # print("Passed gender doesn't matter check")
         return True
+    # if gender does matter for both check
+    elif ex_Employer.gender_matters == 1 and ex_Worker.gender_matters == 1:
+        # check E.preferred == W.gender and W.preferred == E.gender
+        if ex_Employer.gender_preferred == ex_Worker.gender and ex_Worker.gender_preferred == ex_Employer.gender:
+            return True
+        else:
+            return False
+    # Either both or 1 employer/worker cares
+    # Employer cares about gender -> check if E.preferred == W.gender
+    elif ex_Employer.gender_matters == 1:
+        # employer preferred == worker gender
+        if ex_Employer.gender_preferred == ex_Worker.gender:
+            return True
+        # employer preferred != worker gender
+        else:
+            return False
+    # Worker cares about gender -> check if W.preferred == E.gender
+    elif ex_Worker.gender_matters == 1:
+        # Worker preferred == employer gender
+        if ex_Worker.gender_preferred == ex_Employer.gender:
+            return True
+        else: 
+            return False
     else:
-        #print("FAILED GENDER CHECK\n")
         return False
+
+    
+    # gender does matter 
+    # else:
+    #     # check if the employers preferred gender matches the worker and vice versa 
+    #     if ex_Employer.gender_preferred.lower() == ex_Worker.gender.lower() and ex_Worker.gender_preferred.lower() == ex_Employer.gender.lower():
+    #         # print("Passed gender preferred check\n")
+    #         return True
+    #     # else the gender doesn't match 
+    #     else:
+    #         # print("FAILED GENDER CHECK -> gender's don't match preferred\n")
+    #         return False
 
 # ==============================================================================================
 # checks that skills are matched and prints the matched skills
@@ -485,8 +528,8 @@ def checkDistance(address1, address2, dist_dict):
 
 # ==============================================================================================
 # returns true or false based on whether the employer meets the workers minimum salary 
-def checkPay(worker, employer):
-    if (employer.pay >= worker.pay_range_start):
+def checkPay(ex_Worker: Worker, ex_Employer: Employer):
+    if (ex_Employer.payrate >= ex_Worker.payrate):
         return True
     return False
 
@@ -517,11 +560,12 @@ def match(ex_Worker: Worker, ex_Employer: Employer, dist_dict):
     if (checkGender(ex_Worker, ex_Employer)):
         if (checkSkills(ex_Worker, ex_Employer)):
             if (checkDays(ex_Worker, ex_Employer)):
-                if (checkTimeArray(ex_Worker, ex_Employer)):
-                    miles = checkDistance(ex_Worker.address, ex_Employer.address, dist_dict)
-                    if ((ex_Employer, miles) not in ex_Worker.matched_employers):
-                        ex_Employer.matched_workers.append((ex_Worker, miles))
-                        ex_Worker.matched_employers.append((ex_Employer, miles))
+                # if(checkPay(ex_Worker, ex_Employer)):   # pay check added 
+                    if (checkTimeArray(ex_Worker, ex_Employer)):
+                        miles = checkDistance(ex_Worker.address, ex_Employer.address, dist_dict)
+                        if ((ex_Employer, miles) not in ex_Worker.matched_employers):
+                            ex_Employer.matched_workers.append((ex_Worker, miles))
+                            ex_Worker.matched_employers.append((ex_Employer, miles))
 
 
 # def match_update(worker, employerList, has_job_list, dist_dict):

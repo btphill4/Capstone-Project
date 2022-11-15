@@ -3,7 +3,7 @@ import time
 from methods import *
 
 newList = []
-with open('real_addresses_test.csv', newline='') as csvfile:
+with open('real_addresses(ottawa only).csv', newline='') as csvfile:
     
     reader = csv.reader(csvfile, delimiter='\n')
     for row in reader:

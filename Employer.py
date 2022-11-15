@@ -5,8 +5,9 @@ from time import timezone
 
 class Employer:
     #in order based on schema.txt
-    def __init__(self, employer_name, employer_id, gender, timeslot_id, time_array, 
-    job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday ):
+    def __init__(self, employer_name, employer_id, gender, gender_preferred, gender_matters, 
+    timeslot_id, time_array, job_skills, address, 
+    sunday, monday, tuesday, wednesday, thursday, friday, saturday, payrate ):
 
     # def __init__(self, employer_name, employer_id, gender, timeslot_id, timezone, start_time, end_time, 
     # job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday, 
@@ -16,6 +17,8 @@ class Employer:
         self.employer_name = employer_name
         self.employer_id = employer_id
         self.gender = gender
+        self.gender_preferred = gender_preferred
+        self.gender_matters = gender_matters
         self.timeslot_id = timeslot_id
         self.time_array = time_array
         self.job_skills = job_skills
@@ -28,7 +31,7 @@ class Employer:
         self.friday = friday
         self.saturday = saturday
         self.matched_workers = []
-        self.pay = 0;
+        self.payrate = payrate;
 
         
         #class methods if needed here
