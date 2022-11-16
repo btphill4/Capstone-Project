@@ -38,7 +38,7 @@ class Worker:
         self.saturday = saturday
         self.matched_employers = []
         # self.pay_range_start = 0;
-        self.payrate = payrate
+        self.min_payrate = payrate
 
         
         #class methods if needed here

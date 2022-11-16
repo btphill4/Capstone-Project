@@ -482,7 +482,7 @@ def checkDistance(address1, address2, dist_dict):
 # returns true or false based on whether the employer meets the workers minimum salary 
 def checkPay(ex_Worker: Worker, ex_Employer: Employer):
     # if the employer rate is equal to or more than ex_Worker rate return true -> good
-    if (ex_Employer.payrate >= ex_Worker.payrate):
+    if (ex_Employer.payrate >= ex_Worker.min_payrate):
         return True
     # else return false because payrate is below worker rate
     else:    
@@ -510,17 +510,23 @@ def printMatchedWorkers(ex_Employer: Employer):
 #                             ex_Employer.matched_workers.append((ex_Worker, miles))
 #                             ex_Worker.matched_employers.append((ex_Employer, miles))
 
-def match(ex_Worker: Worker, ex_Employer: Employer, dist_dict):
+def match(ex_Worker: Worker, ex_Employer: Employer):
     # filters based on order of importance and leaves nested if's when false
     if (checkGender(ex_Worker, ex_Employer)):
         if (checkSkills(ex_Worker, ex_Employer)):
             if (checkDays(ex_Worker, ex_Employer)):
-                # if(checkPay(ex_Worker, ex_Employer)):   # pay check added 
+                 if(checkPay(ex_Worker, ex_Employer)):   # pay check added 
                     if (checkTimeArray(ex_Worker, ex_Employer)):
-                        miles = checkDistance(ex_Worker.address, ex_Employer.address, dist_dict)
-                        if ((ex_Employer, miles) not in ex_Worker.matched_employers):
-                            ex_Employer.matched_workers.append((ex_Worker, miles))
-                            ex_Worker.matched_employers.append((ex_Employer, miles))
+                        if (ex_Employer not in ex_Worker.matched_employers):
+                            ex_Worker.matched_employers.append(ex_Employer)
+                            
+def addDistanceToMatches(Worker_List, dist_dict):
+    for worker in Worker_List:
+        new_list = []
+        for employer in worker.matched_employers:
+            miles = checkDistance(worker.address, employer.address, dist_dict)
+            new_list.append((employer, miles))
+        worker.matched_employers = new_list;
 
 
 # def match_update(worker, employerList, has_job_list, dist_dict):
@@ -589,6 +595,46 @@ def CalcDistanceDict(Employer_List, Worker_List, dist_dict):
             if (dist != 0):
                 time.sleep(1)
                 print("[" + worker.address + ", " + employer.address + "] = " + str(dist))
+                
+def CalcDistanceDict2(Employer_List, Worker_List, dist_dict):
+    for worker in Worker_List:
+        for employer in worker.matched_employers:
+            if ((worker.address, employer.address) not in dist_dict):
+                dist = get_route2(worker.address, employer.address)
+                dist_dict[worker.address, employer.address] = dist;
+                dist_dict[employer.address, worker.address] = dist;
+                if (dist != 0):
+                    time.sleep(1)
+                    print("[" + worker.address + ", " + employer.address + "] = " + str(dist)) 
+            for employer2 in worker.matched_employers:
+                if ((employer.address, employer2.address) not in dist_dict):
+                    dist = get_route2(employer.address, employer2.address)
+                    dist_dict[employer.address, employer2.address] = dist;
+                    dist_dict[employer2.address, employer.address] = dist;
+                    if (dist != 0):
+                        time.sleep(1)
+                        print("[" + employer.address + ", " + employer2.address + "] = " + str(dist)) 
+    
+#     # get distance between each employer/employer combination
+#     for employer in Employer_List:
+#         for employer2 in Employer_List:
+#             if ((employer, employer2) not in dist_dict): # little bit of optimization to lessen API calls
+#                 dist = get_route2(employer.address, employer2.address)
+#                 dist_dict[employer.address, employer2.address] = dist
+#                 dist_dict[employer2.address, employer.address] = dist
+#                 if (dist != 0):
+#                     time.sleep(1)
+#                     print("[" + employer.address + ", " + employer2.address + "] = " + str(dist)) 
+    
+#     # get distance between each employer/worker combination
+#     for worker in Worker_List:
+#         for employer in Employer_List:
+#             dist = get_route2(worker.address, employer.address)
+#             dist_dict[worker.address, employer.address] = dist
+#             dist_dict[employer.address, worker.address] = dist
+#             if (dist != 0):
+#                 time.sleep(1)
+#                 print("[" + worker.address + ", " + employer.address + "] = " + str(dist))
     
 
 def RecalcDistances(worker, dist_dict):
