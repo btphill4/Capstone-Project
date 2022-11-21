@@ -23,10 +23,10 @@ import time
 
 # Uses https://nominatim.openstreetmap.org/ui/search.html
 geolocater = Nominatim(user_agent="http")
-global output
-output = []
 
-# connect to database method (From previous project)
+# connect to database method 
+#   -> From previous project using postgres
+#   -> can be used as a reference 
 # def connect_to_db():
 #     # Database host is database address
 #     # Database name is name of database
@@ -41,31 +41,6 @@ output = []
 #     connect = psycopg2.connect(host=db_host, dbname=db_name, user=db_user, password=db_pass, port=db_port)
 #     return connect
 
-# ==============================================================================================
-
-# filter job type i.e. Gardening, etc method
-# sets job skills as a set and checks for intersection
-# returns -> none
-def filter_jobType(ex_Worker: Worker, ex_Employer: Employer):
-    # print("Filter_jobType() function for Worker " + ex_Worker.worker_name +
-    #             " and Employer " + ex_Employer.employer_name + ":\n")
-
-    jobs_Worker_set = set(ex_Worker.job_skills)
-    jobs_Employer_set = set(ex_Employer.job_skills)
-
-    #if jobs_Worker_set.intersection(jobs_Employer_set):
-        #print("SETS MATCHED for: " + ex_Employer.employer_name +
-        #      " and " + ex_Worker.worker_name)
-        #print("For jobs: " + str(jobs_Employer_set.intersection(jobs_Worker_set)))
-        #print()
-
-    #else:  # ex_Worker.job_skills != ex_Employer.job_skills:
-    #    print("Jobs NOT Matched for: " + ex_Worker.worker_name +
-    #          " and " + ex_Employer.employer_name + "\n")
-    #    print("Available jobs for Worker " + ex_Worker.worker_name +
-    #          ": " + str(ex_Worker.job_skills) + "\n")
-    #    print("Available jobs for Employer " + ex_Employer.employer_name + ": "
-    #          + str(ex_Employer.job_skills) + "\n")
 
 # ==============================================================================================
 # Methods for calc_distance
@@ -138,7 +113,7 @@ def get_route(ex_Worker: Worker, ex_Employer: Employer):
     distance_Miles = getMetersToMiles(distance)
     distance_Kilometers = getMetersToKilometers(distance)
 
-    # print output -> remove for final product?
+    # print output used for testing
     #print("Distance in miles: " +
     #      str("{:.2f}".format(distance_Miles)) + " Miles")
     #print("Distance in kilometers: " +
@@ -148,6 +123,8 @@ def get_route(ex_Worker: Worker, ex_Employer: Employer):
     return distance_Miles
 
 # gets route between two addresses
+# uses geolocater to assigned the geocode for addresses
+# uses OSRM and nomatim.openstreetmap to get distance
 def get_route2(address1, address2):
     # print("get_route() function: for Worker " + ex_Worker.worker_name +
     #             " and Employer " + ex_Employer.employer_name + ":\n")
@@ -161,7 +138,7 @@ def get_route2(address1, address2):
     # Address testing
     # print("Worker Address: ")
     # print(worker_Location )
-    # print("\nEmployer Address: " )
+    # print("\nEmployer Address: ")
     # print(employer_Location)
 
     # Worker Longitude and latidute -> pickup/starting
@@ -201,7 +178,7 @@ def get_route2(address1, address2):
     distance_Miles = getMetersToMiles(distance)
     distance_Kilometers = getMetersToKilometers(distance)
 
-    # print output -> remove for final product?
+    # print output used for testing
     #print("Distance in miles: " +
     #      str("{:.2f}".format(distance_Miles)) + " Miles")
     #print("Distance in kilometers: " +
@@ -211,48 +188,8 @@ def get_route2(address1, address2):
     return distance_Miles
 
 # ==============================================================================================
-# original distance calculations 
-# -> only returns straight line distance not driving distance
-# used for testing address validity 
-# returns -> none
-def calc_distance(ex_Worker: Worker, ex_Employer: Employer):
-    #print("calc_distance() function for Worker " + ex_Worker.worker_name +
-    #      " and Employer " + ex_Employer.employer_name + ":\n")
-
-    # Testing
-    # print("Worker Address test:")
-    # print(ex_Worker.address)
-
-    # print("\nEmployer Address Test: ")
-    # print(ex_Employer.address)
-
-    # set address to temp location variables
-    worker_Location = geolocater.geocode(ex_Worker.address)
-    employer_Location = geolocater.geocode(ex_Employer.address)
-
-    # Used for testing
-    # print("Worker Address: ")
-    # print(worker_Location )
-    # print("\nEmployer Address: " )
-    # print(employer_Location)
-
-    # Distance is less than 20 miles check
-    # Check if greater than 20 miles
-    #if GD((worker_Location.latitude, worker_Location.longitude),
-    #      (employer_Location.latitude, employer_Location.longitude)).miles >= 20:
-    #    print("\nDistance in miles is greater than 20\n")
-
-    # else return the distance
-    #else:
-    #    print("\nDistance in miles: " + str("{:.2f}".format(GD((worker_Location.latitude, worker_Location.longitude),
-    #                                                           (employer_Location.latitude, employer_Location.longitude)).miles)) + " miles\n")
-    #    print("Distance in Kilometers: " + str("{:.2f}".format(GD((worker_Location.latitude, worker_Location.longitude),
-    #                                                              (employer_Location.latitude, employer_Location.longitude)).kilometers)) + " KM\n")
-
-# ==============================================================================================
-
 # checks for the matched days by adding them to a list of matched_days
-# returns matched_days for out_filter()
+# returns matched_days for match() method
 def filter_days(ex_Worker: Worker, ex_Employer: Employer):
     # print("calc_days() function for Worker " + ex_Worker.worker_name +
     #             " and Employer " + ex_Employer.employer_name + ":\n")
@@ -297,63 +234,12 @@ def filter_days(ex_Worker: Worker, ex_Employer: Employer):
     return matched_days
 
 # ==============================================================================================
-# time filtering
-# prints intersection
-# returns -> none
-# def filter_time(ex_Worker: Worker, ex_Employer: Employer):
-#     # print("filter_time() function for Worker " + ex_Worker.worker_name +
-#     #             " and Employer " + ex_Employer.employer_name + ":\n")
-
-#     # set time range to variable -> worker
-#     worker_range = range(ex_Worker.start_time, ex_Worker.end_time+1)
-#     employer_range = range(ex_Employer.start_time, ex_Employer.end_time+1)
-
-#     # testing
-#     # for i in worker_range:
-#     #     print(i)
-#     # for i in employer_range:
-#     #     print(i)
-
-#     # convert worker_range to set
-#     worker_rangeSet = set(worker_range)
-#     intersect = worker_rangeSet.intersection(employer_range)
-
-#     #if len(intersect) == 0:
-#     #    print("Time does not intersect")
-#     #else:
-#     #    print(intersect)
-
-#     #print()
-
-# ==============================================================================================
-# Check doesn't filter out the objects list 
-# returns information based on the filter methods called 
-# def checker(ex_Worker: Worker, ex_Employer: Employer):
-#     print("checker() function:\n")
-#     print("Begin filter for " + ex_Worker.worker_name +
-#           " and " + ex_Employer.employer_name + ":\n")
-
-#     # gender check
-#     checkGender(ex_Worker, ex_Employer)
-#     # job check
-#     filter_jobType(ex_Worker, ex_Employer)
-#     # filter days
-#     filter_days(ex_Worker, ex_Employer)
-#     # filter time
-#     # filter_time(ex_Worker, ex_Employer)
-#     # filter distance
-#     get_route(ex_Worker, ex_Employer)
-
-#     # end checker
-#     print("End of check")
-
-# ==============================================================================================
 # checks if gender matters to customer and then matches based on their input
 # returns true or false based on 
 def checkGender(ex_Worker: Worker, ex_Employer: Employer):
     # gender_matters == 1 | doesn't matter == 0
 
-    # Check if gender matters for both
+    # Check if gender doesn't matter for both
     if ex_Employer.gender_matters == 0 and ex_Worker.gender_matters == 0:
         # print("Passed gender doesn't matter check")
         return True
@@ -380,20 +266,10 @@ def checkGender(ex_Worker: Worker, ex_Employer: Employer):
             return True
         else: 
             return False
+    # should never reach here but is a final catch 
     else:
+        # print("checkGender failed check input")
         return False
-
-    
-    # gender does matter 
-    # else:
-    #     # check if the employers preferred gender matches the worker and vice versa 
-    #     if ex_Employer.gender_preferred.lower() == ex_Worker.gender.lower() and ex_Worker.gender_preferred.lower() == ex_Employer.gender.lower():
-    #         # print("Passed gender preferred check\n")
-    #         return True
-    #     # else the gender doesn't match 
-    #     else:
-    #         # print("FAILED GENDER CHECK -> gender's don't match preferred\n")
-    #         return False
 
 # ==============================================================================================
 # checks that skills are matched and prints the matched skills
@@ -428,6 +304,7 @@ def checkDays(ex_Worker: Worker, ex_Employer: Employer):
         return True
 
 # ==============================================================================================
+# REMOVE?
 # checks time based on start and end times using intersections 
 # returns intersection list based on matched times
 def checkTime(ex_Worker: Worker, ex_Employer: Employer):
@@ -485,7 +362,8 @@ def checkPay(ex_Worker: Worker, ex_Employer: Employer):
     if (ex_Employer.payrate >= ex_Worker.min_payrate):
         return True
     # else return false because payrate is below worker rate
-    else:    
+    else:
+        # print("Payrate too low for " + ex_Worker.worker_name + " and " + ex_Employer.employer_name)    
         return False
 
 # ==============================================================================================
@@ -497,7 +375,10 @@ def printMatchedWorkers(ex_Employer: Employer):
 
 # ==============================================================================================
 # Filters out the list of workers and employers and returns the matched list
-# return -> list of matched objects
+# uses nested if's to find perfect matches. If any return false, it is not a match and exits the nested if's
+# return -> None, assigns possible matches to object list variables
+
+# REMOVE?
 # def match(ex_Worker: Worker, ex_Employer: Employer, dist_dict):
 #     # filters based on order of importance and leaves nested if's when false
 #     if (checkGender(ex_Worker, ex_Employer)):
@@ -528,7 +409,7 @@ def addDistanceToMatches(Worker_List, dist_dict):
             new_list.append((employer, miles))
         worker.matched_employers = new_list;
 
-
+# REMOVE?
 # def match_update(worker, employerList, has_job_list, dist_dict):
 #     worker.matched_employers = [];
 #     for ex_Employer in employerList:
@@ -636,7 +517,7 @@ def CalcDistanceDict2(Employer_List, Worker_List, dist_dict):
 #                 time.sleep(1)
 #                 print("[" + worker.address + ", " + employer.address + "] = " + str(dist))
     
-
+# used to calculate distances in multi-job matching
 def RecalcDistances(worker, dist_dict):
     for x in range(0, len(worker.matched_employers)):
         current_employer_tuple = worker.matched_employers[x]
