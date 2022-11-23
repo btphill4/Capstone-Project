@@ -350,6 +350,42 @@ def checkTimeArray(ex_Worker: Worker, ex_Employer: Employer):
     return True
 
 # ==============================================================================================
+# Returns "true" if the first time array starts at a time before or equal to the second time array
+def compareTime(time_arr1, time_arr2):
+    start_time1 = getTimeStart(time_arr1)
+    start_time2 = getTimeStart(time_arr2)
+    if (start_time1 <= start_time2):
+        return True
+    return False
+   
+# ==============================================================================================
+# returns the starting index of the time for the time array
+def getTimeStart(time_arr):
+    for i in range(len(time_arr)):
+        if (time_arr[i] == 1):
+            return i;
+
+# ==============================================================================================
+# returns the last time index + 1
+def getLastTimeIndexPlusOne(time_arr):
+    for i in range(23, -1, -1):
+        if (time_arr[i] == 1):
+            if (i <= 22):
+                return i + 1;
+            else:
+                return -1;
+            
+# ==============================================================================================
+# returns the last time index + 1
+def getLastTimeIndex(time_arr):
+    for i in range(23, -1, -1):
+        if (time_arr[i] == 1):
+            if (i <= 23):
+                return i;
+            else:
+                return -1;
+
+# ==============================================================================================
 # checkDistance -> not used in out_filter 
 # returns miles 
 def checkDistance(address1, address2, dist_dict):
@@ -454,7 +490,8 @@ def sortMatchedEmployers(Worker_List):
                     min_idx = j
             (worker.matched_employers[i], worker.matched_employers[min_idx]) = (worker.matched_employers[min_idx], worker.matched_employers[i])
 
-            
+
+# not used anymore
 def CalcDistanceDict(Employer_List, Worker_List, dist_dict):
     # get distance between each employer/employer combination
     for employer in Employer_List:
@@ -476,7 +513,8 @@ def CalcDistanceDict(Employer_List, Worker_List, dist_dict):
             if (dist != 0):
                 time.sleep(1)
                 print("[" + worker.address + ", " + employer.address + "] = " + str(dist))
-                
+
+
 def CalcDistanceDict2(Employer_List, Worker_List, dist_dict):
     for worker in Worker_List:
         for employer in worker.matched_employers:
