@@ -7,7 +7,7 @@ class Employer:
     #in order based on schema.txt
     def __init__(self, employer_name, employer_id, gender, gender_preferred, gender_matters, 
     timeslot_id, time_array, job_skills, address, 
-    sunday, monday, tuesday, wednesday, thursday, friday, saturday, payrate ):
+    sunday, monday, tuesday, wednesday, thursday, friday, saturday, payrate, job_id ):
 
     # def __init__(self, employer_name, employer_id, gender, timeslot_id, timezone, start_time, end_time, 
     # job_skills, address, sunday, monday, tuesday, wednesday, thursday, friday, saturday, 
@@ -32,6 +32,7 @@ class Employer:
         self.saturday = saturday
         self.matched_workers = []
         self.payrate = payrate;
+        self.job_id = job_id
 
         
         #class methods if needed here
