@@ -238,7 +238,7 @@ finished_list = {}
 job_taken_list = []
 max_distance = 30
 max_multi_distance = 45
-worker_list = {};
+worker_list = {}; 
 
 # create list of jobs for each employer under each worker 
 for worker in Copy_Worker_List:    # for loop through each worker
